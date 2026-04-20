@@ -6,7 +6,7 @@ import LearnMore from '../buttons/LearnMore';
 
 const Banner = () => {
     return (
-        <div className="relative w-full h-150 overflow-hidden mt-3 rounded-4xl">
+        <div className="relative w-full h-150 overflow-hidden rounded-4xl ">
             <Image
                 src={banner}
                 alt="Banner"
@@ -24,7 +24,6 @@ const Banner = () => {
                     healthier and your farm more productive.
                 </p>
 
-                {/* Buttons */}
                 <div className="flex gap-4">
                     <Explore></Explore>
                     <LearnMore></LearnMore>
