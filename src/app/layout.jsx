@@ -1,17 +1,17 @@
-import { Plus_Jakarta_Sans, Inter  } from 'next/font/google'
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from '@/components/shared/Navbar';
-import Footer from '@/components/shared/Footer';
+import Navbar from "@/components/shared/Navbar";
+import Footer from "@/components/shared/Footer";
 
 const inter = Inter({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-})
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-})
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata = {
   title: {
@@ -23,21 +23,22 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-      <html lang="en">
-        <body className={`${inter.className} ${jakarta.className} antialiased bg-white`} suppressHydrationWarning={true}>
-          <header className="sticky top-0 z-50">
-            <div className="w-11/12 mx-auto">
-              <Navbar></Navbar>
-            </div>
-          </header>
-          <main className="py-2 w-11/12 mx-auto min-h-[calc(100vh-302px)]">
-            {children}
-          </main>
+    <html lang="en">
+      <body
+        className={`${inter.className} ${jakarta.className} antialiased bg-white`}
+        suppressHydrationWarning={true}
+      >
+        <header className="sticky top-0 z-50">
+          <div className="w-full">
+            <Navbar></Navbar>
+          </div>
+        </header>
+        <main className="py-2 min-h-[calc(100vh-302px)]">{children}</main>
 
-          <footer>
-            <Footer></Footer>
-          </footer>
-        </body>
-      </html>
+        <footer>
+          <Footer></Footer>
+        </footer>
+      </body>
+    </html>
   );
 }

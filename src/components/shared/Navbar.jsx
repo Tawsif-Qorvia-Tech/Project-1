@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { MdOutlineDashboard } from "react-icons/md";
+
 import NavLink from "../buttons/NavLink";
 import Logo from "./Logo";
 import ContactUS from "../buttons/ContactUS";
@@ -30,7 +30,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-white px-28 py-5 rounded-2xl">
+    <div className="navbar bg-white px-4 sm:px-8 lg:px-28 py-2 rounded-2xl">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

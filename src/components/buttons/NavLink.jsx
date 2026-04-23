@@ -14,7 +14,7 @@ const NavLink = ({href,children}) => {
     return (
         <Link
       href={href}
-      className={`${isActive ? "text-primary bg-white" : ""} font-medium`}
+      className={`${isActive ? "text-primary bg-white" : ""} font-medium text-base`}
     >
       {children}
     </Link>

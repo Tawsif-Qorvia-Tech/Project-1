@@ -6,7 +6,7 @@ import LearnMore from '../buttons/LearnMore';
 
 const Banner = () => {
     return (
-        <div className="relative w-full h-150 overflow-hidden rounded-4xl ">
+        <div className="relative w-full h-200 overflow-hidden rounded-4xl ">
             <Image
                 src={banner}
                 alt="Banner"
