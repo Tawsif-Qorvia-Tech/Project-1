@@ -1,5 +1,6 @@
 import About from "@/components/home/About";
 import Banner from "@/components/home/Banner";
+import Specialist from "@/components/home/Specialist";
 import Image from "next/image";
 
 export default function Home() {
@@ -10,6 +11,10 @@ export default function Home() {
       </div>
       <div className="w-11/12 mx-auto">
         <About></About>
+      </div>
+
+      <div className="w-11/12 mx-auto">
+        <Specialist></Specialist>
       </div>
     </div>
   );
