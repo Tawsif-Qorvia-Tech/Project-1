@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { FiHeart } from 'react-icons/fi';
 import { FaHeart, FaStar } from 'react-icons/fa';
+import WishList from '../buttons/WishList';
 
 const ProductsCard = ({ product }) => {
   const { name, tagline, price, moq, image, rating, isWishlisted } = product;
@@ -9,15 +10,10 @@ const ProductsCard = ({ product }) => {
     <div className="relative bg-white rounded-2xl overflow-hidden">
 
       {/* Top slate section — image + button */}
-      <div className="bg-slate-50 p-4 pb-4">
+      <div className="bg-slate-50 p-4 pb-4 relative">
 
         {/* Wishlist Button */}
-        <button className="absolute top-4 right-4 w-9 h-9 rounded-full border-2 border-pink-400 flex items-center justify-center hover:bg-pink-100 transition-colors duration-200">
-          {isWishlisted
-            ? <FaHeart className="text-pink-500 text-sm" />
-            : <FiHeart className="text-pink-400 text-sm" />
-          }
-        </button>
+        <WishList isWishlisted={isWishlisted} productId={product._id} />
 
         {/* Product Image */}
         <div className="relative flex items-center justify-center h-48 mb-4">

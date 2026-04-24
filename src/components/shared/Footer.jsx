@@ -7,7 +7,7 @@ import logo from "@/assets/Logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#232323] text-white pb-5 mt-10">
+    <footer className="bg-[#232323] text-white pb-5 mt-32">
       <div className="w-10/12 mx-auto py-14">
         <div className="flex flex-col md:flex-row gap-10">
           {/* LEFT — Logo & Socials */}

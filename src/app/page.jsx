@@ -1,5 +1,6 @@
 import About from "@/components/home/About";
 import Banner from "@/components/home/Banner";
+import Farmers from "@/components/home/Farmers";
 import OurProducts from "@/components/home/OurProducts";
 import Specialist from "@/components/home/Specialist";
 import Image from "next/image";
@@ -20,6 +21,10 @@ export default function Home() {
 
       <div className="w-full px-6">
         <OurProducts></OurProducts>
+      </div>
+
+      <div className="max-w-7xl px-6">
+        <Farmers></Farmers>
       </div>
     </div>
   );

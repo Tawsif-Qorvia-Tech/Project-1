@@ -26,7 +26,7 @@ const specialties = [
 
 const Specialist = () => {
   return (
-    <section className="bg-[#f5e6f5] w-full rounded-2xl py-14 px-8 mt-25">
+    <section className="bg-[#f5e6f5] w-full rounded-2xl py-14 px-8 mt-32">
       <h2 className="text-6xl font-semibold text-center text-gray-900 mb-7">
         Our Veterinary Specialties
       </h2>

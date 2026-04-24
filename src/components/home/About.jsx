@@ -11,6 +11,7 @@ const About = () => {
           src={banner2}
           alt="About Banner"
           fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
           className="object-contain object-center"
         />
       </div>
