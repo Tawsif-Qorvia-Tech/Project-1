@@ -1,0 +1,27 @@
+/* Custom Swiper Pagination Styles */
+.custom-pagination-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.custom-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  background: #d1d5db !important;
+  opacity: 1 !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  margin: 0 !important;
+}
+
+.custom-bullet-active {
+  background: #232323 !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.custom-bullet:hover {
+  background: #6b7280 !important;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import banner2 from "@/assets/Banner2.png";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import Arrow from '../../assets/Arrow.png'
 
 const About = () => {
   return (
@@ -31,7 +32,7 @@ const About = () => {
             <h1 className="text-base lg:text-[18px] font-light">Learn More About Us</h1>
           </div>
           <div>
-            <FaArrowAltCircleRight size={20} />
+              <Image src={Arrow} alt="Arrow" />
           </div>
         </div>
       </div>

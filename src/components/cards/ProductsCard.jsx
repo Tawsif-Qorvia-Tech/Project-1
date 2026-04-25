@@ -10,7 +10,7 @@ const ProductsCard = ({ product }) => {
     <div className="relative bg-white rounded-2xl overflow-hidden">
 
       {/* Top slate section — image + button */}
-      <div className="bg-slate-50 p-4 pb-4 relative">
+      <div className="bg-[#F3F5F7] p-5 pb-4 relative">
 
         {/* Wishlist Button */}
         <WishList isWishlisted={isWishlisted} productId={product._id} />

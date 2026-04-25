@@ -31,7 +31,7 @@ const Farmers = () => {
 
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-5">
-        <h2 className="text-7xl font-semibold text-[#232323] leading-tight">
+        <h2 className="text-4xl md:text-7xl font-semibold text-[#232323] leading-tight">
           Knowledge for <br /> Farmers & Vets
         </h2>
         <p className="text-[18px] text-[#444444] font-light max-w-xs leading-relaxed">
@@ -50,7 +50,7 @@ const Farmers = () => {
               src={Farmer1}
               alt="Featured farm post"
               fill
-              className="object-cover"
+              className="object-cover object-top rounded-2xl"
             />
           </div>
           <div className="pt-4">
@@ -79,7 +79,7 @@ const Farmers = () => {
                   src={post.image}
                   alt={post.title}
                   fill
-                  className="object-cover rounded-xl"
+                  className="object-cover object-top rounded-xl"
                 />
               </div>
               {/* Text */}
