@@ -19,11 +19,11 @@ export default function Home() {
         <Specialist></Specialist>
       </div>
 
-      <div className="w-full px-6">
+      <div className="w-11/12 mx-auto">
         <OurProducts></OurProducts>
       </div>
 
-      <div className="max-w-7xl px-6">
+      <div className="w-11/12 mx-auto">
         <Farmers></Farmers>
       </div>
     </div>

@@ -15,11 +15,11 @@ const Banner = () => {
                 priority
             />
 
-            <div className="absolute inset-0 flex flex-col justify-center px-16 max-w-2xl">
-                <h1 className="text-white text-5xl font-semibold leading-tight mb-4">
+            <div className="absolute inset-0 flex flex-col justify-center pr-16 pl-24 max-w-4xl">
+                <h1 className="text-white text-7xl font-medium leading-tight mb-4">
                     Leading the Future <br /> of Animal Health
                 </h1>
-                <p className="text-white text-[13px] font-light mb-4 leading-relaxed">
+                <p className="text-white text-[17px] font-light mb-4 leading-relaxed">
                     We manufacture trusted, science-backed veterinary medicines to keep your animals
                     healthier and your farm more productive.
                 </p>

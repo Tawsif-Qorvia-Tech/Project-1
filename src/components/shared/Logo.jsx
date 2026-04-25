@@ -5,7 +5,7 @@ import React from 'react';
 const Logo = () => {
     return (
         <Link href={"/"} className='flex items-center gap-1'>
-            <Image alt='Together In Community logo' src={"/Logo.png"} width={60} height={60} style={{ width: 'auto', height: '50px' }}></Image>
+            <Image alt='Together In Community logo' src={"/Logo.png"} width={70} height={70}></Image>
         </Link>
     );
 };

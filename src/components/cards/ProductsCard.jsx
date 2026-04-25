@@ -26,7 +26,7 @@ const ProductsCard = ({ product }) => {
         </div>
 
         {/* CTA Button */}
-        <button className="btn w-full bg-neutral text-white rounded-xl border-none hover:bg-neutral-800 font-semibold text-sm tracking-wide">
+        <button className="btn w-full bg-neutral text-white rounded-[50px] border-none hover:bg-neutral-800 font-medium text-[18px] tracking-wide">
           Get Quote
         </button>
 
@@ -47,13 +47,13 @@ const ProductsCard = ({ product }) => {
         </div>
 
         {/* Product Info */}
-        <h3 className="text-sm font-bold text-gray-900 leading-snug mb-1">
+        <h3 className="text-[18px] font-semibold text-[#232323] leading-snug mb-1">
           {name} – {tagline}
         </h3>
-        <p className="text-xs text-slate-500 mb-1">
+        <p className="text-[18px] text-[#444444] font-semibold mb-1">
           MOQ: {moq.quantity} {moq.unit}
         </p>
-        <p className="text-base font-bold text-gray-900">
+        <p className="text-[18px] font-bold text-[#232323]">
           ${price.toFixed(2)}
         </p>
 
