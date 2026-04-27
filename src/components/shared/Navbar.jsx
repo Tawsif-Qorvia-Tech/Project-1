@@ -14,17 +14,17 @@ const Navbar = () => {
         <NavLink href={"/"}>Home</NavLink>
       </li>
       <li>
-        <NavLink href={"/services"}>About Us</NavLink>
+        <NavLink href={"/aboutUs"}>About Us</NavLink>
       </li>
       <li>
-        <NavLink href={"/blogs"}>Out Products</NavLink>
+        <NavLink href={"/ourProducts"}>Our Products</NavLink>
       </li>
 
       <li>
-        <NavLink href={"/about"}>Specialties</NavLink>
+        <NavLink href={"/specialties"}>Specialties</NavLink>
       </li>
       <li>
-        <NavLink href={"/contact"}>Blog</NavLink>
+        <NavLink href={"/contact"}>Contact</NavLink>
       </li>
     </>
   );
