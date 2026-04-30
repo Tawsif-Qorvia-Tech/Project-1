@@ -3,6 +3,7 @@ import AboutUs from "@/components/AboutUs/AboutUs";
 import WhoWeAre from "@/components/AboutUs/WhoWeAre";
 import Journey from "@/components/AboutUs/Journey";
 import Trust from "@/components/AboutUs/Trust";
+import Work from "@/components/AboutUs/Work";
 
 const page = () => {
   return (
@@ -18,6 +19,9 @@ const page = () => {
       </div>
       <div>
         <Trust></Trust>
+      </div>
+      <div>
+        <Work></Work>
       </div>
     </>
   );
