@@ -8,7 +8,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 const OurProductsClient = ({ products, paginationRef }) => {
-  // Split products into chunks of 4
   const chunkedProducts = [];
   for (let i = 0; i < products.length; i += 4) {
     chunkedProducts.push(products.slice(i, i + 4));
