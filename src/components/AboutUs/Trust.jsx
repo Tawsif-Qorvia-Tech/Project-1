@@ -36,7 +36,7 @@ const Trust = () => {
 
         {/* Right: Text */}
         <div className="flex-1 flex flex-col">
-          <h2 className="text-5xl md:text-7xl font-black text-gray-900 uppercase leading-tight mb-10">
+          <h2 className="text-5xl md:text-7xl font-black text-gray-900 uppercase leading-tight mb-10 font-[family-name:--font-gilroy]">
             Why Farmers <br /> Trust Us
           </h2>
 
@@ -64,7 +64,7 @@ const Trust = () => {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1 font-[family-name:--font-gilroy]">
                       {point.title}
                     </h3>
                     <p className="text-sm text-[#555] font-light leading-relaxed">

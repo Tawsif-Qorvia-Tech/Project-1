@@ -31,10 +31,10 @@ const Farmers = () => {
 
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 mb-5">
-        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-7xl font-semibold text-[#232323] leading-tight">
+        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-7xl font-semibold text-[#232323] leading-tight font-[family-name:--font-gilroy]">
           Knowledge for <br /> Farmers & Vets
         </h2>
-        <p className="text-sm sm:text-base md:text-[18px] text-[#444444] font-light max-w-xs leading-relaxed">
+        <p className="text-sm sm:text-base md:text-[18px] text-[#444444] font-light max-w-xs leading-relaxed font-[family-name:--font-bdo-grotesk]">
           Browse our wide range of veterinary medicines developed to ensure the
           health and productivity of poultry.
         </p>
@@ -54,11 +54,11 @@ const Farmers = () => {
             />
           </div>
           <div className="pt-3 sm:pt-4">
-            <p className="text-xs text-gray-400 mb-1">Aug 28, 2023</p>
-            <h3 className="text-sm sm:text-base font-bold text-gray-900 leading-snug mb-2">
+            <p className=" text-gray-400 mb-1">Aug 28, 2023</p>
+            <h3 className="text-[22px] font-normal text-gray-900 leading-snug mb-2 font-[family-name:--font-gilroy]">
               The Future of Poultry Healthcare: Innovations in Veterinary Medicine
             </h3>
-            <p className="text-xs text-gray-500 leading-relaxed">
+            <p className="text-[18px] font-light text-gray-500 leading-relaxed">
               New technologies are transforming poultry farming. From advanced
               vaccines to nutritional solutions, discover what is next for
               healthier flocks.
@@ -84,8 +84,8 @@ const Farmers = () => {
               </div>
               {/* Text */}
               <div className="flex flex-col justify-center py-1">
-                <p className="text-xs text-gray-400 mb-1">{post.date}</p>
-                <h4 className="text-xs sm:text-sm font-semibold text-gray-900 leading-snug">
+                <p className="text-[18px] text-[#444444] mb-1">{post.date}</p>
+                <h4 className="text-[22px] font-normal text-gray-900 leading-snug font-[family-name:--font-gilroy]">
                   {post.title}
                 </h4>
               </div>

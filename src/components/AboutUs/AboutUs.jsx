@@ -19,11 +19,11 @@ const AboutUs = () => {
                         About Us
                     </div>
 
-                    <h1 className="text-white text-[36px] md:text-[80px] font-semibold mb-2 text-left md:text-center" style={{ fontFamily: "'inter', serif" }}>
+                    <h1 className="text-white text-[36px] md:text-[80px] font-semibold mb-2 text-left md:text-center font-[family-name:--font-gilroy]" style={{ fontFamily: "'inter', serif" }}>
                         Dedicated to Animal <br className="hidden md:block" />Health & Farm Productivity
                     </h1>
 
-                    <p className="text-white text-left md:text-center text-sm md:text-[18px] font-normal">
+                    <p className="text-white text-left md:text-center text-sm md:text-[18px] font-normal font-[family-name:--font-bdo-grotesk]">
                         With years of experience, we provide science-backed veterinary solutions for healthier <br />
                         animals and sustainable farming.
                     </p>

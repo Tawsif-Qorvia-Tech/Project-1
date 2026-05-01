@@ -9,7 +9,7 @@ const ContactUS = () => {
     return (
         <div className='bg-primary text-white flex items-center justify-center gap-3 rounded-[22.4px] py-[5.6px] pl-[16.8px] pr-[5.6px]'>
             <div className='pl-4'> 
-                <h1 className='text-[18px] font-light'>Contact Us</h1>
+                <h1 className='text-[18px] font-light font-[family-name:--font-bdo-grotesk]'>Contact Us</h1>
             </div>
             <div>
                 <Image src={Arrow} alt="Arrow" />

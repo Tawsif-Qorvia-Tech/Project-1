@@ -1,4 +1,5 @@
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import "./swiper-custom.css";
 import Navbar from "@/components/shared/Navbar";
@@ -14,6 +15,16 @@ const jakarta = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
+const bdoGrotesk = localFont({
+  src: "../fonts/BDOGrotesk-VF.woff2",
+  variable: "--font-bdo-grotesk",
+});
+
+const gilroy = localFont({
+  src: "../fonts/Gilroy-Regular.woff2",
+  variable: "--font-gilroy",
+});
+
 export const metadata = {
   title: {
     default: "Together In Community",
@@ -26,7 +37,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${jakarta.className} antialiased bg-white`}
+        className={`${inter.className} ${jakarta.className} ${bdoGrotesk.variable} ${gilroy.variable} antialiased bg-white`}
         suppressHydrationWarning={true}
       >
         <header className="sticky top-0 z-50">

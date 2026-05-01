@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import banner2 from "@/assets/Banner2.png";
-import { FaArrowAltCircleRight } from "react-icons/fa";
 import Arrow from '../../assets/Arrow.png'
 
 const About = () => {
@@ -18,10 +17,10 @@ const About = () => {
       </div>
 
       <div className="w-full lg:w-1/2 flex flex-col justify-center gap-4 lg:gap-6 px-4 lg:px-0">
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-semibold text-[#232323] leading-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-semibold text-[#232323] leading-tight font-[family-name:--font-gilroy]">
           Committed to Animal Health & Farmer Success
         </h2>
-        <p className="text-sm lg:text-base text-[#444444] leading-relaxed uppercase">
+        <p className="text-sm lg:text-[16px] font-light text-[#444444] tracking-tighter [word-spacing:0.3em] uppercase font-(family-name:--font-bdo-grotesk)">
           With years of expertise in veterinary pharmaceuticals, we specialize
           in creating innovative, reliable, and effective solutions for poultry
           health. Our mission is to support farmers with high-quality medicines
@@ -29,7 +28,7 @@ const About = () => {
         </p>
         <div className="bg-primary text-white flex items-center justify-center gap-3 rounded-[22.4px] py-[5.6px] pl-[16.8px] pr-[5.6px] w-max">
           <div>
-            <h1 className="text-base lg:text-[18px] font-light">Learn More About Us</h1>
+            <h1 className="text-base lg:text-[18px] font-light font-[family-name:--font-gilroy]">Learn More About Us</h1>
           </div>
           <div>
               <Image src={Arrow} alt="Arrow" />

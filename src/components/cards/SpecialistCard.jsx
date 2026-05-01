@@ -17,7 +17,7 @@ const SpecialistCard = ({ image, title, description }) => {
       </div>
 
       <div className="flex flex-col flex-1 pt-4 sm:pt-5 pb-14 sm:pb-16">
-        <h3 className="text-lg sm:text-[24px] font-bold text-[#222222] mb-2">{title}</h3>
+        <h3 className="text-lg sm:text-[24px] font-bold text-[#222222] mb-2 font-[family-name:--font-gilroy]">{title}</h3>
         <p className="text-sm sm:text-lg text-[#222222] flex-1">{description}</p>
       </div>
 
