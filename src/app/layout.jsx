@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
         </header>
         <main className="py-2 min-h-[calc(100vh-302px)]">{children}</main>
 
-        <footer>
+        <footer className="w-full">
           <Footer></Footer>
         </footer>
       </body>

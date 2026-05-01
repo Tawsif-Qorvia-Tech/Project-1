@@ -9,3 +9,9 @@
 
   --color-primary: oklch(42% 0.28 328);
 }
+
+@custom-media --xs (width >= 320px);
+
+@theme {
+  --breakpoint-xs: 320px;
+}

@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center">
-      <div className="w-full px-6">
+      <div className="w-full px-3 sm:px-6">
         <Banner />
       </div>
       <div className="w-11/12 mx-auto">
