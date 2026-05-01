@@ -19,8 +19,8 @@ const AboutUs = () => {
                         About Us
                     </div>
 
-                    <h1 className="text-white text-3xl md:text-[80px] font-semibold mb-2 text-left md:text-center" style={{ fontFamily: "'inter', serif" }}>
-                        Dedicated to Animal <br /> Health & Farm Productivity
+                    <h1 className="text-white text-[36px] md:text-[80px] font-semibold mb-2 text-left md:text-center" style={{ fontFamily: "'inter', serif" }}>
+                        Dedicated to Animal <br className="hidden md:block" />Health & Farm Productivity
                     </h1>
 
                     <p className="text-white text-left md:text-center text-sm md:text-[18px] font-normal">

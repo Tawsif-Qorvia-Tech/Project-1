@@ -82,7 +82,7 @@ const Journey = () => {
                   : "border-[1.5px] border-gray-200"
               }`}
             >
-              <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-[#CF02A6] to-[#AF008C] flex items-center justify-center mx-auto mb-5 shadow-[0_0_0_10px_rgba(214,58,213,0.12)]">
+              <div className="relative w-20 h-20 rounded-full bg-linear-to-br from-[#CF02A6] to-[#AF008C] flex items-center justify-center mx-auto mb-5 shadow-[0_0_0_10px_rgba(214,58,213,0.12)]">
                 <div className="absolute inset-[-10px] rounded-full border-2 border-dashed border-[rgba(214,58,213,0.35)]" />
                 <Image
                   src={item.icon}
@@ -108,36 +108,33 @@ const Journey = () => {
       </div>
 
       {/* Mobile: vertical stack */}
-      <div className="flex md:hidden flex-col items-center w-full max-w-sm">
+      <div className="flex md:hidden flex-col items-center w-full max-w-sm gap-6">
         {journeyData.map((item, index) => (
-          <React.Fragment key={index}>
-            <div
-              className={`bg-white rounded-2xl p-6 w-full text-center relative z-10 shadow-sm ${
-                item.highlight
-                  ? "border-[1.5px] border-primary shadow-[0_4px_20px_rgba(214,58,213,0.15)]"
-                  : "border-[1.5px] border-gray-200"
-              }`}
-            >
-              <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-[#CF02A6] to-[#AF008C] flex items-center justify-center mx-auto mb-5 shadow-[0_0_0_10px_rgba(214,58,213,0.12)]">
-                <div className="absolute inset-[-10px] rounded-full border-2 border-dashed border-[rgba(214,58,213,0.35)]" />
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={40}
-                  height={40}
-                  className="object-contain brightness-0 invert"
-                />
-              </div>
-              <h3 className="text-base font-extrabold text-gray-900 mb-2">
-                {item.title}
-              </h3>
-              <p className="text-[13.5px] text-[#666] leading-relaxed m-0">
-                {item.desc}
-              </p>
+          <div
+            key={index}
+            className={`bg-white rounded-2xl p-6 w-full text-center relative z-10 shadow-sm ${
+              item.highlight
+                ? "border-[1.5px] border-primary shadow-[0_4px_20px_rgba(214,58,213,0.15)]"
+                : "border-[1.5px] border-gray-200"
+            }`}
+          >
+            <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-[#CF02A6] to-[#AF008C] flex items-center justify-center mx-auto mb-5 shadow-[0_0_0_10px_rgba(214,58,213,0.12)]">
+              <div className="absolute inset-[-10px] rounded-full border-2 border-dashed border-[rgba(214,58,213,0.35)]" />
+              <Image
+                src={item.icon}
+                alt={item.title}
+                width={40}
+                height={40}
+                className="object-contain brightness-0 invert"
+              />
             </div>
-
-            {index < journeyData.length - 1 && <VerticalArrow />}
-          </React.Fragment>
+            <h3 className="text-base font-extrabold text-gray-900 mb-2">
+              {item.title}
+            </h3>
+            <p className="text-[13.5px] text-[#666] leading-relaxed m-0">
+              {item.desc}
+            </p>
+          </div>
         ))}
       </div>
     </div>

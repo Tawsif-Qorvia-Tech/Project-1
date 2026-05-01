@@ -42,7 +42,7 @@ const Trust = () => {
 
           <div className="flex flex-col">
             {trustPoints.map((point, index) => (
-              <div key={index}>
+              <div key={index} className="border-b-2 border-gray-300 last:border-b-0">
                 <div className="flex items-start gap-4 py-6">
                   {/* Check icon */}
                   <div className="mt-0.5 shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
@@ -72,11 +72,6 @@ const Trust = () => {
                     </p>
                   </div>
                 </div>
-
-                {/* Divider */}
-                {index < trustPoints.length - 1 && (
-                  <hr className="border-gray-300" />
-                )}
               </div>
             ))}
           </div>
