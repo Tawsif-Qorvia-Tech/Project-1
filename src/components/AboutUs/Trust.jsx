@@ -36,8 +36,8 @@ const Trust = () => {
 
         {/* Right: Text */}
         <div className="flex-1 flex flex-col">
-          <h2 className="text-5xl md:text-7xl font-black text-gray-900 uppercase leading-tight mb-10 font-[family-name:--font-gilroy]">
-            Why Farmers <br /> Trust Us
+          <h2 className="text-3xl md:text-7xl font-black text-gray-900 uppercase leading-tight mb-7 font-[family-name:--font-gilroy]">
+            Why Farmers Trust Us
           </h2>
 
           <div className="flex flex-col">

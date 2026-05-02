@@ -16,10 +16,10 @@ const Banner = () => {
       />
 
       <div className="absolute inset-0 flex flex-col justify-center text-left pl-4 sm:px-6 md:pl-24 md:pr-16 w-full">
-        <h1 className="text-white  text-4xl sm:text-4xl md:text-5xl lg:text-7xl font-medium leading-tight mb-2 sm:mb-3 md:mb-4 w-full max-w-full md:max-w-4xl font-[family-name:--font-gilroy]">
-          Leading the Future  <br /> of Animal Health
+        <h1 className="text-white text-4xl min-[321px]:text-5xl md:text-5xl lg:text-[90px] font-medium mb-2 sm:mb-3 md:mb-4 w-full max-w-full md:max-w-4xl font-[--font-gilroy]">
+          Leading the Future <br /> of Animal Health
         </h1>
-        <p className="text-white text-xs md:text-[18px] font-light mb-3 sm:mb-4 md:mb-6 leading-relaxed w-full md:max-w-xl font-[family-name:--font-bdo-grotesk]">
+        <p className="text-white text-xs md:text-[18px] font-light mb-3 sm:mb-4 md:mb-6 leading-relaxed w-full md:max-w-xl font-[--font-bdo-grotesk]">
           We manufacture trusted, science-backed veterinary medicines to keep
           your animals healthier and your farm more productive.
         </p>
