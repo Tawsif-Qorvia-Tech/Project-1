@@ -23,23 +23,42 @@ const journeyData = [
   },
 ];
 
-const HorizontalArrow = ({ flip }) => (
-  <div className="w-16 shrink-0">
+const TopArrow = () => (
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[90%] w-[calc(160%+4rem)] h-28 pointer-events-none z-20">
     <svg
-      viewBox="0 0 80 60"
+      viewBox="0 0 400 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-full h-[60px]"
-      style={{ transform: flip ? "scaleY(-1)" : "none" }}
+      className="w-full h-full"
     >
       <path
-        d="M4 50 Q40 4 76 50"
+        d="M180 90 Q260 10 390 50"
         stroke="#d63ad5"
         strokeWidth="2"
         strokeDasharray="5 4"
         fill="none"
       />
-      <polygon points="76,44 80,54 70,52" fill="#d63ad5" />
+      <polygon points="388,44 396,54 382,54" fill="#d63ad5" />
+    </svg>
+  </div>
+);
+
+const BottomArrow = () => (
+  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[80%] w-[calc(160%+4rem)] h-28 pointer-events-none z-20">
+    <svg
+      viewBox="0 0 400 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-full h-full"
+    >
+      {/* Arrow from center (second card) curving down to left (first card) */}
+      <path
+        d="M200 20 Q150 80 20 50"
+        stroke="#d63ad5"
+        strokeWidth="2"
+        strokeDasharray="5 4"
+        fill="none"
+      />
     </svg>
   </div>
 );
@@ -50,7 +69,7 @@ const VerticalArrow = () => (
       viewBox="0 0 60 80"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="h-full w-[60px]"
+      className="h-full w-15"
     >
       <path
         d="M50 4 Q4 40 50 76"
@@ -67,43 +86,46 @@ const VerticalArrow = () => (
 const Journey = () => {
   return (
     <div className="w-full flex flex-col items-center py-16 md:py-24 px-4 sm:px-8 lg:px-24">
-      <h2 className="text-4xl md:text-7xl font-semibold text-gray-900 mb-12 text-center font-[family-name:--font-gilroy]">
+      <h2 className="text-4xl md:text-[80px] font-semibold text-gray-900 mb-20 text-center font-[--font-gilroy]">
         Our Journey
       </h2>
 
       {/* Desktop: horizontal row */}
-      <div className="hidden md:flex items-center justify-center">
+      <div className="hidden md:flex items-start justify-center relative gap-4">
         {journeyData.map((item, index) => (
-          <React.Fragment key={index}>
-            <div
-              className={`bg-white rounded-2xl p-8 w-[260px] lg:w-[300px] text-center relative z-10 shadow-sm ${
-                item.highlight
-                  ? "border-[1.5px] border-primary shadow-[0_4px_20px_rgba(214,58,213,0.15)]"
-                  : "border-[1.5px] border-gray-200"
-              }`}
-            >
-              <div className="relative w-20 h-20 rounded-full bg-linear-to-br from-[#CF02A6] to-[#AF008C] flex items-center justify-center mx-auto mb-5 shadow-[0_0_0_10px_rgba(214,58,213,0.12)]">
-                <div className="absolute inset-[-10px] rounded-full border-2 border-dashed border-[rgba(214,58,213,0.35)]" />
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={40}
-                  height={40}
-                  className="object-contain brightness-0 invert"
-                />
-              </div>
-              <h3 className="text-base font-extrabold text-gray-900 mb-2 font-[family-name:--font-gilroy]">
-                {item.title}
-              </h3>
-              <p className="text-[13.5px] text-[#666] leading-relaxed m-0">
-                {item.desc}
-              </p>
-            </div>
-
-            {index < journeyData.length - 1 && (
-              <HorizontalArrow flip={index % 2 === 1} />
+          <div
+            key={index}
+            className={`bg-white rounded-2xl p-8 w-65 lg:w-75 text-center relative z-10 shadow-sm ${
+              item.highlight
+                ? "border-[1.5px] border-primary shadow-[0_4px_20px_rgba(214,58,213,0.15)]"
+                : "border-[1.5px] border-gray-200"
+            }`}
+          >
+            {/* Arrow overlays on second card */}
+            {index === 1 && (
+              <>
+                <TopArrow />
+                <BottomArrow />
+              </>
             )}
-          </React.Fragment>
+
+            <div className="relative w-20 h-20 rounded-full bg-linear-to-br from-[#CF02A6] to-[#AF008C] flex items-center justify-center mx-auto mb-5 shadow-[0_0_0_10px_rgba(214,58,213,0.12)]">
+              <div className="absolute -inset-2.5 rounded-full border-2 border-dashed border-[rgba(214,58,213,0.35)]" />
+              <Image
+                src={item.icon}
+                alt={item.title}
+                width={40}
+                height={40}
+                className="object-contain brightness-0 invert"
+              />
+            </div>
+            <h3 className="text-[22px] font-semibold text-gray-900 mb-2 font-[--font-gilroy]">
+              {item.title}
+            </h3>
+            <p className="text-[14px] text-[#666] leading-relaxed m-0">
+              {item.desc}
+            </p>
+          </div>
         ))}
       </div>
 
@@ -118,8 +140,8 @@ const Journey = () => {
                 : "border-[1.5px] border-gray-200"
             }`}
           >
-            <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-[#CF02A6] to-[#AF008C] flex items-center justify-center mx-auto mb-5 shadow-[0_0_0_10px_rgba(214,58,213,0.12)]">
-              <div className="absolute inset-[-10px] rounded-full border-2 border-dashed border-[rgba(214,58,213,0.35)]" />
+            <div className="relative w-20 h-20 rounded-full bg-linear-to-br from-[#CF02A6] to-[#AF008C] flex items-center justify-center mx-auto mb-5 shadow-[0_0_0_10px_rgba(214,58,213,0.12)]">
+              <div className="absolute -inset-2.5 rounded-full border-2 border-dashed border-[rgba(214,58,213,0.35)]" />
               <Image
                 src={item.icon}
                 alt={item.title}
@@ -128,7 +150,7 @@ const Journey = () => {
                 className="object-contain brightness-0 invert"
               />
             </div>
-            <h3 className="text-base font-extrabold text-gray-900 mb-2 font-[family-name:--font-gilroy]">
+            <h3 className="text-[22px] font-semibold text-gray-900 mb-2 font-[--font-gilroy]">
               {item.title}
             </h3>
             <p className="text-[13.5px] text-[#666] leading-relaxed m-0">
