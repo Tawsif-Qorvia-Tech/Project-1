@@ -4,12 +4,12 @@ import aboutBanner from "@/assets/AboutBanner.png";
 
 const AboutUs = () => {
   return (
-    <div className="relative h-100 md:h-137.5 overflow-hidden rounded-2xl md:rounded-4xl">
+    <div className="relative h-100 md:h-137.5 overflow-hidden rounded-2xl md:rounded-4xl mb-15 md:mb-0">
       <Image
         src={aboutBanner}
         alt="About Us Banner"
         fill
-        className="object-cover object-[center_30%] md:object-top"
+        className="object-cover object-center md:object-top"
         priority
       />
 

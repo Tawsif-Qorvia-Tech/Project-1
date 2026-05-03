@@ -17,7 +17,7 @@ const About = () => {
       </div>
 
       <div className="w-full lg:w-1/2 flex flex-col justify-center gap-4 lg:gap-6 px-4 lg:px-0">
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-semibold text-[#232323] leading-tight font-[family-name:--font-gilroy]">
+        <h2 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-semibold text-[#232323] font-[family-name:--font-gilroy]">
           Committed to Animal Health & Farmer Success
         </h2>
         <p className="text-sm lg:text-[16px] font-light text-[#444444] tracking-tighter [word-spacing:0.3em] uppercase font-(family-name:--font-bdo-grotesk)">

@@ -86,7 +86,7 @@ const VerticalArrow = () => (
 const Journey = () => {
   return (
     <div className="w-full flex flex-col items-center py-16 md:py-24 px-4 sm:px-8 lg:px-24">
-      <h2 className="text-4xl md:text-[80px] font-semibold text-gray-900 mb-20 text-center font-[--font-gilroy]">
+      <h2 className="text-5xl md:text-[80px] font-semibold text-gray-900 mb-5 md:mb-20 text-center font-[--font-gilroy]">
         Our Journey
       </h2>
 

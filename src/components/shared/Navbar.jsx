@@ -2,12 +2,36 @@
 
 import React from "react";
 import Link from "next/link";
-
+import { useState, useEffect, useRef } from "react";
 import NavLink from "../buttons/NavLink";
 import Logo from "./Logo";
 import ContactUS from "../buttons/ContactUS";
 
 const Navbar = () => {
+
+    const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < lastScrollY.current || currentScrollY < 10) {
+        // Scrolling UP or near top → show
+        setVisible(true);
+      } else {
+        // Scrolling DOWN → hide
+        setVisible(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
   const nav = (
     <>
       <li>
@@ -30,41 +54,33 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-white px-2 xs:px-3 sm:px-8 lg:px-24 pb-2 pt-3 sm:pt-5 rounded-xl sm:rounded-2xl">
-      <div className="navbar-start">
-        <Logo></Logo>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{nav}</ul>
-      </div>
-      <div className="navbar-end space-x-2 sm:space-x-4">
-        <div className="dropdown lg:hidden">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-sm sm:btn-md min-h-8 h-8 sm:min-h-12 sm:h-12 px-2 sm:px-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 sm:h-5 sm:w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
-          </div>
-          <ul
-            tabIndex="-1"
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-44 sm:w-52 p-2 shadow right-0"
-          >
-            {nav}
-          </ul>
+    <div
+      className={`sticky top-0 z-50 transition-transform duration-300 ${
+        visible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      <div className="navbar bg-white px-2 xs:px-3 sm:px-8 lg:px-24 pb-2 pt-3 sm:pt-5 rounded-xl sm:rounded-2xl relative z-50">
+        <div className="navbar-start">
+          <Logo />
         </div>
-        <Link href={"/contact-us"} className="rounded-full hidden lg:block">
-            <ContactUS></ContactUS>
-        </Link>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">{nav}</ul>
+        </div>
+        <div className="navbar-end space-x-2 sm:space-x-4">
+          <div className="dropdown lg:hidden">
+            <div tabIndex={0} role="button" className="btn btn-ghost btn-sm sm:btn-md min-h-8 h-8 sm:min-h-12 sm:h-12 px-2 sm:px-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <ul tabIndex="-1" className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-44 sm:w-52 p-2 shadow right-0">
+              {nav}
+            </ul>
+          </div>
+          <Link href={"/contact-us"} className="rounded-full hidden lg:block">
+            <ContactUS />
+          </Link>
+        </div>
       </div>
     </div>
   );

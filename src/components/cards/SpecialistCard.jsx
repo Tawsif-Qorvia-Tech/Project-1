@@ -35,7 +35,7 @@ const SpecialistCard = ({ image, title, description }) => {
                      hover:opacity-90 transition shadow-lg z-20"
           aria-label="View details"
         >
-          <FiArrowUpRight strokeWidth={4} size={16} className="sm:w-5 sm:h-5" />
+          <FiArrowUpRight strokeWidth={4} size={24} className="sm:w-5 sm:h-5" />
         </button>
       </div>
     </div>
