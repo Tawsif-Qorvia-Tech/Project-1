@@ -86,7 +86,7 @@ const VerticalArrow = () => (
 const Journey = () => {
   return (
     <div className="w-full flex flex-col items-center py-16 md:py-24 px-4 sm:px-8 lg:px-24">
-      <h2 className="text-5xl md:text-[80px] font-semibold text-gray-900 mb-5 md:mb-20 text-center font-[--font-gilroy]">
+      <h2 className="text-5xl md:text-[80px] font-semibold text-gray-900 mb-5 md:mb-20 text-center">
         Our Journey
       </h2>
 
@@ -119,7 +119,7 @@ const Journey = () => {
                 className="object-contain brightness-0 invert"
               />
             </div>
-            <h3 className="text-[22px] font-semibold text-gray-900 mb-2 font-[--font-gilroy]">
+            <h3 className="text-[22px] font-semibold text-gray-900 mb-2">
               {item.title}
             </h3>
             <p className="text-[14px] text-[#666] leading-relaxed m-0">
@@ -150,7 +150,7 @@ const Journey = () => {
                 className="object-contain brightness-0 invert"
               />
             </div>
-            <h3 className="text-[22px] font-semibold text-gray-900 mb-2 font-[--font-gilroy]">
+            <h3 className="text-[22px] font-semibold text-gray-900 mb-2">
               {item.title}
             </h3>
             <p className="text-[13.5px] text-[#666] leading-relaxed m-0">

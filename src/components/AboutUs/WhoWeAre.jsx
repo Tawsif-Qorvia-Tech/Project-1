@@ -8,7 +8,7 @@ const WhoWeAre = () => {
     <div className="w-full flex flex-col md:flex-row items-center gap-10 md:gap-16 py-16 md:py-36 px-4 sm:px-8 lg:px-24">
       {/* Left: Text */}
       <div className="flex-1 flex flex-col items-start">
-        <h2 className="text-4xl md:text-7xl font-semibold text-gray-900 mb-6 font-[family-name:--font-gilroy]">
+        <h2 className="text-4xl md:text-7xl font-semibold text-gray-900 mb-6">
           Who We Are
         </h2>
         <p className="text-[#444444] text-sm md:text-[18px] font-light leading-relaxed mb-4">
@@ -24,7 +24,7 @@ const WhoWeAre = () => {
 
         <div className="bg-primary text-white flex items-center justify-center gap-3 rounded-[22.4px] py-[5.6px] pl-[16.8px] pr-[5.6px] w-max">
           <div>
-            <h1 className="text-base lg:text-[18px] font-light font-[family-name:--font-gilroy]">
+            <h1 className="text-base lg:text-[18px] font-light">
               Learn More About Us
             </h1>
           </div>
