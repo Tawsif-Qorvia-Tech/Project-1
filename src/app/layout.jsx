@@ -8,21 +8,13 @@ import Footer from "@/components/shared/Footer";
 const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-inter",
 });
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-});
-
-const bdoGrotesk = localFont({
-  src: "../fonts/BDOGrotesk-VF.woff2",
-  variable: "--font-bdo-grotesk",
-});
-
-const gilroy = localFont({
-  src: "../fonts/Gilroy-Regular.woff2",
-  variable: "--font-gilroy",
+  variable: "--font-jakarta", 
 });
 
 export const metadata = {
@@ -37,7 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${jakarta.className} ${bdoGrotesk.variable} ${gilroy.variable} antialiased bg-white`}
+        className={`${inter.className} ${jakarta.className} antialiased bg-white`}
         suppressHydrationWarning={true}
       >
         <header className="sticky top-0 z-50">

@@ -26,7 +26,7 @@ const ProductsCard = ({ product }) => {
         </div>
 
         {/* CTA Button */}
-        <button className="btn w-full bg-neutral text-white rounded-[50px] border-none hover:bg-neutral-800 font-medium text-sm sm:text-[18px] tracking-wide min-h-10 h-10 sm:min-h-12 sm:h-12 font-[family-name:--font-bdo-grotesk]">
+        <button className="btn w-full bg-neutral text-white rounded-[50px] border-none hover:bg-neutral-800 font-medium text-sm sm:text-[18px] tracking-wide min-h-10 h-10 sm:min-h-12 sm:h-12">
           Get Quote
         </button>
 
@@ -47,7 +47,7 @@ const ProductsCard = ({ product }) => {
         </div>
 
         {/* Product Info */}
-        <h3 className="text-sm sm:text-[18px] font-semibold text-[#232323] leading-snug mb-1 font-[family-name:--font-gilroy]">
+        <h3 className="text-sm sm:text-[18px] font-semibold text-[#232323] leading-snug mb-1">
           {name} – {tagline}
         </h3>
         <p className="text-sm sm:text-[18px] text-[#444444] font-semibold mb-1">

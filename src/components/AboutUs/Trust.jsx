@@ -20,7 +20,7 @@ const trustPoints = [
 const Trust = () => {
   return (
     <div className="w-full bg-[#f9eef9] py-16 md:py-24 px-4 sm:px-8 lg:px-24">
-      <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+      <div className="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-16">
         {/* Left: Image */}
         <div className="flex-1 w-full rounded-2xl md:rounded-3xl overflow-hidden">
           <Image

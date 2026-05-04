@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { FiArrowUpRight } from "react-icons/fi";
+import Arrow from "../../assets/Arrow2.png"
 
 const SpecialistCard = ({ image, title, description }) => {
   return (
@@ -17,7 +17,7 @@ const SpecialistCard = ({ image, title, description }) => {
       </div>
 
       <div className="flex flex-col flex-1 pt-4 sm:pt-5 pb-14 sm:pb-16">
-        <h3 className="text-lg sm:text-[24px] font-bold text-[#222222] mb-2 font-[family-name:--font-gilroy]">{title}</h3>
+        <h3 className="text-lg sm:text-[24px] font-bold text-[#222222] mb-2">{title}</h3>
         <p className="text-sm sm:text-lg text-[#222222] flex-1">{description}</p>
       </div>
 
@@ -25,17 +25,24 @@ const SpecialistCard = ({ image, title, description }) => {
       <div className="absolute bottom-0 right-0">
         {/* Background circle/oval that creates the curve */}
         <div className="absolute bottom-0 right-0 w-20 sm:w-24 h-20 sm:h-24 bg-white rounded-tl-full" />
-        
+
         {/* The curve cutout effect using a pseudo-circle */}
         <div className="absolute bottom-0 right-0 w-16 sm:w-20 h-16 sm:h-20 bg-[#f5e6f5] rounded-tl-full translate-x-2 translate-y-2" />
-        
+
         {/* Arrow Button - positioned at the curve intersection */}
-        <button 
-          className="absolute bottom-1.5 right-1.5 sm:bottom-2 sm:right-2 bg-primary text-white rounded-full p-2 sm:p-3 
+        <button
+          className="absolute bottom-1.5 right-1.5 sm:bottom-2 sm:right-2 bg-primary text-white rounded-full p-2 sm:p-3
                      hover:opacity-90 transition shadow-lg z-20"
           aria-label="View details"
         >
-          <FiArrowUpRight strokeWidth={4} size={24} className="sm:w-5 sm:h-5" />
+          <div className="relative w-6 h-6 sm:w-5 sm:h-5">
+            <Image
+              src={Arrow}
+              alt="Arrow"
+              fill
+              className="object-contain"
+            />
+          </div>
         </button>
       </div>
     </div>

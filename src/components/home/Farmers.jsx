@@ -42,20 +42,20 @@ const Farmers = () => {
     <section className="pt-20 sm:pt-32 px-4 sm:px-8">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 mb-5">
-        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-7xl font-semibold text-[#232323] leading-tight font-[family-name:--font-gilroy]">
+        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-7xl font-semibold text-[#232323] leading-tight font-">
           Knowledge for <br className="hidden md:block" /> Farmers & Vets
         </h2>
-        <p className="text-sm sm:text-base md:text-[18px] text-[#444444] font-light max-w-xs leading-relaxed font-[family-name:--font-bdo-grotesk]">
+        <p className="text-sm sm:text-base md:text-[18px] text-[#444444] font-light max-w-xs leading-relaxed">
           Browse our wide range of veterinary medicines developed to ensure the
           health and productivity of poultry.
         </p>
       </div>
 
       {/* Content Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 max-w-8xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 max-w-8xl mx-auto items-stretch">
         {/* Featured Post — Left */}
-        <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-gray-200 p-3 sm:p-4">
-          <div className="relative w-full h-48 sm:h-80">
+        <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-gray-200 p-3 sm:p-4 flex flex-col">
+          <div className="relative w-full flex-1 min-h-48 sm:min-h-80">
             <Image
               src={Farmer1}
               alt="Featured farm post"
@@ -64,8 +64,8 @@ const Farmers = () => {
             />
           </div>
           <div className="pt-3 sm:pt-4">
-            <p className=" text-gray-400 mb-1">Aug 28, 2023</p>
-            <h3 className="text-[16px] md:text-[26px] font-medium text-gray-900 leading-snug mb-2 font-[family-name:--font-gilroy]">
+            <p className="text-gray-400 mb-1">Aug 28, 2023</p>
+            <h3 className="text-[16px] md:text-[22px] font-medium text-gray-900 leading-snug mb-2">
               The Future of Poultry Healthcare: Innovations in Veterinary
               Medicine
             </h3>
@@ -78,25 +78,23 @@ const Farmers = () => {
         </div>
 
         {/* Side Posts — Right */}
-        <div className="flex flex-col gap-3 sm:gap-4 hidden md:block">
+        <div className="flex-col hidden md:flex justify-between">
           {posts.map((post) => (
             <div
               key={post.id}
-              className="flex gap-3 sm:gap-4 bg-white rounded-xl sm:rounded-2xl overflow-hidden border-gray-200 p-3 sm:p-4 border"
+              className="flex gap-3 sm:gap-4 bg-white rounded-xl sm:rounded-2xl overflow-hidden border-gray-200 p-3 sm:p-4 border flex-1 mb-4 last:mb-0"
             >
-              {/* Thumbnail */}
-              <div className="relative w-28 sm:w-36 h-16 sm:h-34 shrink-0">
+              <div className="relative w-28 sm:w-36 shrink-0 self-stretch">
                 <Image
                   src={post.image}
-                  alt={post.title}
+                  alt={typeof post.title === "string" ? post.title : "post"}
                   fill
                   className="object-cover object-top rounded-lg sm:rounded-xl"
                 />
               </div>
-              {/* Text */}
               <div className="flex flex-col justify-center py-1">
                 <p className="text-[18px] text-[#444444] mb-1">{post.date}</p>
-                <h4 className="text-[16px] md:text-[26px] font-medium text-gray-900 leading-snug font-[family-name:--font-gilroy]">
+                <h4 className="text-[16px] md:text-[22px] font-medium text-gray-900 leading-snug">
                   {post.title}
                 </h4>
               </div>
