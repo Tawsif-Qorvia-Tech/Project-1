@@ -1,5 +1,6 @@
 import { getProducts } from "@/actions/server/Product";
 import ProductsCard from "@/components/cards/ProductsCard";
+import RangeCard from "../cards/RangeCard";
 
 
 const ProductRange = async () => {
@@ -20,7 +21,7 @@ const ProductRange = async () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-3 sm:gap-5">
         {products.map((product) => (
-          <ProductsCard key={product._id} product={product} />
+          <RangeCard key={product._id} product={product} />
         ))}
       </div>
     </section>

@@ -6,7 +6,7 @@ import Vet2 from "@/assets/Vet2.webp";
 import Vet3 from "@/assets/Vet3.webp";
 import SpecialistCard from "../cards/SpecialistCard";
 import Image from "next/image";
-import Arrow from "../../assets/Arrow.webp";
+import Arrow from "../../assets/Arrow.png";
 
 const specialties = [
   {

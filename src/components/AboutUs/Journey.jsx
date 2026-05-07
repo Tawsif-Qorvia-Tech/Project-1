@@ -24,7 +24,7 @@ const journeyData = [
 ];
 
 const TopArrow = () => (
-  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[90%] w-[calc(160%+4rem)] h-28 pointer-events-none z-20">
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[100%] w-[calc(160%+4rem)] h-28 pointer-events-none z-20">
     <svg
       viewBox="0 0 400 100"
       fill="none"
@@ -32,33 +32,37 @@ const TopArrow = () => (
       className="w-full h-full"
     >
       <path
-        d="M180 90 Q260 10 390 50"
+        /* All X-coordinates increased by 30 (240->270, 300->330, 390->420) */
+        d="M270 95 Q330 10 420 80"
         stroke="#d63ad5"
         strokeWidth="2"
         strokeDasharray="5 4"
         fill="none"
       />
-      <polygon points="388,44 396,54 382,54" fill="#d63ad5" />
+      {/* Arrowhead X-coordinates also shifted +30 */}
+      <polygon points="418,74 426,84 412,84" fill="#d63ad5" />
     </svg>
   </div>
 );
 
 const BottomArrow = () => (
-  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[80%] w-[calc(160%+4rem)] h-28 pointer-events-none z-20">
+  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[100%] w-[calc(160%+4rem)] h-28 pointer-events-none z-20">
     <svg
       viewBox="0 0 400 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="w-full h-full"
     >
-      {/* Arrow from center (second card) curving down to left (first card) */}
       <path
-        d="M200 20 Q150 80 20 50"
+        /* All X-coordinates decreased by 30 (160->130, 100->70, 10->-20) */
+        d="M130 5 Q70 90 -20 20"
         stroke="#d63ad5"
         strokeWidth="2"
         strokeDasharray="5 4"
         fill="none"
       />
+      {/* Arrowhead X-coordinates also shifted -30 */}
+      <polygon points="-18,26 -26,16 -12,16" fill="#d63ad5" />
     </svg>
   </div>
 );

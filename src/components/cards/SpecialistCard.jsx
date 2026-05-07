@@ -35,7 +35,7 @@ const SpecialistCard = ({ image, title, description }) => {
                      hover:opacity-90 transition shadow-lg z-20"
           aria-label="View details"
         >
-          <div className="relative w-6 h-6 sm:w-5 sm:h-5">
+          <div className="relative w-4 h-4 sm:w-5 sm:h-5">
             <Image
               src={Arrow}
               alt="Arrow"
