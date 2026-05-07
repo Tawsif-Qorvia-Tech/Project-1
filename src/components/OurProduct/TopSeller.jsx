@@ -5,6 +5,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import ProductsCard from '../cards/ProductsCard';
+import Arrow from "../../assets/Arrow.png";
+import Image from 'next/image';
+import TopSellerCard from '../cards/TopSellerCard';
 
 const TopSeller = ({ products = [] }) => {
   const prevRef = useRef(null);
@@ -66,21 +69,19 @@ const TopSeller = ({ products = [] }) => {
         >
           {products.map((product) => (
             <SwiperSlide key={product._id}>
-              <ProductsCard product={product} />
+              <TopSellerCard product={product} />
             </SwiperSlide>
           ))}
         </Swiper>
       )}
 
-      <div className="flex justify-center mt-10">
-        <button className="flex items-center gap-3 bg-[#c4006e] hover:bg-[#a3005c] text-white font-medium text-sm sm:text-base px-6 py-3 rounded-full transition-colors duration-200">
-          View More
-          <span className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M3 7h8M7 3l4 4-4 4" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </span>
-        </button>
+     <div className="bg-primary text-white w-fit flex justify-center items-center gap-2 sm:gap-3 rounded-[22.4px] py-[5.6px] pl-3 sm:pl-[16.8px] pr-[5.6px] mx-auto mt-5">
+        <div>
+          <h1 className="text-sm sm:text-[18px] font-light pl-2 sm:pl-4">View More</h1>
+        </div>
+        <div>
+          <Image src={Arrow} alt="Arrow" />
+        </div>
       </div>
     </section>
   );
