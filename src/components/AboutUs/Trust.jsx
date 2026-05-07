@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import TrustImg from "@/assets/Trust.png";
+import TrustImg from "@/assets/Trust.webp";
 
 const trustPoints = [
   {

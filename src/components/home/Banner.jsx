@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import banner from "@/assets/Banner.png";
+import banner from "@/assets/Banner.webp";
 import Explore from "../buttons/Explore";
 import LearnMore from "../buttons/LearnMore";
 

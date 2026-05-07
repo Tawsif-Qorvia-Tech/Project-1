@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row gap-8 sm:gap-10">
           {/* LEFT — Logo & Socials */}
           <div className="flex flex-col gap-3 sm:gap-4 md:w-1/3 md:pr-10">
-            <Image src="/GLogo.png" alt="Logo" width={80} height={80} className="rounded-full sm:w-[100px] sm:h-[100px]"/>
+            <Image src="/GLogo.webp" alt="Logo" width={80} height={80} className="rounded-full sm:w-[100px] sm:h-[100px]"/>
             <p className="text-[15px] sm:text-[17px] font-light text-[#CFCFCF] leading-relaxed font-[family-name:--font-bdo-grotesk]">
               Together for healthier poultry, <br className="hidden md:block" />
               stronger farming.

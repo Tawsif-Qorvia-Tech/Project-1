@@ -1,12 +1,12 @@
 import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 
-import Vet1 from "@/assets/Vet1.png";
-import Vet2 from "@/assets/Vet2.png";
-import Vet3 from "@/assets/Vet3.png";
+import Vet1 from "@/assets/Vet1.webp";
+import Vet2 from "@/assets/Vet2.webp";
+import Vet3 from "@/assets/Vet3.webp";
 import SpecialistCard from "../cards/SpecialistCard";
 import Image from "next/image";
-import Arrow from "../../assets/Arrow.png";
+import Arrow from "../../assets/Arrow.webp";
 
 const specialties = [
   {

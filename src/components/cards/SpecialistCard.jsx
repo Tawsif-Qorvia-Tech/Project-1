@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Arrow from "../../assets/Arrow2.png"
+import Arrow from "../../assets/Arrow2.webp"
 
 const SpecialistCard = ({ image, title, description }) => {
   return (

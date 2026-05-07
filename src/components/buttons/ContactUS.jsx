@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import Arrow from '../../assets/Arrow.png'
+import Arrow from '../../assets/Arrow.webp'
 import { FaArrowAltCircleRight, FaLongArrowAltRight } from 'react-icons/fa';
 import Image from 'next/image';
 

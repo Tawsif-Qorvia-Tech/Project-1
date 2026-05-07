@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import aboutBanner from "@/assets/AboutBanner.png";
+import aboutBanner from "@/assets/AboutBanner.webp";
 
 const AboutUs = () => {
   return (

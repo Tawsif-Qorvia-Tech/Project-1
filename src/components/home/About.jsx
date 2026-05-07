@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import banner2 from "@/assets/Banner2.png";
-import Arrow from '../../assets/Arrow.png'
+import banner2 from "@/assets/Banner2.webp";
+import Arrow from '../../assets/Arrow.webp'
 
 const About = () => {
   return (

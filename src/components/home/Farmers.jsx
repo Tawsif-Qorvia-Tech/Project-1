@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Farmer1 from "@/assets/Farmer1.png";
-import Farmer2 from "@/assets/Farmer2.png";
-import Farmer3 from "@/assets/Farmer3.png";
-import Farmer4 from "@/assets/Farmer4.png";
+import Farmer1 from "@/assets/Farmer1.webp";
+import Farmer2 from "@/assets/Farmer2.webp";
+import Farmer3 from "@/assets/Farmer3.webp";
+import Farmer4 from "@/assets/Farmer4.webp";
 
 const posts = [
   {

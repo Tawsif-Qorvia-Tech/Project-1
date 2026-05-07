@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import Journey1 from "@/assets/Journey1.png";
-import Journey2 from "@/assets/Journey2.png";
-import Journey3 from "@/assets/Journey3.png";
+import Journey1 from "@/assets/Journey1.webp";
+import Journey2 from "@/assets/Journey2.webp";
+import Journey3 from "@/assets/Journey3.webp";
 
 const journeyData = [
   {
