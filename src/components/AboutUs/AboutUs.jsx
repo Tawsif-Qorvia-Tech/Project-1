@@ -20,7 +20,7 @@ const AboutUs = () => {
           </div>
 
           <h1
-            className="text-2xl text-white min-[321px]:text-4xl lg:text-6xl xl:text-7xl font-semibold mb-2 text-left md:text-center"
+            className="text-2xl text-white min-[321px]:text-3xl lg:text-6xl xl:text-7xl font-semibold mb-2 text-left md:text-center"
             style={{ fontFamily: "'inter', serif" }}
           >
             Dedicated to Animal <br className="hidden md:block" />
