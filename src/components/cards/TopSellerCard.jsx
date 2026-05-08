@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import WishList from '../buttons/WishList';
+import AddtoCart from '../buttons/AddtoCart';
 
 
 const TopSellerCard = ({ product }) => {
@@ -20,9 +21,9 @@ const TopSellerCard = ({ product }) => {
     <div className="bg-white border border-gray-200 rounded-2xl p-4 flex flex-col gap-4 hover:shadow-lg transition-shadow duration-300 w-full max-w-[320px]">
       
       {/* Upper Image Section */}
-      <div className="relative bg-[#F9F9F9] rounded-xl aspect-square w-full flex items-center justify-center overflow-hidden">
+      <div className="relative bg-[#F8F8F8] rounded-xl aspect-square w-full flex items-center justify-center overflow-hidden">
         {/* Wishlist Button Component */}
-        <div className="absolute top-3 right-3 z-10 scale-90">
+        <div className="absolute top-1 right-1 z-10 scale-90">
             <WishList productId={_id} isWishlisted={isWishlisted} />
         </div>
 
@@ -69,12 +70,7 @@ const TopSellerCard = ({ product }) => {
             {formattedPrice}{currency === "USD" ? "$" : "€"}
           </p>
           
-          <button 
-            className="bg-[#D371B8] hover:bg-[#c05da4] text-white p-3 rounded-2xl transition-colors shadow-md"
-            aria-label="Add to cart"
-          >
-            <HiOutlineShoppingCart size={28} />
-          </button>
+          <AddtoCart productId={_id} />
         </div>
       </div>
     </div>

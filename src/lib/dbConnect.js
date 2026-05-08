@@ -6,6 +6,7 @@ dns.setServers(['8.8.8.8', '1.1.1.1']);
 export const collections = {
     PRODUCTS: 'products',
     WISHLIST: 'wishlist',
+    CART: 'cart',
 };
 
 let client;

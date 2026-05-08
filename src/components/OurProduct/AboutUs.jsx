@@ -26,7 +26,7 @@ const AboutUs = () => {
             Trusted Veterinary Medicines <br className="hidden md:block" /> for Better Animal Health
           </h1>
 
-          <p className="text-white text-left md:text-center text-[12px] md:text-[18px] font-normal">
+          <p className="text-white text-left md:text-center text-[10px] md:text-[18px] font-normal">
            Explore our wide range of science-backed solutions designed to keep your animals  <br className="hidden md:block" /> healthier and your farm more productive.
           </p>
         </div>
