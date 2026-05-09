@@ -10,9 +10,18 @@
   --color-primary: oklch(42% 0.28 328);
 }
 
-@custom-variant xs (&:where(.xs-screen, .xs-screen *)); /* remove this if it exists */
+@custom-variant xs (&:where(.xs-screen, .xs-screen *)); 
 
 @theme {
-  --breakpoint-xs: 320px; /* 👈 keep only this, remove the @custom-media line */
+  --breakpoint-xs: 320px;
 }
-@custom-variant xs-only (@media (max-width: 320px));
+@custom-variant xs-only (@media (min-width: 320px) and (max-width: 376px));
+
+/* Fixes the internal Swal success animation from breaking in flex containers */
+.swal2-icon-show {
+  display: flex !important;
+}
+
+.swal2-success-ring {
+  box-sizing: content-box !important;
+}

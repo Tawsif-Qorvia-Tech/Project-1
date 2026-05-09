@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import banner2 from "@/assets/Banner2.webp";
 import Arrow from '../../assets/Arrow.png'
+import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 const About = () => {
   return (
@@ -12,7 +13,7 @@ const About = () => {
           alt="About Banner"
           fill
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-contain object-center pl-8"
+          className="object-contain object-center pl-9"
         />
       </div>
 
@@ -30,9 +31,9 @@ const About = () => {
           <div>
             <h1 className="text-base lg:text-[18px] font-light">Learn More About Us</h1>
           </div>
-          <div>
-              <Image src={Arrow} alt="Arrow" />
-          </div>
+          <div className='bg-white text-primary flex items-center justify-center rounded-full aspect-square h-full p-1'>
+                  <MdOutlineArrowRightAlt size={28} />
+              </div>
         </div>
       </div>
     </div>

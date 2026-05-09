@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import React, { useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import TopSellerCard from '../cards/TopSellerCard';
+import React, { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import TopSellerCard from "../cards/TopSellerCard";
 import Arrow from "../../assets/Arrow.png";
-import Image from 'next/image';
-import { MdOutlineArrowRightAlt } from 'react-icons/md';
+import Image from "next/image";
+import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 const TopSeller = ({ products = [] }) => {
   const swiperRef = useRef(null);
@@ -33,7 +33,7 @@ const TopSeller = ({ products = [] }) => {
             aria-label="Previous"
             className="w-9 h-9 rounded-full border flex items-center justify-center border-[#c4006e] text-[#c4006e] transition-colors duration-200"
           >
-           <MdOutlineArrowRightAlt size={28} className="rotate-180" />
+            <MdOutlineArrowRightAlt size={28} className="rotate-180" />
           </button>
           <button
             onClick={handleNext}
@@ -86,10 +86,12 @@ const TopSeller = ({ products = [] }) => {
 
       <div className="bg-primary text-white w-fit flex justify-center items-center gap-2 sm:gap-3 rounded-[22.4px] py-[5.6px] pl-3 sm:pl-[16.8px] pr-[5.6px] mx-auto mt-5">
         <div>
-          <h1 className="text-sm sm:text-[18px] font-light pl-2 sm:pl-4">View More</h1>
+          <h1 className="text-sm sm:text-[18px] font-light pl-2 sm:pl-4">
+            View More
+          </h1>
         </div>
-        <div>
-          <Image src={Arrow} alt="Arrow" />
+        <div className="bg-white text-primary flex items-center justify-center rounded-full aspect-square h-full p-1">
+          <MdOutlineArrowRightAlt size={28} />
         </div>
       </div>
     </section>

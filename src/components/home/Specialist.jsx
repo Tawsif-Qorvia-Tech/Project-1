@@ -7,6 +7,7 @@ import Vet3 from "@/assets/Vet3.webp";
 import SpecialistCard from "../cards/SpecialistCard";
 import Image from "next/image";
 import Arrow from "../../assets/Arrow.png";
+import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 const specialties = [
   {
@@ -48,9 +49,9 @@ const Specialist = () => {
         <div>
           <h1 className="text-sm sm:text-[18px] font-light pl-2 sm:pl-4">Explore Products</h1>
         </div>
-        <div>
-          <Image src={Arrow} alt="Arrow" />
-        </div>
+        <div className='bg-white text-primary flex items-center justify-center rounded-full aspect-square h-full p-1'>
+                <MdOutlineArrowRightAlt size={28} />
+            </div>
       </div>
     </section>
   );

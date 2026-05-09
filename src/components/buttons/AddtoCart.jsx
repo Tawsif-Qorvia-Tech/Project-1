@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { addToCart } from '@/actions/server/Cart';
-import React, { useState } from 'react';
-import { HiOutlineShoppingCart } from 'react-icons/hi';
-import { LuShoppingCart } from 'react-icons/lu';
-import Swal from 'sweetalert2';
+import { addToCart } from "@/actions/server/Cart";
+import React, { useState } from "react";
+import { HiOutlineShoppingCart } from "react-icons/hi";
+import { LuShoppingCart } from "react-icons/lu";
+import Swal from "sweetalert2";
 
 const AddtoCart = ({ productId }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -22,6 +22,12 @@ const AddtoCart = ({ productId }) => {
           title: "Product added to cart",
           showConfirmButton: false,
           timer: 1500,
+            grow: 'row', 
+          customClass: {
+            popup: "!w-64 !py-2",
+            icon: "!my-2",
+            title: "!text-sm !pb-2",
+          },
         });
       } else {
         Swal.fire({
@@ -30,6 +36,11 @@ const AddtoCart = ({ productId }) => {
           title: result.message || "Failed to add to cart",
           showConfirmButton: false,
           timer: 1500,
+          customClass: {
+            popup: "!w-64 !py-2",
+            icon: "!my-2",
+            title: "!text-sm !pb-2",
+          },
         });
       }
     } catch (error) {
@@ -40,6 +51,10 @@ const AddtoCart = ({ productId }) => {
         title: "Something went wrong",
         showConfirmButton: false,
         timer: 1500,
+        customClass: {
+          popup: "!w-46 !py-2",
+          icon: "!my-2",
+        },
       });
     } finally {
       setIsLoading(false);
