@@ -21,16 +21,17 @@ const Trust = () => {
   return (
     <div className="w-full bg-[#f9eef9] py-16 md:py-24 px-4 sm:px-8 lg:px-24">
       <div className="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-16">
-        {/* Left: Image */}
-        <div className="flex-1 w-full rounded-2xl md:rounded-3xl overflow-hidden">
+        <div className="w-full md:flex-1"> 
           <Image
             src={TrustImg}
             alt="Farmers with poultry"
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{ width: "100%", height: "auto", display: "block" }}
-            className="rounded-2xl md:rounded-3xl"
+            style={{ 
+                width: "100%", 
+                height: "auto", 
+                display: "block",
+                objectFit: "contain"
+            }}
+            className="rounded-2xl md:rounded-3xl px-2 md:px-0"
           />
         </div>
 

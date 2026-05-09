@@ -8,7 +8,7 @@ const posts = [
   {
     id: 1,
     image: Farmer2,
-    date: "Aug 15, 2022",
+    date: "May 15, 2026",
     title: (
       <>
         Top Challenges Poultry Farmers Face – <br /> And How to Overcome Them
@@ -18,7 +18,7 @@ const posts = [
   {
     id: 2,
     image: Farmer3,
-    date: "Aug 06, 2022",
+    date: "May 06, 2026",
     title: (
       <>
         Why Preventive Care Matters in Poultry <br /> Farming
@@ -28,7 +28,7 @@ const posts = [
   {
     id: 3,
     image: Farmer4,
-    date: "Aug 10, 2022",
+    date: "May 10, 2026",
     title: (
       <>
         Nutrition First: Boosting Poultry Growth <br /> & Immunity Naturally
@@ -94,7 +94,7 @@ const Farmers = () => {
               </div>
               <div className="flex flex-col justify-center py-1">
                 <p className="text-[18px] text-[#444444] mb-1">{post.date}</p>
-                <h4 className="text-[16px] md:text-[22px] font-medium text-gray-900 leading-snug">
+                <h4 className="text-[16px] md:text-[18px] font-medium text-gray-900 leading-snug">
                   {post.title}
                 </h4>
               </div>

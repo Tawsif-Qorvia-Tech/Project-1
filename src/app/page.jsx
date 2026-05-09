@@ -11,7 +11,7 @@ export default function Home() {
       <div className="w-full px-3 sm:px-6">
         <Banner />
       </div>
-      <div className="w-11/12 mx-auto">
+      <div className="w-full md:w-11/12 mx-auto">
         <About></About>
       </div>
 

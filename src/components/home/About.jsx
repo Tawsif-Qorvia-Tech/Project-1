@@ -12,15 +12,15 @@ const About = () => {
           alt="About Banner"
           fill
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-contain object-center"
+          className="object-contain object-center pl-8"
         />
       </div>
 
       <div className="w-full lg:w-1/2 flex flex-col justify-center gap-4 lg:gap-6 px-4 lg:px-0">
-        <h2 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-semibold text-[#232323]">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-[#232323]">
           Committed to Animal Health & Farmer Success
         </h2>
-        <p className="text-sm lg:text-[16px] font-light text-[#444444] tracking-tighter [word-spacing:0.3em] uppercase">
+        <p className="text-sm lg:text-[16px] font-light text-[#444444] tracking-tighter [word-spacing:0.3em]">
           With years of expertise in veterinary pharmaceuticals, we specialize
           in creating innovative, reliable, and effective solutions for poultry
           health. Our mission is to support farmers with high-quality medicines

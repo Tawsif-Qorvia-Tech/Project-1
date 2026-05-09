@@ -10,13 +10,13 @@ const Footer = () => {
       <div className="w-11/12 mx-auto py-10 sm:py-14 px-4 sm:px-8">
         <div className="flex flex-col md:flex-row gap-8 sm:gap-10">
           {/* LEFT — Logo & Socials */}
-          <div className="flex flex-col gap-3 sm:gap-4 md:w-1/3 md:pr-10">
+          <div className="flex flex-col gap-3 sm:gap-3 md:w-1/3 md:pr-10">
             <Image src="/GLogo.png" alt="Logo" width={80} height={80} className="rounded-full sm:w-[100px] sm:h-[100px]"/>
             <p className="text-[15px] sm:text-[17px] font-light text-[#CFCFCF] leading-relaxed   ">
               Together for healthier poultry, <br className="hidden md:block" />
               stronger farming.
             </p>
-            <div className="flex gap-2 sm:gap-3 mt-2">
+            <div className="flex gap-2 sm:gap-3 mt-7">
               <a href="#" className="bg-primary rounded-full p-2 sm:p-2.5 hover:opacity-80 transition">
                 <FaFacebookF size={14} className="sm:w-4 sm:h-4" />
               </a>
@@ -65,12 +65,12 @@ const Footer = () => {
             {/* Newsletter */}
             <div className="flex flex-col gap-3 sm:gap-4">
               <h3 className="text-[15px] sm:text-[18px] font-semibold ">
-                Subscribe Aur Newsletter
+                Subscribe Our Newsletter
               </h3>
               <p className="text-[14px] sm:text-[16px] text-white leading-relaxed   ">
                 Subscribe for exclusive news, training tips, and event updates!
               </p>
-             <div className="flex items-center bg-white rounded-full border border-gray-200 pr-1 py-1 max-w-[200px] sm:max-w-full mt-5 ml-5 md:ml-0">
+            <div className="flex items-center bg-white rounded-full border border-gray-200 pr-1 py-1 w-full mt-5 md:ml-0">
                 <input
                   type="email"
                   placeholder="Type Here"
@@ -87,10 +87,10 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="flex justify-center px-4">
-        <div className="w-10/12 border-t border-gray-700">
+        <div className="w-10/12 border-t border-[#FFFFFF]">
           <div className="py-4 sm:py-5 flex flex-col md:flex-row justify-between items-center gap-2 sm:gap-3">
             <p className="text-[14px] sm:text-[16px] text-white text-center md:text-left   ">
-              Copyright &copy; 2025 Together In Community. All Rights Reserved.
+              Copyright &copy; 2026 Together In Community. All Rights Reserved.
             </p>
             <div className="flex gap-4 sm:gap-6">
               <Link href="#" className="text-[14px] sm:text-[16px] text-white hover:text-white transition   ">

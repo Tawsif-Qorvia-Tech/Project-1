@@ -99,11 +99,7 @@ const Journey = () => {
         {journeyData.map((item, index) => (
           <div
             key={index}
-            className={`bg-white rounded-2xl p-8 w-65 lg:w-75 text-center relative z-10 shadow-sm ${
-              item.highlight
-                ? "border-[1.5px] border-primary shadow-[0_4px_20px_rgba(214,58,213,0.15)]"
-                : "border-[1.5px] border-gray-200"
-            }`}
+            className="bg-white rounded-2xl p-8 w-65 lg:w-75 text-center relative z-10 shadow-sm border-[1.5px] border-gray-200 hover:border-primary hover:shadow-[0_4px_20px_rgba(214,58,213,0.15)] transition-all duration-300"
           >
             {/* Arrow overlays on second card */}
             {index === 1 && (
@@ -138,11 +134,7 @@ const Journey = () => {
         {journeyData.map((item, index) => (
           <div
             key={index}
-            className={`bg-white rounded-2xl p-6 w-full text-center relative z-10 shadow-sm ${
-              item.highlight
-                ? "border-[1.5px] border-primary shadow-[0_4px_20px_rgba(214,58,213,0.15)]"
-                : "border-[1.5px] border-gray-200"
-            }`}
+            className="bg-white rounded-2xl p-6 w-full text-center relative z-10 shadow-sm border-[1.5px] border-gray-200 hover:border-primary hover:shadow-[0_4px_20px_rgba(214,58,213,0.15)] transition-all duration-300"
           >
             <div className="relative w-20 h-20 rounded-full bg-linear-to-br from-[#CF02A6] to-[#AF008C] flex items-center justify-center mx-auto mb-5 shadow-[0_0_0_10px_rgba(214,58,213,0.12)]">
               <div className="absolute -inset-2.5 rounded-full border-2 border-dashed border-[rgba(214,58,213,0.35)]" />
