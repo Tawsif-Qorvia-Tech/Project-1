@@ -78,7 +78,7 @@ const Farmers = () => {
         </div>
 
         {/* Side Posts — Right */}
-        <div className="flex-col hidden md:flex justify-between">
+        <div className="flex-col justify-between">
           {posts.map((post) => (
             <div
               key={post.id}
@@ -93,8 +93,8 @@ const Farmers = () => {
                 />
               </div>
               <div className="flex flex-col justify-center py-1">
-                <p className="text-[18px] text-[#444444] mb-1">{post.date}</p>
-                <h4 className="text-[16px] md:text-[18px] font-medium text-gray-900 leading-snug">
+                <p className="text-[14px] md:text-[18px] text-[#444444] mb-1">{post.date}</p>
+                <h4 className="text-[14px] md:text-[18px] font-medium text-gray-900 leading-snug">
                   {post.title}
                 </h4>
               </div>
