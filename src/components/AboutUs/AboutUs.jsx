@@ -9,7 +9,7 @@ const AboutUs = () => {
         src={aboutBanner}
         alt="About Us Banner"
         fill
-        className="object-cover object-top"
+        className="object-cover object-[55%_center]"
         priority
       />
       <div className="absolute inset-0 flex items-center md:items-start z-10">

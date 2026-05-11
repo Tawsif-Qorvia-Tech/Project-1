@@ -6,12 +6,12 @@ import LearnMore from "../buttons/LearnMore";
 
 const Banner = () => {
   return (
-    <div className="relative w-full h-100 sm:h-125 md:h-150 lg:h-200 overflow-hidden rounded-xl sm:rounded-2xl md:rounded-4xl">
+    <div className="relative w-full h-100 sm:h-125 md:h-150 lg:h-200 overflow-hidden rounded-2xl md:rounded-4xl">
       <Image
         src={banner}
         alt="Banner"
         fill
-        className="object-cover object-[75%_20%] md:object-center"
+        className="object-cover object-[60%_center]"
         priority
       />
 
