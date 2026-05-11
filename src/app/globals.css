@@ -7,7 +7,7 @@
   name: "light";
   default: true;
 
-  --color-primary: oklch(42% 0.28 328);
+  --color-primary: oklch(50.9% 0.221 340.06);
 }
 
 @custom-variant xs (&:where(.xs-screen, .xs-screen *)); 

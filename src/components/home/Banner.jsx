@@ -11,7 +11,7 @@ const Banner = () => {
         src={banner}
         alt="Banner"
         fill
-        className="object-cover object-[75%] md:object-center"
+        className="object-cover object-[75%_20%] md:object-center"
         priority
       />
 

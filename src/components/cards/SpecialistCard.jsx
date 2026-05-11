@@ -1,49 +1,63 @@
 import React from "react";
 import Image from "next/image";
-import Arrow from "../../assets/Arrow2.webp"
+import Arrow from "../../assets/Arrow2.webp";
 
 const SpecialistCard = ({ image, title, description }) => {
   return (
-    <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden flex flex-col relative p-3 sm:p-4">
-      {/* Main card content */}
+    <div className="bg-white rounded-[2rem] overflow-hidden flex flex-col relative p-4">
+      {/* Image Container */}
       <div className="relative w-full h-40 sm:h-52">
         <Image
           src={image}
           alt={title}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-contain rounded-xl sm:rounded-2xl"
+          className="object-cover rounded-2xl"
         />
       </div>
 
-      <div className="flex flex-col flex-1 pt-4 sm:pt-5 pb-14 sm:pb-16">
-        <h3 className="text-lg sm:text-[24px] font-bold text-[#222222] mb-2">{title}</h3>
-        <p className="text-sm sm:text-lg text-[#222222] flex-1">{description}</p>
+      {/* Text Content */}
+      <div className="flex flex-col flex-1 pt-5 pb-12">
+        <h3 className="text-xl sm:text-[24px] font-bold text-[#222222] mb-2 leading-tight">
+          {title}
+        </h3>
+        <p className="text-sm sm:text-base text-gray-600 flex-1 leading-relaxed">
+          {description}
+        </p>
       </div>
 
-      {/* Curved corner with arrow */}
-      <div className="absolute bottom-0 right-0">
-        {/* Background circle/oval that creates the curve */}
-        <div className="absolute bottom-0 right-0 w-20 sm:w-24 h-20 sm:h-24 bg-white rounded-tl-full" />
+      {/* The Curved Corner & Floating Button */}
+      <div className="absolute bottom-0 right-0 w-20 h-20 sm:w-24 sm:h-24">
+        {/* Top Fillet */}
+        <div className="absolute -top-8 right-0 w-8 h-8 bg-transparent overflow-hidden pointer-events-none">
+          <div className="w-16 h-16 rounded-full bg-white absolute bottom-0 right-0"></div>
+        </div>
 
-        {/* The curve cutout effect using a pseudo-circle */}
-        <div className="absolute bottom-0 right-0 w-16 sm:w-20 h-16 sm:h-20 bg-[#f5e6f5] rounded-tl-full translate-x-2 translate-y-2" />
+        {/* Left Fillet */}
+        <div className="absolute bottom-0 -left-8 w-8 h-8 bg-transparent overflow-hidden pointer-events-none">
+          <div className="w-16 h-16 rounded-full bg-white absolute top-0 left-0"></div>
+        </div>
 
-        {/* Arrow Button - positioned at the curve intersection */}
-        <button
-          className="absolute bottom-1.5 right-1.5 sm:bottom-2 sm:right-2 bg-primary text-white rounded-full p-2 sm:p-3
-                     hover:opacity-90 transition shadow-lg z-20"
-          aria-label="View details"
-        >
-          <div className="relative w-4 h-4 sm:w-5 sm:h-5">
-            <Image
-              src={Arrow}
-              alt="Arrow"
-              fill
-              className="object-contain"
-            />
+        {/* The Main Corner Cutout Area */}
+        <div className="absolute inset-0 bg-white rounded-tl-[2rem]">
+          {/* Inner Background */}
+          <div className="absolute bottom-0 right-0 w-[calc(100%-10px)] h-[calc(100%-10px)] bg-[#f5e6f5] rounded-tl-[2rem] flex items-center justify-center">
+            {/* Arrow Button */}
+            <button
+              className="bg-primary text-white rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center hover:scale-105 transition-transform shadow-md z-20"
+              aria-label="View details"
+            >
+              <div className="relative w-6 h-6">
+                <Image
+                  src={Arrow}
+                  alt="Arrow"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </button>
           </div>
-        </button>
+        </div>
       </div>
     </div>
   );

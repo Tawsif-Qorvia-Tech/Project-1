@@ -6,7 +6,7 @@ const OurProductsWrapper = ({ products }) => {
   return (
     <>
       <div className="mb-6 md:mb-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-0">
-        <h2 className="text-[2xl] xs:text-[32px] sm:text-4xl md:text-5xl lg:text-7xl font-semibold text-[#232323] wrap-break-word md:whitespace-nowrap">
+        <h2 className="text-3xl xs:text-[32px] sm:text-4xl md:text-5xl lg:text-7xl font-semibold text-[#232323] wrap-break-word md:whitespace-nowrap">
           Explore Our Products
         </h2>
         {/* Swiper will look for this class to inject bullets */}
