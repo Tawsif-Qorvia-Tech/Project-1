@@ -7,6 +7,7 @@ import TopSellerCard from "../cards/TopSellerCard";
 import Arrow from "../../assets/Arrow.png";
 import Image from "next/image";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import Link from "next/link";
 
 const TopSeller = ({ products = [] }) => {
   const swiperRef = useRef(null);
@@ -84,7 +85,10 @@ const TopSeller = ({ products = [] }) => {
         </Swiper>
       )}
 
-      <div className="bg-primary text-white w-fit flex justify-center items-center gap-2 sm:gap-3 rounded-[22.4px] py-[5.6px] pl-3 sm:pl-[16.8px] pr-[5.6px] mx-auto mt-5">
+      <Link
+        href="/our-products"
+        className="bg-primary text-white w-fit flex justify-center items-center gap-2 sm:gap-3 rounded-[22.4px] py-[5.6px] pl-3 sm:pl-[16.8px] pr-[5.6px] mx-auto mt-5"
+      >
         <div>
           <h1 className="text-sm sm:text-[18px] font-light pl-2 sm:pl-4">
             View More
@@ -93,7 +97,7 @@ const TopSeller = ({ products = [] }) => {
         <div className="bg-white text-primary flex items-center justify-center rounded-full aspect-square h-full p-1">
           <MdOutlineArrowRightAlt size={28} />
         </div>
-      </div>
+      </Link>
     </section>
   );
 };

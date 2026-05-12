@@ -3,6 +3,7 @@ import React from "react";
 import aboutChick from "@/assets/AboutChick.webp";
 import Arrow from '../../assets/Arrow.png'
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import Link from "next/link";
 
 const WhoWeAre = () => {
   return (
@@ -23,7 +24,7 @@ const WhoWeAre = () => {
           needs of veterinarians and livestock owners across the region
         </p>
 
-        <div className="bg-primary text-white flex items-center justify-center gap-3 rounded-[22.4px] py-[5.6px] pl-[16.8px] pr-[5.6px] w-max">
+        <Link href="/our-products" className="bg-primary text-white flex items-center justify-center gap-3 rounded-[22.4px] py-[5.6px] pl-[16.8px] pr-[5.6px] w-max">
           <div>
             <h1 className="text-base lg:text-[18px] font-light">
               Explore Our Products
@@ -32,7 +33,7 @@ const WhoWeAre = () => {
           <div className='bg-white text-primary flex items-center justify-center rounded-full aspect-square h-full p-1'>
                   <MdOutlineArrowRightAlt size={28} />
               </div>
-        </div>
+        </Link>
       </div>
 
       {/* Right: Image */}

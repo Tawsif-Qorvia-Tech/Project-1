@@ -8,6 +8,7 @@ import SpecialistCard from "../cards/SpecialistCard";
 import Image from "next/image";
 import Arrow from "../../assets/Arrow.png";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import Link from "next/link";
 
 const specialties = [
   {
@@ -45,14 +46,14 @@ const Specialist = () => {
         ))}
       </div>
 
-      <div className="bg-primary text-white w-fit flex justify-center items-center gap-2 sm:gap-3 rounded-[22.4px] py-[5.6px] pl-3 sm:pl-[16.8px] pr-[5.6px] mx-auto">
+      <Link href="/our-products" className="bg-primary text-white w-fit flex justify-center items-center gap-2 sm:gap-3 rounded-[22.4px] py-[5.6px] pl-3 sm:pl-[16.8px] pr-[5.6px] mx-auto">
         <div>
           <h1 className="text-sm sm:text-[18px] font-light pl-2 sm:pl-4">Explore Products</h1>
         </div>
         <div className='bg-white text-primary flex items-center justify-center rounded-full aspect-square h-full p-1'>
                 <MdOutlineArrowRightAlt size={28} />
             </div>
-      </div>
+      </Link>
     </section>
   );
 };

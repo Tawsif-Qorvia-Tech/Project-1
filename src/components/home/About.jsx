@@ -3,6 +3,7 @@ import Image from "next/image";
 import banner2 from "@/assets/Banner2.webp";
 import Arrow from '../../assets/Arrow.png'
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -27,14 +28,14 @@ const About = () => {
           health. Our mission is to support farmers with high-quality medicines
           that ensure healthier flocks and better productivity.
         </p>
-        <div className="bg-primary text-white flex items-center justify-center gap-3 rounded-[22.4px] py-[5.6px] pl-[16.8px] pr-[5.6px] w-max">
+        <Link href="/about-us" className="bg-primary text-white flex items-center justify-center gap-3 rounded-[22.4px] py-[5.6px] pl-[16.8px] pr-[5.6px] w-max">
           <div>
             <h1 className="text-base lg:text-[18px] font-light">Learn More About Us</h1>
           </div>
           <div className='bg-white text-primary flex items-center justify-center rounded-full aspect-square h-full p-1'>
                   <MdOutlineArrowRightAlt size={28} />
               </div>
-        </div>
+        </Link>
       </div>
     </div>
   );
