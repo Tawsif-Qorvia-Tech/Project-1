@@ -14,7 +14,7 @@ const AboutUs = () => {
       />
       <div className="absolute inset-0 flex items-center md:items-start z-10">
         <div className="relative flex flex-col items-center justify-center text-center px-6 sm:px-12 md:px-24 py-16 md:py-24 lg:py-32 w-full">
-          <div className="border border-white/70 rounded-full hidden md:block px-11 py-2.5 text-white text-[18px] font-light tracking-wide bg-white/10 mb-6">
+          <div className="border border-white/70 rounded-full px-11 py-2.5 text-white text-[18px] font-light tracking-wide bg-white/10 mb-6">
             About Us
           </div>
 

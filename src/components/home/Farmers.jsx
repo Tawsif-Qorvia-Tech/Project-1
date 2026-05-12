@@ -3,6 +3,7 @@ import Farmer1 from "@/assets/Farmer1.webp";
 import Farmer2 from "@/assets/Farmer2.webp";
 import Farmer3 from "@/assets/Farmer3.webp";
 import Farmer4 from "@/assets/Farmer4.webp";
+import Link from "next/link";
 
 const posts = [
   {
@@ -45,7 +46,7 @@ const Farmers = () => {
         <h2 className="text-3xl xs:text-3xl sm:text-4xl md:text-7xl font-semibold text-[#232323] leading-tight font-">
           Knowledge for <br className="hidden md:block" /> Farmers & Vets
         </h2>
-        <p className="text-sm sm:text-base md:text-[18px] text-[#444444] font-light max-w-xs leading-relaxed">
+        <p className="text-[18px] text-[#444444] font-light max-w-xs leading-relaxed">
           Browse our wide range of veterinary medicines developed to ensure the
           health and productivity of poultry.
         </p>
@@ -54,7 +55,7 @@ const Farmers = () => {
       {/* Content Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 max-w-8xl mx-auto items-stretch">
         {/* Featured Post — Left */}
-        <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-gray-200 p-3 sm:p-4 flex flex-col">
+        <Link href="#" className="bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-gray-200 p-3 sm:p-4 flex flex-col">
           <div className="relative w-full flex-1 min-h-48 sm:min-h-80">
             <Image
               src={Farmer1}
@@ -75,12 +76,12 @@ const Farmers = () => {
               healthier flocks.
             </p>
           </div>
-        </div>
+        </Link>
 
         {/* Side Posts — Right */}
-        <div className="flex-col justify-between">
+        <div className="flex flex-col justify-between h-full">
           {posts.map((post) => (
-            <div
+            <Link href="#"
               key={post.id}
               className="flex gap-3 sm:gap-4 bg-white rounded-xl sm:rounded-2xl overflow-hidden border-gray-200 p-3 sm:p-4 border flex-1 mb-4 last:mb-0"
             >
@@ -98,7 +99,7 @@ const Farmers = () => {
                   {post.title}
                 </h4>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

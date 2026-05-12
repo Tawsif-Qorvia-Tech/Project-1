@@ -1,5 +1,6 @@
 "use client";
 
+import { MdOutlineArrowRightAlt } from "react-icons/md";
 import OurProductsClient from "./OurProductsClient";
 
 const OurProductsWrapper = ({ products }) => {
@@ -16,6 +17,17 @@ const OurProductsWrapper = ({ products }) => {
       <div className="max-w-8xl mx-auto">
         <OurProductsClient products={products} />
       </div>
+
+      <div className="bg-primary text-white w-fit flex justify-center items-center gap-2 sm:gap-3 rounded-[22.4px] py-[5.6px] pl-3 sm:pl-[16.8px] pr-[5.6px] mx-auto mt-8">
+              <div>
+                <h1 className="text-sm sm:text-[18px] font-light pl-2 sm:pl-4">
+                  View More
+                </h1>
+              </div>
+              <div className="bg-white text-primary flex items-center justify-center rounded-full aspect-square h-full p-1">
+                <MdOutlineArrowRightAlt size={28} />
+              </div>
+            </div>
     </>
   );
 };

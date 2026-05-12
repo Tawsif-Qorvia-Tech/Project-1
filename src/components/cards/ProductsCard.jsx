@@ -54,7 +54,7 @@ const ProductsCard = ({ product }) => {
           MOQ: {moq.quantity} {moq.unit}
         </p>
         <p className="text-sm sm:text-[18px] font-bold text-[#232323]">
-          ${price.toFixed(2)}
+          ₹{price.toFixed(2)}
         </p>
 
       </div>

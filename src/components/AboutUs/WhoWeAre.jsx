@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import aboutChick from "@/assets/AboutChick.webp";
 import Arrow from '../../assets/Arrow.png'
+import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 const WhoWeAre = () => {
   return (
@@ -25,12 +26,12 @@ const WhoWeAre = () => {
         <div className="bg-primary text-white flex items-center justify-center gap-3 rounded-[22.4px] py-[5.6px] pl-[16.8px] pr-[5.6px] w-max">
           <div>
             <h1 className="text-base lg:text-[18px] font-light">
-              Learn More About Us
+              Explore Our Products
             </h1>
           </div>
-          <div>
-            <Image src={Arrow} alt="Arrow" />
-          </div>
+          <div className='bg-white text-primary flex items-center justify-center rounded-full aspect-square h-full p-1'>
+                  <MdOutlineArrowRightAlt size={28} />
+              </div>
         </div>
       </div>
 

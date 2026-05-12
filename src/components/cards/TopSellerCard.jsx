@@ -49,7 +49,7 @@ const TopSellerCard = ({ product }) => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-[#888EA2] line-through text-lg">
-                ${formattedOriginalPrice}
+                ₹{formattedOriginalPrice}
             </span>
             <span className="bg-[#C4C4C4] text-white text-xs px-2 py-1 rounded font-bold">
                 -25%

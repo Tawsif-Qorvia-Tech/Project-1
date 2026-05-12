@@ -55,14 +55,12 @@ const BottomArrow = () => (
     >
       <path
         /* All X-coordinates decreased by 30 (160->130, 100->70, 10->-20) */
-        d="M130 5 Q70 90 -20 20"
+        d="M140 5 Q70 90 -20 20"
         stroke="#d63ad5"
         strokeWidth="2"
         strokeDasharray="5 4"
         fill="none"
       />
-      {/* Arrowhead X-coordinates also shifted -30 */}
-      <polygon points="-18,26 -26,16 -12,16" fill="#d63ad5" />
     </svg>
   </div>
 );

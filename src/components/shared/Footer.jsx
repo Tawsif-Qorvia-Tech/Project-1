@@ -73,13 +73,14 @@ const Footer = () => {
             <div className="flex items-center bg-white rounded-full border border-gray-200 pr-1 py-1 w-full mt-5 md:ml-0">
                 <input
                   type="email"
-                  placeholder="Type Here"
+                  placeholder="Enter your email"
                   className="flex-1 bg-transparent text-gray-800 text-[14px] sm:text-[16px] px-3 sm:px-4 outline-none placeholder-gray-400 min-w-0   "
                 />
                 <button className="btn btn-primary btn-xs sm:btn-sm rounded-full px-3 sm:px-5 shrink-0 min-h-7 h-7 sm:min-h-8 sm:h-8 text-[14px]   ">
                   Subscribe
                 </button>
-              </div>
+              </div >
+              <h3 className="text-[15px] sm:text-[18px] font-semibold mt-5">Designed and Developed by Qorvia Technologies.</h3>
             </div>
           </div>
         </div>
