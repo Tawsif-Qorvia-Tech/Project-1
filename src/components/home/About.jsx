@@ -7,16 +7,18 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <div className="flex flex-col-reverse lg:flex-row items-center w-[90%] min-h-100 lg:min-h-125 gap-8 lg:gap-12 pt-16 lg:pt-30">
-      <div className="w-full lg:w-1/2 h-75 lg:h-125 relative rounded-3xl overflow-hidden shrink-0">
-        <Image
-          src={banner2}
-          alt="About Banner"
-          fill
-          sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-contain object-center pl-9"
-        />
-      </div>
+   <div className="flex flex-col-reverse lg:flex-row items-center w-full min-h-100 lg:min-h-125 gap-8 lg:gap-12 pt-16 lg:pt-30 px-4 sm:px-8 lg:px-0 lg:pl-10">
+     <div className="flex-1 w-full relative rounded-2xl md:rounded-3xl overflow-hidden">
+  <Image
+    src={banner2}
+    alt="About Banner"
+    width={0}
+    height={0}
+    sizes="100vw"
+    style={{ width: "100%", height: "auto", display: "block" }}
+    className="rounded-2xl md:rounded-3xl"
+  />
+</div>
 
       <div className="w-full lg:w-1/2 flex flex-col justify-center gap-4 lg:gap-6 px-4 lg:px-0">
         <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-[#232323]">

@@ -116,8 +116,8 @@ const ContactForm = () => {
                   How can we assist you?
                 </span>
               </label>
-              <select className="select select-bordered bg-white w-full h-14 rounded-xl border-slate-200 focus:border-primary focus:outline-none shadow-sm transition-all text-slate-600 font-medium">
-                <option disabled selected>
+              <select className="select select-bordered bg-white w-full h-14 rounded-xl border-slate-200 focus:border-primary focus:outline-none shadow-sm transition-all text-slate-600 font-medium" defaultValue="">
+                <option disabled>
                   Select an inquiry type
                 </option>
                 <option>Product Information</option>

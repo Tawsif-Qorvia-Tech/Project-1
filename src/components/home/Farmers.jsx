@@ -43,7 +43,7 @@ const Farmers = () => {
     <section className="pt-20 sm:pt-32 px-4 sm:px-8">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 mb-5">
-        <h2 className="text-3xl xs-only:text-[22px] sm:text-4xl md:text-7xl font-semibold text-[#232323] leading-tight font-">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl  font-semibold text-[#232323] leading-tight font-">
           Knowledge for <br className="hidden md:block" /> Farmers & Vets
         </h2>
         <p className="text-[18px] text-[#444444] font-light max-w-xs leading-relaxed">

@@ -44,10 +44,10 @@ const SpecialistCard = ({ image, title, description }) => {
           <div className="absolute bottom-0 right-0 w-[calc(100%-10px)] h-[calc(100%-10px)] bg-[#f5e6f5] rounded-tl-[2rem] flex items-center justify-center">
             {/* Arrow Button */}
             <button
-              className="bg-primary text-white rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center hover:scale-105 transition-transform shadow-md z-20"
+              className="bg-primary text-white rounded-full w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center hover:scale-105 transition-transform shadow-md z-20"
               aria-label="View details"
             >
-              <div className="relative w-6 h-6">
+              <div className="relative w-5 h-5">
                 <Image
                   src={Arrow}
                   alt="Arrow"

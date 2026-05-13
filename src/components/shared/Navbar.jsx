@@ -73,7 +73,7 @@ const Navbar = () => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 sm:h-5 sm:w-5 text-primary"
+                className="h-8 w-8 sm:h-5 sm:w-5 text-primary scale-x-[-1]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
