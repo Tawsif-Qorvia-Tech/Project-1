@@ -28,20 +28,20 @@ const TopSeller = ({ products = [] }) => {
           Our Top-Selling Products
         </h2>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <button
             onClick={handlePrev}
             aria-label="Previous"
             className="w-9 h-9 rounded-full border flex items-center justify-center border-[#c4006e] text-[#c4006e] transition-colors duration-200"
           >
-            <MdOutlineArrowRightAlt size={28} className="rotate-180" />
+            <MdOutlineArrowRightAlt size={34} className="rotate-180" />
           </button>
           <button
             onClick={handleNext}
             aria-label="Next"
             className="w-9 h-9 rounded-full border flex items-center justify-center border-[#c4006e] text-[#c4006e] transition-colors duration-200"
           >
-            <MdOutlineArrowRightAlt size={28} />
+            <MdOutlineArrowRightAlt size={34} />
           </button>
         </div>
       </div>
@@ -84,20 +84,6 @@ const TopSeller = ({ products = [] }) => {
           ))}
         </Swiper>
       )}
-
-      <Link
-        href="/our-products"
-        className="bg-primary text-white w-fit flex justify-center items-center gap-2 sm:gap-3 rounded-[22.4px] py-[5.6px] pl-3 sm:pl-[16.8px] pr-[5.6px] mx-auto mt-5"
-      >
-        <div>
-          <h1 className="text-sm sm:text-[18px] font-light pl-2 sm:pl-4">
-            View More
-          </h1>
-        </div>
-        <div className="bg-white text-primary flex items-center justify-center rounded-full aspect-square h-full p-1">
-          <MdOutlineArrowRightAlt size={28} />
-        </div>
-      </Link>
     </section>
   );
 };

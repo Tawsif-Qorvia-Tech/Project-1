@@ -9,11 +9,7 @@ import AddtoCart from '../buttons/AddtoCart';
 const TopSellerCard = ({ product }) => {
   const { _id, name, price, currency, rating, image, isWishlisted } = product;
 
-  // Formatting price (Example: 100.000)
   const formattedPrice = new Intl.NumberFormat('de-DE').format(price);
-  
-  // Calculate a fake original price for the "discount" look in the image 
-  // (Or use product.originalPrice if you add it to DB later)
   const originalPrice = (price * 1.25).toFixed(0); 
   const formattedOriginalPrice = new Intl.NumberFormat('de-DE').format(originalPrice);
 
@@ -67,7 +63,7 @@ const TopSellerCard = ({ product }) => {
         {/* Bottom Row: Final Price & Cart */}
         <div className="flex items-center justify-between mt-1">
           <p className="text-[32px] font-bold text-[#1A1A1A]">
-            {formattedPrice}{currency === "USD" ? "$" : "€"}
+            {formattedPrice}₹
           </p>
           
           <AddtoCart productId={_id} />
