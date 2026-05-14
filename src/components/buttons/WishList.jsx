@@ -20,58 +20,42 @@ const WishList = ({ isWishlisted: initialWishlisted, productId }) => {
         const result = await removeFromWishlist(productId, userId);
         
         if (result.success) {
-          Swal.fire({
-            position: "top-end",
-            icon: "info",
-            title: "Product removed from wishlist",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          Toast.fire({ icon: "info", title: "Removed from wishlist" });
           setIsWishlisted(false);
         } else {
-          Swal.fire({
-            position: "top-end",
-            icon: "error",
-            title: result.message || "Failed to remove from wishlist",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+         Toast.fire({ icon: "error", title: "Failed to remove from wishlist" });
         }
       } else {
         const result = await addToWishlist(productId, userId);
         
         if (result.success) {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Product added to wishlist",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+         Toast.fire({ icon: "success", title: "Added to wishlist" });
           setIsWishlisted(true);
         } else {
-          Swal.fire({
-            position: "top-end",
-            icon: "error",
-            title: result.message || "Failed to add to wishlist",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+         Toast.fire({ icon: "error", title: result.message || "Failed to update wishlist" });
+
         }
       }
     } catch (error) {
       console.error("Wishlist error:", error);
-      Swal.fire({
-        position: "top-end",
-        icon: "error",
-        title: "Something went wrong",
-        showConfirmButton: false,
-        timer: 1500,
-      });
+      Toast.fire({ icon: "error", title: "Something went wrong" });
     } finally {
       setIsLoading(false);
     }
   };
+
+  const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 1500,
+  timerProgressBar: true,
+  customClass: {
+    popup: "!flex !flex-row !items-center !gap-3 !px-4 !py-2 !min-h-0 !w-auto",
+    icon: "!m-0 !w-7 !h-7 !text-sm",
+    title: "!m-0 !text-sm !font-medium",
+  },
+});
 
   return (
     <button 

@@ -32,7 +32,13 @@ const TopSeller = ({ products = [] }) => {
           <button
             onClick={handlePrev}
             aria-label="Previous"
-            className="w-9 h-9 rounded-full border flex items-center justify-center border-[#c4006e] text-[#c4006e] transition-colors duration-200"
+            disabled={activeIndex === 0}
+            className={`w-9 h-9 rounded-full border flex items-center justify-center transition-colors duration-200 
+    ${
+      activeIndex === 0
+        ? "border-gray-300 text-gray-300 cursor-not-allowed"
+        : "border-[#c4006e] text-[#c4006e]"
+    }`}
           >
             <MdOutlineArrowRightAlt size={34} className="rotate-180" />
           </button>

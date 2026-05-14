@@ -16,50 +16,30 @@ const AddtoCart = ({ productId }) => {
       const result = await addToCart(productId);
 
       if (result.success) {
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Product added to cart",
-          showConfirmButton: false,
-          timer: 1500,
-            grow: 'row', 
-          customClass: {
-            popup: "!w-64 !py-2",
-            icon: "!my-2",
-            title: "!text-sm !pb-2",
-          },
-        });
+       Toast.fire({ icon: "success", title: "Product added to cart" });
       } else {
-        Swal.fire({
-          position: "top-end",
-          icon: result.message === "Item already in cart" ? "info" : "error",
-          title: result.message || "Failed to add to cart",
-          showConfirmButton: false,
-          timer: 1500,
-          customClass: {
-            popup: "!w-64 !py-2",
-            icon: "!my-2",
-            title: "!text-sm !pb-2",
-          },
-        });
+       Toast.fire({ icon: "info", title: result.message || "Failed to add to cart" });
       }
     } catch (error) {
       console.error("Cart error:", error);
-      Swal.fire({
-        position: "top-end",
-        icon: "error",
-        title: "Something went wrong",
-        showConfirmButton: false,
-        timer: 1500,
-        customClass: {
-          popup: "!w-46 !py-2",
-          icon: "!my-2",
-        },
-      });
+    Toast.fire({ icon: "info", title: "Something went wrong" });
     } finally {
       setIsLoading(false);
     }
   };
+
+    const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+    customClass: {
+      popup: "!flex !flex-row !items-center !gap-3 !px-4 !py-2 !min-h-0 !w-auto",
+      icon: "!m-0 !w-7 !h-7 !text-sm",
+      title: "!m-0 !text-sm !font-medium",
+    },
+  });
 
   return (
     <div>
