@@ -24,7 +24,7 @@ const Chat = () => {
         <div
           className="flex flex-col items-center gap-4 py-4"
           style={{
-            background: "#d1d5db",
+            background: "#f5e6f5",
             width: "90px",
           }}
         >
@@ -62,7 +62,7 @@ const Chat = () => {
         <button
           aria-label={open ? "Close menu" : "Open chat options"}
           onClick={() => setOpen(!open)}
-          className="relative flex items-center justify-center w-20 h-20 rounded-3xl shadow-2xl transition-transform duration-200 hover:scale-110 active:scale-95"
+          className="relative flex items-center justify-center w-17 h-17 rounded-3xl shadow-2xl transition-transform duration-200 hover:scale-110 active:scale-95"
           style={{
             background: "#c0186c",
             transition:
@@ -80,7 +80,7 @@ const Chat = () => {
           {open ? (
             <FiX className="text-white drop-shadow-md" size={38} />
           ) : (
-            <FaChevronLeft className="text-white drop-shadow-md" size={38} />
+            <FaChevronLeft className="text-white drop-shadow-md pr-5" size={38} />
           )}
         </button>
       </div>
