@@ -4,6 +4,7 @@ import "./globals.css";
 import "./swiper-custom.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import Chat from "@/components/buttons/Chat";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -42,6 +43,10 @@ export default function RootLayout({ children }) {
         <footer className="w-full">
           <Footer></Footer>
         </footer>
+
+        <div className="fixed bottom-6 right-6 z-50">
+          <Chat />
+        </div>
       </body>
     </html>
   );
