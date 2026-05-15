@@ -80,7 +80,7 @@ const Chat = () => {
           {open ? (
             <FiX className="text-white drop-shadow-md" size={38} />
           ) : (
-            <FaChevronLeft className="text-white drop-shadow-md pr-5" size={38} />
+            <FaChevronLeft className="text-white drop-shadow-md" size={38} />
           )}
         </button>
       </div>
