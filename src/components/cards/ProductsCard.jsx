@@ -2,12 +2,13 @@ import Image from 'next/image';
 import { FiHeart } from 'react-icons/fi';
 import { FaHeart, FaStar } from 'react-icons/fa';
 import WishList from '../buttons/WishList';
+import Link from 'next/link';
 
 const ProductsCard = ({ product }) => {
   const { name, tagline, price, moq, image, rating, isWishlisted } = product;
 
   return (
-    <div className="relative bg-white rounded-xl sm:rounded-2xl overflow-hidden">
+    <Link href={`/our-products/${product._id}`} className="relative bg-white rounded-xl sm:rounded-2xl overflow-hidden">
 
       {/* Top slate section — image + button */}
       <div className="bg-[#F3F5F7] p-3 sm:p-5 pb-3 sm:pb-4 relative">
@@ -59,7 +60,7 @@ const ProductsCard = ({ product }) => {
 
       </div>
 
-    </div>
+    </Link>
   );
 };
 

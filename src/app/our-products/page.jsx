@@ -4,6 +4,7 @@ import ProductRange from '@/components/OurProduct/ProductRange';
 import TopSeller from '@/components/OurProduct/TopSeller';
 import { getProducts } from '@/actions/server/Product';
 import React from 'react';
+import CTA from '@/components/home/CTA';
 
 const page = async () => {
     const products = await getProducts();
@@ -21,7 +22,9 @@ const page = async () => {
         <div className="w-11/12 mx-auto">
             <Farmers></Farmers>
         </div>
-       
+       <div>
+        <CTA></CTA>
+       </div>
         </>
     );
 };

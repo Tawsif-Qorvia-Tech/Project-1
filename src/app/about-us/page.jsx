@@ -6,6 +6,7 @@ import Trust from "@/components/AboutUs/Trust";
 import Work from "@/components/AboutUs/Work";
 import TopSeller from "@/components/OurProduct/TopSeller";
 import { getProducts } from "@/actions/server/Product";
+import CTA from "@/components/home/CTA";
 
 const page = async() => {
   const products = await getProducts();
@@ -28,6 +29,9 @@ const page = async() => {
       </div>
       <div>
         <Work></Work>
+      </div>
+      <div>
+        <CTA></CTA>
       </div>
     </>
   );

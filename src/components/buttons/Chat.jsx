@@ -10,36 +10,41 @@ const Chat = () => {
 
   return (
     <div className="relative inline-flex flex-col items-end">
-      
+
       {/* Popup Box */}
       <div
         className="overflow-hidden transition-all rounded-3xl duration-300 ease-in-out"
         style={{
           maxHeight: open ? "220px" : "0px",
           opacity: open ? 1 : 0,
-          width: "90px",
+          width: "75px",
           marginBottom: open ? "12px" : "0px",
+          pointerEvents: open ? "auto" : "none",
         }}
       >
         <div
           className="flex flex-col items-center gap-4 py-4"
           style={{
             background: "#f5e6f5",
-            width: "90px",
+            // width: "90px",
           }}
         >
-          
+
           {/* WhatsApp Button */}
           <button
-            aria-label="Chat on WhatsApp"
-            className="flex items-center justify-center w-14 h-14 rounded-full transition-transform duration-150 hover:scale-110 active:scale-95"
+            aria-label={open ? "Close menu" : "Open chat options"}
+            onClick={() => setOpen((prev) => !prev)}
+            onTouchStart={(e) => {
+              e.preventDefault();
+              setOpen((prev) => !prev);
+            }}
+            className="relative flex items-center justify-center w-15 h-15 rounded-3xl shadow-2xl transition-transform duration-200 hover:scale-110 active:scale-95 touch-manipulation"
             style={{
-              background:
-                "linear-gradient(145deg, #25d366 0%, #128c7e 100%)",
-              boxShadow: "0 4px 12px rgba(37, 211, 102, 0.4)",
+              background: "#c0186c",
+              transition: "background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease",
             }}
           >
-            <BsWhatsapp className="text-white" size={28} />
+            <BsWhatsapp className="text-white" size={25} />
           </button>
 
           {/* Call Button */}
@@ -52,7 +57,7 @@ const Chat = () => {
               boxShadow: "0 4px 12px rgba(79, 142, 247, 0.4)",
             }}
           >
-            <FiPhone className="text-white" size={26} />
+            <FiPhone className="text-white" size={24} />
           </button>
         </div>
       </div>
@@ -61,12 +66,11 @@ const Chat = () => {
       <div className="relative inline-flex items-center justify-center">
         <button
           aria-label={open ? "Close menu" : "Open chat options"}
-          onClick={() => setOpen(!open)}
-          className="relative flex items-center justify-center w-17 h-17 rounded-3xl shadow-2xl transition-transform duration-200 hover:scale-110 active:scale-95"
+          onClick={() => setOpen((prev) => !prev)}
+          className="relative flex items-center justify-center w-15 h-15 rounded-3xl shadow-2xl transition-transform duration-200 hover:scale-110 active:scale-95 touch-manipulation"
           style={{
             background: "#c0186c",
-            transition:
-              "background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease",
+            transition: "background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease",
           }}
         >
           <span
@@ -80,7 +84,7 @@ const Chat = () => {
           {open ? (
             <FiX className="text-white drop-shadow-md" size={38} />
           ) : (
-            <FaChevronLeft className="text-white drop-shadow-md" size={38} />
+            <FaChevronLeft className="text-white drop-shadow-md" size={25} />
           )}
         </button>
       </div>

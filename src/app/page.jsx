@@ -1,5 +1,6 @@
 import About from "@/components/home/About";
 import Banner from "@/components/home/Banner";
+import CTA from "@/components/home/CTA";
 import Farmers from "@/components/home/Farmers";
 import OurProducts from "@/components/home/OurProducts";
 import Specialist from "@/components/home/Specialist";
@@ -25,6 +26,10 @@ export default function Home() {
 
       <div className="w-11/12 mx-auto">
         <Farmers></Farmers>
+      </div>
+
+      <div>
+        <CTA></CTA>
       </div>
     </div>
   );
