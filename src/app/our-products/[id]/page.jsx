@@ -220,9 +220,9 @@ const ProductDetailsPage = async ({ params }) => {
           
           {/* Section 1: Why Supplement Framework */}
           <section className="bg-[#f5e6f5] rounded-2xl p-6 sm:p-8 border border-base-200">
-            <h3 className="text-lg sm:text-xl font-bold text-[#232323] flex items-center gap-2.5 mb-3 uppercase tracking-tight">
+            <h2 className="text-lg sm:text-4xl font-bold text-[#232323] flex items-center gap-2.5 mb-3 uppercase tracking-tight">
               <FaQuestionCircle className="text-primary" /> Why Supplement ImuLiv?
-            </h3>
+            </h2>
             <p className="text-sm sm:text-base font-medium leading-relaxed">
               The present agricultural trend where numerous toxic chemicals are used in the production of animal foods 
               and with the present demand of numerous drugs to be incorporated in the animal diet and water supply, 
@@ -233,9 +233,9 @@ const ProductDetailsPage = async ({ params }) => {
 
           {/* Section 2: Nutritional Value Matrix Table */}
           <section className="space-y-4">
-            <h3 className="text-lg sm:text-xl font-bold text-[#232323] flex items-center gap-2.5 uppercase tracking-tight">
+            <h2 className="text-lg sm:text-4xl font-bold text-[#232323] flex items-center gap-2.5 uppercase tracking-tight">
               <FaTable className="text-primary" /> Nutritional Value of each 10 ml.
-            </h3>
+            </h2>
             <div className="overflow-x-auto border border-base-200 rounded-xl shadow-sm">
               <table className="table w-full bg-base-100 text-sm text-[#444444]">
                 <thead>
@@ -284,13 +284,13 @@ const ProductDetailsPage = async ({ params }) => {
           </section>
 
           {/* Grid Layout Container for remaining actionable bullet points */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-15">
             
             {/* Section 3: Unique Features Bullet Panel */}
             <section className="space-y-4">
-              <h3 className="text-lg sm:text-xl font-bold text-[#232323] flex items-center gap-2.5 uppercase tracking-tight">
+              <h2 className="text-lg sm:text-4xl font-bold text-[#232323] flex items-center gap-2.5 uppercase tracking-tight">
                 <FaStar className="text-primary" /> Unique Features
-              </h3>
+              </h2>
               <ul className="space-y-2.5 text-sm sm:text-base text-[#444444] font-medium">
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
@@ -313,9 +313,9 @@ const ProductDetailsPage = async ({ params }) => {
 
             {/* Section 4: Indications Diagnostics Bullet Panel */}
             <section className="space-y-4">
-              <h3 className="text-lg sm:text-xl font-bold text-[#232323] flex items-center gap-2.5 uppercase tracking-tight">
+              <h2 className="text-lg sm:text-4xl font-bold text-[#232323] flex items-center gap-2.5 uppercase tracking-tight">
                 <FaStethoscope className="text-primary" /> Indications
-              </h3>
+              </h2>
               <ul className="space-y-2.5 text-sm sm:text-base text-[#444444] font-medium">
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
@@ -335,9 +335,9 @@ const ProductDetailsPage = async ({ params }) => {
 
           {/* Section 5: Inclusion Rate Calculation Metrics */}
           <section className="space-y-4">
-            <h3 className="text-lg sm:text-xl font-bold text-[#232323] flex items-center gap-2.5 uppercase tracking-tight">
+            <h2 className="text-lg sm:text-4xl font-bold text-[#232323] flex items-center gap-2.5 uppercase tracking-tight">
               <FaFlask className="text-primary" /> Inclusion Rate
-            </h3>
+            </h2>
             <div className="bg-[#f5e6f5] rounded-xl border border-base-200 divide-y divide-base-200 overflow-hidden shadow-sm max-w-2xl">
               <div className="flex justify-between items-center p-3.5 sm:px-6 text-sm font-semibold">
                 <span className="text-base-content/70">Chicks</span>
