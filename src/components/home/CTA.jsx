@@ -1,34 +1,68 @@
 import React from 'react';
+import Link from 'next/link';
+import { MdOutlineArrowRightAlt } from 'react-icons/md';
 
 const CTA = () => {
-    return (
-        <section className="w-full bg-[#f5e6f5] py-20 px-6 md:px-12 border-t border-base-300 my-20 rounded-2xl">
-            <div className="max-w-5xl mx-auto text-center space-y-8">
-                {/* Strong headline focusing on health and outcomes */}
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-[#232323] leading-tight">
-                    Protect Your Herd. Optimize Your Yield.
-                </h2>
-                
-                {/* Short supporting sentence with clear farm benefits */}
-                <p className="text-lg md:text-xl text-[#444444] max-w-3xl mx-auto leading-relaxed">
-                    Invest in science-backed veterinary medicines engineered to keep your livestock healthier, your animals happier, and your farm operations running at peak productivity.
-                </p>
-                
-                {/* Dual Button Layout - Spaced, wider, and responsive */}
-                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
-                    {/* Primary Action: Direct Sales */}
-                    <button className="btn btn-primary btn-lg px-10 shadow-md hover:shadow-lg transition-all normal-case text-white w-full sm:w-auto min-w-55">
-                        Shop Vet Solutions
-                    </button>
-                    
-                    {/* Secondary Action: Bulk Orders / Consultation */}
-                    <button className="btn btn-outline btn-primary btn-lg px-10 transition-all normal-case w-full sm:w-auto min-w-55">
-                        Consult a Farm Expert
-                    </button>
-                </div>
+  return (
+    <section className="relative w-full py-8 px-8 md:px-16 lg:px-24 mt-20 rounded-2xl overflow-hidden">
+
+      <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+
+        {/* Left — copy */}
+        <div className="flex-1 min-w-0">
+
+          {/* Pill + stats inline row */}
+          <div className="flex flex-wrap items-center gap-2.5 mb-2.5">
+            <div className="inline-flex items-center gap-1.5 bg-[#8b3fac]/10 text-[#7c3fa0] text-[12px] font-medium px-3 py-1 rounded-full">
+              Science-backed care
             </div>
-        </section>
-    );
+            <span className="w-1 h-1 rounded-full bg-[#bbb]" />
+            <div className="flex items-center gap-3 text-[12px] text-[#666]">
+              <span><strong className="text-[#232323] font-semibold">500+</strong> farms</span>
+              <span className="w-1 h-1 rounded-full bg-[#bbb] inline-block" />
+              <span><strong className="text-[#232323] font-semibold">98%</strong> satisfaction</span>
+              <span className="w-1 h-1 rounded-full bg-[#bbb] inline-block" />
+              <span><strong className="text-[#232323] font-semibold">15+</strong> yrs expertise</span>
+            </div>
+          </div>
+
+          <h2 className="text-4xl sm:text-[50px] font-semibold text-[#1a1a1a] leading-[1.2] mb-1.5">
+            Protect Your Herd.{' '} <br/>
+            <span className="text-[#8b3fac]">Optimize</span> Your Yield.
+          </h2>
+
+          <p className="text-[14px] text-[#666666] leading-relaxed max-w-lg">
+            Invest in science-backed veterinary medicines engineered to keep your livestock healthier,
+            your animals happier, and your farm operations running at peak productivity.
+          </p>
+        </div>
+
+        {/* Right — buttons */}
+        <div className="flex flex-col gap-2.5 w-full lg:w-auto lg:min-w-[200px] shrink-0">
+          <Link
+            href="/our-products"
+            className="bg-[#232323] text-white flex items-center justify-center gap-2 rounded-full px-5 py-3 text-[14px] font-medium hover:bg-[#3a3a3a] transition-colors"
+          >
+            <span>Shop Vet Solutions</span>
+            <div className="bg-[#8b3fac] rounded-full w-[28px] h-[28px] flex items-center justify-center shrink-0">
+              <MdOutlineArrowRightAlt size={16} />
+            </div>
+          </Link>
+
+          <Link
+            href="/contact-us"
+            className="bg-transparent text-[#232323] flex items-center justify-center gap-2 rounded-full px-5 py-3 text-[14px] font-medium border border-black/15 hover:border-[#8b3fac] hover:bg-[#8b3fac]/[0.04] transition-all"
+          >
+            <span>Consult an Expert</span>
+            <div className="bg-[#8b3fac]/10 rounded-full w-[30px] h-[30px] flex items-center justify-center shrink-0">
+              <MdOutlineArrowRightAlt size={17} className="text-[#8b3fac]" />
+            </div>
+          </Link>
+        </div>
+
+      </div>
+    </section>
+  );
 };
 
 export default CTA;

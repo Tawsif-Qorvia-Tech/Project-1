@@ -7,7 +7,7 @@ import ProductsCard from '../cards/ProductsCard';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-const OurProductsClient = ({ products, showWishlist = true }) => {
+const OurProductsClient = ({ products }) => {
   // Chunking logic stays the same
   const chunkedProducts = [];
   for (let i = 0; i < products.length; i += 4) {
@@ -35,11 +35,7 @@ const OurProductsClient = ({ products, showWishlist = true }) => {
           <SwiperSlide key={index}>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {chunk.map((product) => (
-                <ProductsCard
-                  key={product._id}
-                  product={product}
-                  showWishlist={showWishlist}
-                />
+                <ProductsCard key={product._id} product={product} />
               ))}
             </div>
           </SwiperSlide>

@@ -4,11 +4,11 @@ import { MdOutlineArrowRightAlt } from "react-icons/md";
 import OurProductsClient from "./OurProductsClient";
 import Link from "next/link";
 
-const OurProductsWrapper = ({ products, showWishlist = true }) => {
+const OurProductsWrapper = ({ products }) => {
   return (
     <>
       <div className="mb-6 md:mb-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-0">
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl  font-semibold text-[#232323] wrap-break-word md:whitespace-nowrap">
+        <h2 className="text-5xl sm:text-5xl lg:text-6xl xl:text-7xl  font-semibold text-[#232323] wrap-break-word md:whitespace-nowrap">
           Explore Our Products
         </h2>
         {/* Swiper will look for this class to inject bullets */}
@@ -16,7 +16,7 @@ const OurProductsWrapper = ({ products, showWishlist = true }) => {
       </div>
 
       <div className="max-w-8xl mx-auto">
-        <OurProductsClient products={products} showWishlist={showWishlist} />
+        <OurProductsClient products={products} />
       </div>
 
       <Link
