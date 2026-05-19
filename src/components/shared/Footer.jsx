@@ -117,9 +117,9 @@ const Footer = () => {
             <p className="text-[14px] sm:text-[16px] text-white text-center md:text-left">
               Copyright &copy; 2026 Together In Community. All Rights Reserved.
             </p>
-            <h3 className="text-[14px] xs-only:text-[12px] text-white">
+            <h3 className="text-[14px] xs-only:text-[15px] text-white text-center">
               Designed and Developed by{" "}
-              <span className="text-[16px]">
+              <span className="text-[14px] font-bold">
                 <Link
                   href="https://qorviatechnologies.com/"
                   className="text-primary hover:underline"

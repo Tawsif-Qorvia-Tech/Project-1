@@ -15,7 +15,7 @@ const Chat = () => {
         style={{
           maxHeight: open ? "220px" : "0px",
           opacity: open ? 1 : 0,
-          width: "75px",
+          width: "70px",
           marginBottom: open ? "12px" : "0px",
           pointerEvents: open ? "auto" : "none",
         }}
@@ -27,7 +27,7 @@ const Chat = () => {
           {/* WhatsApp Button */}
           <button
             aria-label="Chat on WhatsApp"
-            className="relative flex items-center justify-center w-15 h-15 rounded-3xl shadow-2xl transition-transform duration-200 hover:scale-110 active:scale-95 touch-manipulation"
+            className="relative flex items-center justify-center w-14 h-14 rounded-3xl shadow-2xl transition-transform duration-200 hover:scale-110 active:scale-95 touch-manipulation"
             style={{
               background: "#c0186c",
               transition:
@@ -56,7 +56,7 @@ const Chat = () => {
         <button
           aria-label={open ? "Close menu" : "Open chat options"}
           onClick={() => setOpen((prev) => !prev)}
-          className="relative flex items-center justify-center w-15 h-15 rounded-3xl shadow-2xl transition-transform duration-200 hover:scale-110 active:scale-95 touch-manipulation"
+          className="relative flex items-center justify-center w-14 h-14 rounded-3xl shadow-2xl transition-transform duration-200 hover:scale-110 active:scale-95 touch-manipulation"
           style={{
             background: "#c0186c",
             transition:
