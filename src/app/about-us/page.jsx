@@ -12,7 +12,7 @@ const page = async() => {
   const products = await getProducts();
   return (
     <>
-      <div className="w-full px-6">
+      <div className="w-full px-3">
         <AboutUs></AboutUs>
       </div>
       <div className="w-full">

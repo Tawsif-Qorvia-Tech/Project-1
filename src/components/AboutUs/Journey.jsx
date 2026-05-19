@@ -32,14 +32,12 @@ const TopArrow = () => (
       className="w-full h-full"
     >
       <path
-        /* All X-coordinates increased by 30 (240->270, 300->330, 390->420) */
         d="M270 95 Q330 10 420 80"
         stroke="#d63ad5"
         strokeWidth="2"
         strokeDasharray="5 4"
         fill="none"
       />
-      {/* Arrowhead X-coordinates also shifted +30 */}
       <polygon points="418,74 426,84 412,84" fill="#d63ad5" />
     </svg>
   </div>
@@ -54,7 +52,6 @@ const BottomArrow = () => (
       className="w-full h-full"
     >
       <path
-        /* All X-coordinates decreased by 30 (160->130, 100->70, 10->-20) */
         d="M140 5 Q70 90 -20 20"
         stroke="#d63ad5"
         strokeWidth="2"
@@ -66,7 +63,7 @@ const BottomArrow = () => (
 );
 
 const VerticalArrow = () => (
-  <div className="h-12 flex items-center justify-center">
+  <div className="h-12 flex items-center justify-center my-2">
     <svg
       viewBox="0 0 60 80"
       fill="none"
@@ -74,13 +71,13 @@ const VerticalArrow = () => (
       className="h-full w-15"
     >
       <path
-        d="M50 4 Q4 40 50 76"
+        d="M30 5 L30 70"
         stroke="#d63ad5"
         strokeWidth="2"
         strokeDasharray="5 4"
         fill="none"
       />
-      <polygon points="44,76 54,80 52,70" fill="#d63ad5" />
+      <polygon points="25,65 35,65 30,75" fill="#d63ad5" />
     </svg>
   </div>
 );
@@ -128,29 +125,33 @@ const Journey = () => {
       </div>
 
       {/* Mobile: vertical stack */}
-      <div className="flex md:hidden flex-col items-center w-full max-w-sm gap-6">
+      <div className="flex md:hidden flex-col items-center w-full max-w-sm">
         {journeyData.map((item, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-2xl p-6 w-full text-center relative z-10 shadow-sm border-[1.5px] border-gray-200 hover:border-primary hover:shadow-[0_4px_20px_rgba(214,58,213,0.15)] transition-all duration-300"
-          >
-            <div className="relative w-20 h-20 rounded-full bg-linear-to-br from-[#CF02A6] to-[#AF008C] flex items-center justify-center mx-auto mb-5 shadow-[0_0_0_10px_rgba(214,58,213,0.12)]">
-              <div className="absolute -inset-2.5 rounded-full border-2 border-dashed border-[rgba(214,58,213,0.35)]" />
-              <Image
-                src={item.icon}
-                alt={item.title}
-                width={40}
-                height={40}
-                className="object-contain brightness-0 invert"
-              />
+          <React.Fragment key={index}>
+            <div
+              className="bg-white rounded-2xl p-6 w-full text-center relative z-10 shadow-sm border-[1.5px] border-gray-200 hover:border-primary hover:shadow-[0_4px_20px_rgba(214,58,213,0.15)] transition-all duration-300"
+            >
+              <div className="relative w-20 h-20 rounded-full bg-linear-to-br from-[#CF02A6] to-[#AF008C] flex items-center justify-center mx-auto mb-5 shadow-[0_0_0_10px_rgba(214,58,213,0.12)]">
+                <div className="absolute -inset-2.5 rounded-full border-2 border-dashed border-[rgba(214,58,213,0.35)]" />
+                <Image
+                  src={item.icon}
+                  alt={item.title}
+                  width={40}
+                  height={40}
+                  className="object-contain brightness-0 invert"
+                />
+              </div>
+              <h3 className="text-[22px] font-semibold text-gray-900 mb-2">
+                {item.title}
+              </h3>
+              <p className="text-[13.5px] text-[#666] leading-relaxed m-0">
+                {item.desc}
+              </p>
             </div>
-            <h3 className="text-[22px] font-semibold text-gray-900 mb-2">
-              {item.title}
-            </h3>
-            <p className="text-[13.5px] text-[#666] leading-relaxed m-0">
-              {item.desc}
-            </p>
-          </div>
+
+            {/* Render a vertical arrow element after card 1 and card 2 in mobile stack view */}
+            {index < journeyData.length - 1 && <VerticalArrow />}
+          </React.Fragment>
         ))}
       </div>
     </div>
