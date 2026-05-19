@@ -6,7 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#232323] text-white pb-5 mt-20 sm:mt-32">
+    <footer className="bg-[#232323] text-white pb-5 pt-20">
       <div className="w-11/12 mx-auto py-10 sm:py-14 px-4 sm:px-8">
         <div className="flex flex-col md:flex-row gap-8 sm:gap-10">
           {/* LEFT — Logo & Socials */}
@@ -126,15 +126,17 @@ const Footer = () => {
             <p className="text-[14px] sm:text-[16px] text-white text-center md:text-left   ">
               Copyright &copy; 2026 Together In Community. All Rights Reserved.
             </p>
-            <h3 className="text-[14px] xs-only:text-[12px] sm:text-[16px]  text-white">
+            <h3 className="text-[14px] xs-only:text-[12px]  text-white">
               Designed and Developed by{" "}
-              <Link
-                href="https://qorviatechnologies.com/"
-                className="text-primary hover:underline"
-                target="_blank"
-              >
-                Qorvia Technologies
-              </Link>
+              <span className="text-[16px]">
+                <Link
+                  href="https://qorviatechnologies.com/"
+                  className="text-primary hover:underline"
+                  target="_blank"
+                >
+                  Qorvia Technologies
+                </Link>
+              </span>
               .
             </h3>
           </div>

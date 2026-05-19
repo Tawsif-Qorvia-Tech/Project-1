@@ -4,7 +4,7 @@ import { MdOutlineArrowRightAlt } from "react-icons/md";
 import OurProductsClient from "./OurProductsClient";
 import Link from "next/link";
 
-const OurProductsWrapper = ({ products }) => {
+const OurProductsWrapper = ({ products, showWishlist = true }) => {
   return (
     <>
       <div className="mb-6 md:mb-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-0">
@@ -16,7 +16,7 @@ const OurProductsWrapper = ({ products }) => {
       </div>
 
       <div className="max-w-8xl mx-auto">
-        <OurProductsClient products={products} />
+        <OurProductsClient products={products} showWishlist={showWishlist} />
       </div>
 
       <Link

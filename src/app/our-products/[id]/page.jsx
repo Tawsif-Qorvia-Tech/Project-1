@@ -37,10 +37,10 @@ const ProductDetailsPage = async ({ params }) => {
   }
 
   return (
-    <>
-      <main className="min-h-screen bg-base-100 py-12 px-4 sm:px-6 lg:px-12 flex flex-col items-center gap-12">
+    <div  className=" bg-[#f5e6f5]">
+      <main className="min-h-screen py-12 px-4 sm:px-6 lg:px-12 flex flex-col items-center gap-12">
         {/* Main Product Presentation Card Container */}
-        <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-base-100">
+        <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Premium Single Image Showcase Viewport */}
           <div className="col-span-1 lg:col-span-6 w-full">
             <div className="bg-[#F3F5F7] rounded-2xl overflow-hidden aspect-square flex items-center justify-center p-6 sm:p-12 relative border border-base-200 shadow-sm">
@@ -139,20 +139,7 @@ const ProductDetailsPage = async ({ params }) => {
             <div className="space-y-4 pt-2">
               <div className="flex flex-col sm:flex-row gap-3 items-stretch">
                 {/* Native Multiplier Input Frame */}
-                <div className="join border border-base-300 w-full sm:w-auto justify-between items-center bg-base-100 rounded-lg">
-                  <button className="btn btn-ghost join-item px-4 text-lg font-bold text-[#444444]">
-                    -
-                  </button>
-                  <input
-                    type="number"
-                    className="input join-item w-20 text-center font-bold border-none focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none text-[#232323]"
-                    defaultValue={product.moq?.quantity || 1}
-                    min={product.moq?.quantity || 1}
-                  />
-                  <button className="btn btn-ghost join-item px-4 text-lg font-bold text-[#444444]">
-                    +
-                  </button>
-                </div>
+
 
                 {/* Main Transaction Processing Trigger Link */}
                 <button className="btn btn-primary flex-1 shadow-md hover:shadow-lg transition-all text-white font-semibold text-base gap-2 rounded-lg h-auto min-h-[48px]">
@@ -162,8 +149,8 @@ const ProductDetailsPage = async ({ params }) => {
             </div>
 
             {/* Modular Regulatory Collapsible Information Accents */}
-            <div className="space-y-2 pt-4 border-t border-base-200">
-              <div className="collapse collapse-plus border border-base-200 bg-base-100 rounded-xl">
+            <div className="space-y-2 pt-4 border-t-2 border-primary">
+              <div className="collapse collapse-plus rounded-xl">
                 <input type="checkbox" defaultChecked />
                 <div className="collapse-title text-sm font-bold uppercase tracking-wider text-[#232323] flex items-center gap-2">
                   <FaCheckCircle className="text-primary text-xs" /> Description
@@ -180,7 +167,7 @@ const ProductDetailsPage = async ({ params }) => {
                 </div>
               </div>
 
-              <div className="collapse collapse-plus border border-base-200 bg-base-100 rounded-xl">
+              <div className="collapse collapse-plus rounded-xl">
                 <input type="checkbox" />
                 <div className="collapse-title text-sm font-bold uppercase tracking-wider text-[#232323] flex items-center gap-2">
                   <FaShieldAlt className="text-primary text-xs" /> Storage &
@@ -196,7 +183,7 @@ const ProductDetailsPage = async ({ params }) => {
                 </div>
               </div>
 
-              <div className="collapse collapse-plus border border-base-200 bg-base-100 rounded-xl">
+              <div className="collapse collapse-plus rounded-xl">
                 <input type="checkbox" />
                 <div className="collapse-title text-sm font-bold uppercase tracking-wider text-[#232323] flex items-center gap-2">
                   <FaShieldAlt className="text-primary text-xs" /> Storage &
@@ -216,10 +203,10 @@ const ProductDetailsPage = async ({ params }) => {
         </div>
 
         {/* ========================================================================= */}
-        <div className="max-w-6xl w-full border-t border-base-200 pt-12 space-y-20">
+        <div className="max-w-3xl w-full pt-12 space-y-20">
           
           {/* Section 1: Why Supplement Framework */}
-          <section className="bg-[#f5e6f5] rounded-2xl p-6 sm:p-8 border border-base-200">
+          <section className="bg-[#f5e6f5] rounded-2xl">
             <h2 className="text-2xl sm:text-4xl font-bold text-[#232323] flex items-center gap-2.5 mb-3 uppercase tracking-tight">
               <FaQuestionCircle className="text-primary" /> Why Supplement ImuLiv?
             </h2>
@@ -237,7 +224,7 @@ const ProductDetailsPage = async ({ params }) => {
               <FaTable className="text-primary" /> Nutritional Value of 10 ml.
             </h2>
             <div className="overflow-x-auto border border-base-200 rounded-xl shadow-sm">
-              <table className="table w-full bg-base-100 text-sm text-[#444444]">
+              <table className="table w-full text-sm text-[#444444]">
                 <thead>
                   <tr className="bg-base-200/60 text-[#232323] border-b border-base-200 text-xs uppercase tracking-wider">
                     <th className="py-3.5 px-4 font-bold">Nutrient Ingredient</th>
@@ -357,14 +344,14 @@ const ProductDetailsPage = async ({ params }) => {
         </div>
       </main>
 
-      <div>
+      <div> 
         <FAQ></FAQ>
       </div>
 
       <div className="w-11/12 mx-auto mt-16">
-        <OurProducts></OurProducts>
+        <OurProducts showWishlist={false}></OurProducts>
       </div>
-    </>
+    </div>
   );
 };
 

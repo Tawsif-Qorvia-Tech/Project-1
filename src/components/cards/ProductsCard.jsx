@@ -4,7 +4,7 @@ import { FaHeart, FaStar } from 'react-icons/fa';
 import WishList from '../buttons/WishList';
 import Link from 'next/link';
 
-const ProductsCard = ({ product }) => {
+const ProductsCard = ({ product, showWishlist = true }) => {
   const { name, tagline, price, moq, image, rating, isWishlisted } = product;
 
   return (
@@ -14,7 +14,9 @@ const ProductsCard = ({ product }) => {
       <div className="bg-[#F3F5F7] p-3 sm:p-5 pb-3 sm:pb-4 relative">
 
         {/* Wishlist Button */}
-        <WishList isWishlisted={isWishlisted} productId={product._id} />
+        {showWishlist && (
+          <WishList isWishlisted={isWishlisted} productId={product._id} />
+        )}
 
         {/* Product Image */}
         <div className="relative flex items-center justify-center h-36 sm:h-48 mb-3 sm:mb-4">

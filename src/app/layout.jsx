@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${jakarta.className} antialiased bg-white`}
+        className={`${inter.className} ${jakarta.className} antialiased`}
         suppressHydrationWarning={true}
       >
         <header className="sticky top-0 z-50">

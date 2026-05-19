@@ -1,7 +1,7 @@
 import { getProducts } from "@/actions/server/Product";
 import OurProductsWrapper from "./OurProductsWrapper";
 
-const OurProducts = async () => {
+const OurProducts = async ({ showWishlist = true }) => {
   const products = await getProducts();
 
   return (
@@ -11,7 +11,7 @@ const OurProducts = async () => {
           No products found.
         </div>
       ) : (
-        <OurProductsWrapper products={products} />
+        <OurProductsWrapper products={products} showWishlist={showWishlist} />
       )}
     </section>
   );

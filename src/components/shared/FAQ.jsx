@@ -40,7 +40,7 @@ const FAQ = () => {
     const rightColumnFaqs = faqData.slice(3, 6);
 
     return (
-        <section className="w-full max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-12 bg-base-100">
+        <section className="w-full max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-12  bg-[#f5e6f5]">
             {/* Header Area */}
             <div className="text-center space-y-3 mb-10">
                 <span className="text-xs uppercase font-bold tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-md inline-block">
@@ -62,11 +62,11 @@ const FAQ = () => {
                     {leftColumnFaqs.map((faq) => (
                         <div 
                             key={faq.id} 
-                            className="collapse collapse-plus border border-base-200 bg-base-100 rounded-xl shadow-sm transition-all duration-200 hover:border-base-300"
+                            className="collapse collapse-plus border border-base-200  bg-[#f5e6f5] rounded-xl shadow-sm transition-all duration-200 hover:border-base-300"
                         >
                             <input type="checkbox" name={`faq-accordion-${faq.id}`} /> 
                             <div className="collapse-title text-sm sm:text-base font-bold text-[#232323] pr-12 flex items-center gap-2.5">
-                                <FaQuestionCircle className="text-primary text-xs flex-shrink-0" />
+
                                 <span>{faq.question}</span>
                             </div>
                             <div className="collapse-content text-sm text-[#444444] leading-relaxed pl-9">
@@ -81,11 +81,11 @@ const FAQ = () => {
                     {rightColumnFaqs.map((faq) => (
                         <div 
                             key={faq.id} 
-                            className="collapse collapse-plus border border-base-200 bg-base-100 rounded-xl shadow-sm transition-all duration-200 hover:border-base-300"
+                            className="collapse collapse-plus border border-base-200  bg-[#f5e6f5] rounded-xl shadow-sm transition-all duration-200 hover:border-base-300"
                         >
                             <input type="checkbox" name={`faq-accordion-${faq.id}`} /> 
                             <div className="collapse-title text-sm sm:text-base font-bold text-[#232323] pr-12 flex items-center gap-2.5">
-                                <FaQuestionCircle className="text-primary text-xs flex-shrink-0" />
+
                                 <span>{faq.question}</span>
                             </div>
                             <div className="collapse-content text-sm text-[#444444] leading-relaxed pl-9">

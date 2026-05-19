@@ -2,7 +2,7 @@ import React from 'react';
 
 const CTA = () => {
     return (
-        <section className="w-full bg-[#f5e6f5] py-20 px-6 md:px-12 border-t border-base-300 mt-20 rounded-2xl">
+        <section className="w-full bg-[#f5e6f5] py-20 px-6 md:px-12 border-t border-base-300 my-20 rounded-2xl">
             <div className="max-w-5xl mx-auto text-center space-y-8">
                 {/* Strong headline focusing on health and outcomes */}
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-[#232323] leading-tight">
