@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import { BsWhatsapp } from "react-icons/bs";
 import { FaChevronLeft } from "react-icons/fa";
@@ -9,8 +8,7 @@ const Chat = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="relative inline-flex flex-col items-end">
-
+    <div className="hidden md:inline-flex relative flex-col items-end">
       {/* Popup Box */}
       <div
         className="overflow-hidden transition-all rounded-3xl duration-300 ease-in-out"
@@ -24,24 +22,16 @@ const Chat = () => {
       >
         <div
           className="flex flex-col items-center gap-4 py-4"
-          style={{
-            background: "#f5e6f5",
-            // width: "90px",
-          }}
+          style={{ background: "#f5e6f5" }}
         >
-
           {/* WhatsApp Button */}
           <button
-            aria-label={open ? "Close menu" : "Open chat options"}
-            onClick={() => setOpen((prev) => !prev)}
-            onTouchStart={(e) => {
-              e.preventDefault();
-              setOpen((prev) => !prev);
-            }}
+            aria-label="Chat on WhatsApp"
             className="relative flex items-center justify-center w-15 h-15 rounded-3xl shadow-2xl transition-transform duration-200 hover:scale-110 active:scale-95 touch-manipulation"
             style={{
               background: "#c0186c",
-              transition: "background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease",
+              transition:
+                "background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease",
             }}
           >
             <BsWhatsapp className="text-white" size={25} />
@@ -52,8 +42,7 @@ const Chat = () => {
             aria-label="Call us"
             className="flex items-center justify-center w-14 h-14 rounded-full transition-transform duration-150 hover:scale-110 active:scale-95"
             style={{
-              background:
-                "linear-gradient(145deg, #4f8ef7 0%, #2563eb 100%)",
+              background: "linear-gradient(145deg, #4f8ef7 0%, #2563eb 100%)",
               boxShadow: "0 4px 12px rgba(79, 142, 247, 0.4)",
             }}
           >
@@ -70,7 +59,8 @@ const Chat = () => {
           className="relative flex items-center justify-center w-15 h-15 rounded-3xl shadow-2xl transition-transform duration-200 hover:scale-110 active:scale-95 touch-manipulation"
           style={{
             background: "#c0186c",
-            transition: "background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease",
+            transition:
+              "background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease",
           }}
         >
           <span
@@ -80,7 +70,6 @@ const Chat = () => {
                 "radial-gradient(ellipse at 38% 30%, rgba(255,255,255,0.18) 0%, transparent 70%)",
             }}
           />
-
           {open ? (
             <FiX className="text-white drop-shadow-md" size={38} />
           ) : (

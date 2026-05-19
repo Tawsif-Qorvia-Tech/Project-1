@@ -36,7 +36,7 @@ const About = () => {
           href="/about-us"
           className="bg-primary text-white flex items-center justify-center gap-3 rounded-[22.4px] py-[5.6px] pl-[16.8px] pr-[5.6px] w-max"
         >
-          <h1 className="text-base lg:text-[18px] font-light">Learn More About Us</h1>
+          <h2 className="text-base lg:text-[18px] font-light">Learn More About Us</h2>
           <div className="bg-white text-primary flex items-center justify-center rounded-full aspect-square h-full p-1">
             <MdOutlineArrowRightAlt size={28} />
           </div>

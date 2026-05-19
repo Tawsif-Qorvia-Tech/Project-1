@@ -28,9 +28,9 @@ export default function Home() {
         <Farmers></Farmers>
       </div>
 
-      <div>
+      
         <CTA></CTA>
-      </div>
+      
     </div>
   );
 }
