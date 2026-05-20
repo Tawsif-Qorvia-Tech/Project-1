@@ -38,6 +38,7 @@ export default function RootLayout({ children }) {
             <Navbar></Navbar>
           </div>
         </header>
+        
         <main className="py-2 min-h-[calc(100vh-302px)]">{children}</main>
 
         <footer className="w-full">
