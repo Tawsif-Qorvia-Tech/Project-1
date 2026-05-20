@@ -62,7 +62,7 @@ const FAQ = () => {
                     {leftColumnFaqs.map((faq) => (
                         <div 
                             key={faq.id} 
-                            className="collapse collapse-plus border border-base-200  bg-[#f5e6f5] rounded-xl shadow-sm transition-all duration-200 hover:border-base-300"
+                            className="collapse collapse-plus  bg-[#f5e6f5] rounded-xl transition-all duration-200 hover:border-base-300"
                         >
                             <input type="checkbox" name={`faq-accordion-${faq.id}`} /> 
                             <div className="collapse-title text-sm sm:text-base font-bold text-[#232323] pr-12 flex items-center gap-2.5">
@@ -81,7 +81,7 @@ const FAQ = () => {
                     {rightColumnFaqs.map((faq) => (
                         <div 
                             key={faq.id} 
-                            className="collapse collapse-plus border border-base-200  bg-[#f5e6f5] rounded-xl shadow-sm transition-all duration-200 hover:border-base-300"
+                            className="collapse collapse-plus bg-[#f5e6f5] rounded-xl transition-all duration-200 hover:border-base-300"
                         >
                             <input type="checkbox" name={`faq-accordion-${faq.id}`} /> 
                             <div className="collapse-title text-sm sm:text-base font-bold text-[#232323] pr-12 flex items-center gap-2.5">

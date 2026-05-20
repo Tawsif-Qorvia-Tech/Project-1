@@ -21,7 +21,7 @@ const OurProductsWrapper = ({ products }) => {
 
       <Link
         href="/our-products"
-        className="bg-primary text-white w-fit flex justify-center items-center gap-2 sm:gap-3 rounded-[22.4px] py-[5.6px] pl-3 sm:pl-[16.8px] pr-[5.6px] mx-auto mt-8"
+        className="bg-primary text-white w-fit flex justify-center items-center gap-2 sm:gap-3 rounded-[22.4px] py-[5.6px] pl-3 sm:pl-[16.8px] pr-[5.6px] mx-auto mt-14"
       >
         <div>
           <h2 className="text-[16px] sm:text-[18px] font-light pl-2 sm:pl-4">
