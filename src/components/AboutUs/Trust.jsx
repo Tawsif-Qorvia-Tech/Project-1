@@ -50,7 +50,7 @@ const Trust = () => {
           <div className="flex flex-col w-full">
             {trustPoints.map((point, index) => (
               <div key={index} className="border-b-2 border-gray-300 last:border-b-0">
-                <div className="flex items-start gap-4 py-6 text-left">
+                <div className="flex items-start gap-4 sm:gap-4 py-6 text-left">
                   {/* Check icon wrapper */}
                   <div className="mt-0.5 shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
                     <svg

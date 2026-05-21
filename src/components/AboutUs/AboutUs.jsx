@@ -25,7 +25,7 @@ const AboutUs = () => {
 
         {/* Header - Stays centered, scales beautifully up to lg screens */}
         <h1 
-          className="text-white text-[35px] sm:text-4xl md:text-5xl lg:text-[72px] xl:text-[82px] font-semibold mb-3 sm:mb-4 md:mb-6 w-full max-w-full md:max-w-4xl lg:max-w-6xl md:text-center"
+          className="text-white text-[37px] sm:text-4xl md:text-5xl lg:text-[72px] xl:text-[82px] font-semibold mb-3 sm:mb-4 md:mb-6 w-full max-w-full md:max-w-4xl lg:max-w-6xl md:text-center"
           style={{ fontFamily: "'inter', serif" }}
         >
           Dedicated to Animal <br className="hidden md:block" />

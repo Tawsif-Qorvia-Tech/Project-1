@@ -19,7 +19,7 @@ const Footer = () => {
               height={70}
               className="rounded-full sm:w-[70px] sm:h-[70px]"
             />
-            <p className="text-[15px] sm:text-[17px] font-light text-[#CFCFCF] leading-relaxed">
+            <p className="text-[16px] sm:text-[17px] font-light text-[#CFCFCF] leading-relaxed">
               Together for healthier poultry, <br className="hidden md:block" />
               stronger farming.
             </p>
@@ -44,7 +44,7 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div className="flex flex-col gap-2 sm:gap-3">
-              <h3 className="text-[16px] sm:text-[18px] font-semibold mb-1 sm:mb-2">
+              <h3 className="text-[18px] sm:text-[18px] font-semibold mb-1 sm:mb-2">
                 Quick Links
               </h3>
               {[
@@ -57,7 +57,7 @@ const Footer = () => {
                 <Link
                   key={label}
                   href={href}
-                  className="text-[14px] sm:text-[16px] text-white hover:text-white transition"
+                  className="text-[16px] sm:text-[16px] text-white hover:text-white transition"
                 >
                   {label}
                 </Link>
@@ -66,7 +66,7 @@ const Footer = () => {
 
             {/* Help */}
             <div className="flex flex-col gap-2 sm:gap-3">
-              <h3 className="text-[16px] sm:text-[18px] font-semibold mb-1 sm:mb-2">
+              <h3 className="text-[18px] sm:text-[18px] font-semibold mb-1 sm:mb-2">
                 Help
               </h3>
               {[
@@ -79,7 +79,7 @@ const Footer = () => {
                 <Link
                   key={link}
                   href="#"
-                  className="text-[14px] sm:text-[16px] text-white hover:text-white transition"
+                  className="text-[16px] sm:text-[16px] text-white hover:text-white transition"
                 >
                   {link}
                 </Link>
@@ -88,10 +88,10 @@ const Footer = () => {
 
             {/* Newsletter */}
             <div className="col-span-2 sm:col-span-1 flex flex-col gap-3 sm:gap-4">
-              <h3 className="text-[16px] sm:text-[18px] font-semibold">
+              <h3 className="text-[18px] sm:text-[18px] font-semibold">
                 Subscribe Our Newsletter
               </h3>
-              <p className="text-[14px] sm:text-[16px] text-white leading-relaxed">
+              <p className="text-[16px] sm:text-[16px] text-white leading-relaxed">
                 Subscribe for exclusive news, training tips, and event updates!
               </p>
               <div className="flex items-center bg-white rounded-full border border-gray-200 pr-1 py-2 w-full mt-5 md:ml-0">

@@ -38,9 +38,9 @@ const TopSeller = ({ products = [] }) => {
   const barLeftPercent = (activeIndex / maxIndex) * 100;
 
   return (
-    <section className="w-full px-4 sm:px-8 py-10">
+    <section id="topseller" className="w-full px-4 sm:px-8 py-10">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-        <h2 className="text-5xl sm:text-[78px] font-bold text-[#1a1a1a] tracking-tight leading-tight select-none">
+        <h2 className="text-5xl md:text-[72px] font-bold text-[#1a1a1a] tracking-tight leading-tight select-none">
           Our Top-Selling Products
         </h2>
 

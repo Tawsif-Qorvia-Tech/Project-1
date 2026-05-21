@@ -57,7 +57,7 @@ const Navbar = () => {
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="navbar bg-white px-2 xs:px-3 sm:px-8 lg:px-24 pb-2 pt-3 sm:pt-5 rounded-xl sm:rounded-2xl relative z-50">
+      <div className="navbar bg-white px-2 xs:px-3 sm:px-8 lg:px-24 pb-2 mb-2 pt-3 sm:pt-5 rounded-xl sm:rounded-2xl relative z-50">
         <div className="navbar-start">
           <Logo />
         </div>
@@ -87,7 +87,7 @@ const Navbar = () => {
               </svg>
             </div>
             <ul
-              tabIndex="-1"
+              tabIndex="-1" 
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-44 sm:w-52 p-2 shadow right-0"
             >
               {nav}

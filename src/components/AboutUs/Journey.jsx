@@ -63,7 +63,7 @@ const BottomArrow = () => (
 );
 
 const VerticalArrow = () => (
-  <div className="h-12 flex items-center justify-center my-2">
+  <div className="h-11 flex items-center justify-center my-2">
     <svg
       viewBox="0 0 60 80"
       fill="none"
@@ -85,12 +85,12 @@ const VerticalArrow = () => (
 const Journey = () => {
   return (
     <div className="w-full flex flex-col items-center py-16 md:py-24 px-4 sm:px-8 lg:px-24">
-      <h2 className="text-5xl md:text-[80px] font-semibold text-gray-900 mb-5 md:mb-20 text-center">
+      <h2 className="text-5xl md:text-[80px] font-semibold text-gray-900 mb-7 md:mb-20 text-center">
         Our Journey
       </h2>
 
       {/* Desktop: horizontal row */}
-      <div className="hidden md:flex items-start justify-center relative gap-4">
+      <div className="hidden md:flex items-start justify-center relative gap-7">
         {journeyData.map((item, index) => (
           <div
             key={index}

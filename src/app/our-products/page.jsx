@@ -10,7 +10,7 @@ const page = async () => {
     const products = await getProducts();
     return (
         <>
-        <div className='w-full px-6'>
+        <div className='w-full px-2 xl:px-6'>
             <AboutUs></AboutUs>
         </div>
         <div  className="w-11/12 mx-auto">

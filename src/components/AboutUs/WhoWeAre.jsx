@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const WhoWeAre = () => {
   return (
-    <div className="w-full flex flex-col md:flex-row items-center gap-10 md:gap-16 py-16 md:py-36 px-4 sm:px-8 lg:px-24">
+    <div className="w-full flex flex-col md:flex-row items-center gap-10 md:gap-16 py-5 md:py-36 px-4 sm:px-8 lg:px-24">
       {/* Left: Text */}
       <div className="flex-1 flex flex-col items-start">
         <h2 className="text-5xl md:text-7xl font-semibold text-gray-900 mb-6">

@@ -44,9 +44,9 @@ const FAQ = () => {
             {/* Header Area */}
             <div className="text-center space-y-3 mb-10">
                 <span className="text-xs uppercase font-bold tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-md inline-block">
-                    Support Matrix
+                    FAQs
                 </span>
-                <h2 className="text-2xl sm:text-4xl font-bold text-[#232323] tracking-tight">
+                <h2 className="text-4xl sm:text-4xl font-bold text-[#232323] tracking-tight">
                     Frequently Asked Questions
                 </h2>
                 <p className="max-w-2xl mx-auto text-sm sm:text-base text-[#444444]">

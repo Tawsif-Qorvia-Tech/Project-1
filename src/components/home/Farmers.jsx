@@ -101,7 +101,7 @@ const Farmers = () => {
       </div>
 
       {/* MATCHING INTERACTIVE HOVER BUTTON */}
-      <div className="flex justify-center mt-8 md:mt-12">
+      <div className="flex justify-center mt-10 md:mt-12">
         <Link
           href="/knowledge-center"
           className="group relative overflow-hidden bg-primary text-white w-fit flex justify-center items-center gap-2 sm:gap-3 rounded-[22.4px] py-[5.6px] pl-3 sm:pl-[10px] pr-[5.6px] border border-primary transition-transform duration-300 active:scale-95 cursor-pointer"
