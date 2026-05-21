@@ -6,18 +6,18 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#232323] text-white pb-5 pt-20">
+    <footer className="bg-[#232323] text-white pb-5 pt-10 md:pt-20">
       <div className="w-11/12 mx-auto py-10 sm:py-14 px-4 sm:px-8">
-        <div className="flex flex-col md:flex-row gap-8 sm:gap-10">
+        <div className="flex flex-col md:flex-row gap-8 sm:gap-1">
 
           {/* LEFT — Logo & Socials */}
           <div className="flex flex-col gap-3 sm:gap-3 md:w-1/3 md:pr-10">
             <Image
               src="/GLogo.png"
               alt="Logo"
-              width={80}
-              height={80}
-              className="rounded-full sm:w-[100px] sm:h-[100px]"
+              width={70}
+              height={70}
+              className="rounded-full sm:w-[70px] sm:h-[70px]"
             />
             <p className="text-[15px] sm:text-[17px] font-light text-[#CFCFCF] leading-relaxed">
               Together for healthier poultry, <br className="hidden md:block" />
@@ -100,7 +100,7 @@ const Footer = () => {
                   placeholder="Enter your email"
                   className="flex-1 bg-transparent text-gray-800 text-[14px] sm:text-[16px] px-3 sm:px-4 outline-none placeholder-gray-400 min-w-0"
                 />
-                <button className="btn btn-primary btn-xs sm:btn-sm rounded-full px-3 py-3 sm:px-4 shrink-0 min-h-7 h-7 sm:min-h-8 sm:h-8 text-[16px]">
+                <button className="btn btn-primary btn-xs sm:btn-sm rounded-full px-4 py-4 sm:px-4 shrink-0 min-h-7 h-7 sm:min-h-8 sm:h-8 text-[16px]">
                   Subscribe
                 </button>
               </div>
