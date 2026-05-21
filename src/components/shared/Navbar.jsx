@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import NavLink from "../buttons/NavLink";
 import Logo from "./Logo";
 import ContactUS from "../buttons/ContactUS";
+import Login from "../buttons/Login";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(true);
@@ -93,6 +94,9 @@ const Navbar = () => {
               {nav}
             </ul>
           </div>
+          <Link href={"/login"} className="rounded-full">
+            <Login></Login>
+          </Link>
           <Link href={"/contact-us"} className="rounded-full hidden lg:block">
             <ContactUS />
           </Link>

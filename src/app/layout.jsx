@@ -1,10 +1,6 @@
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
-import localFont from "next/font/local";
 import "./globals.css";
 import "./swiper-custom.css";
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
-import Chat from "@/components/buttons/Chat";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,7 +11,7 @@ const inter = Inter({
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-jakarta", 
+  variable: "--font-jakarta",
 });
 
 export const metadata = {
@@ -33,20 +29,7 @@ export default function RootLayout({ children }) {
         className={`${inter.className} ${jakarta.className} antialiased`}
         suppressHydrationWarning={true}
       >
-        <header className="sticky top-0 z-50">
-          <div className="w-full">
-            <Navbar></Navbar>
-          </div>
-        </header>
-        <main className="py-2 min-h-[calc(100vh-302px)]">{children}</main>
-
-        <footer className="w-full">
-          <Footer></Footer>
-        </footer>
-
-        <div className="fixed bottom-6 right-2 z-50">
-          <Chat />
-        </div>
+        {children}
       </body>
     </html>
   );
