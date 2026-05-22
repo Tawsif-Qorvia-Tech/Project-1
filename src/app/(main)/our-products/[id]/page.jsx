@@ -1,7 +1,7 @@
 import { getProductById } from "@/actions/server/Product";
-import WishList from "@/components/buttons/WishList";
 import OurProducts from "@/components/home/OurProducts";
 import FAQ from "@/components/shared/FAQ";
+import ProductDetailsClient from "@/components/ProductDetails/ProductDetailsClient";
 import Image from "next/image";
 
 import {
@@ -112,16 +112,7 @@ const ProductDetailsPage = async ({ params }) => {
             </div>
 
             {/* Operational Order Form Execution Controls */}
-            <div className="space-y-4 pt-2">
-              <div className="flex flex-col sm:flex-row gap-3 items-stretch">
-                {/* Native Multiplier Input Frame */}
-
-                {/* Main Transaction Processing Trigger Link */}
-                <button className="btn btn-primary flex-1 shadow-md hover:shadow-lg transition-all text-white font-semibold text-base gap-2 rounded-lg h-auto min-h-[48px]">
-                  <FaShoppingCart className="text-sm" /> Add to Cart
-                </button>
-              </div>
-            </div>
+            <ProductDetailsClient productName={product.name} />
 
             {/* Modular Regulatory Collapsible Information Accents */}
             <div className="space-y-2 pt-4">
