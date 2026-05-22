@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import { verifyAdmin } from '@/actions/server/auth';
+import { signIn } from 'next-auth/react';
 
 const LoginForm = () => {
   const router = useRouter();
@@ -14,13 +14,17 @@ const LoginForm = () => {
     const password = form.password.value;
 
     try {
-      const res = await verifyAdmin(email, password);
+      const res = await signIn('credentials', {
+        email,
+        password,
+        redirect: false,
+      });
 
-      if (res?.success) {
-        alert(`Welcome ${res.user.email} (${res.user.role})`);
+      if (res?.ok) {
+        alert(`Welcome back!`);
         router.push('/dashboard');
       } else {
-        alert(res.message || 'Login failed');
+        alert(res?.error || 'Login failed');
       }
     } catch (err) {
       console.error(err);
@@ -41,7 +45,7 @@ const LoginForm = () => {
         </p>
       </div>
 
-      {/* Main Login Card */}
+  {/* Main Login Card */}
       <div className="card w-full max-w-md shadow-2xl bg-base-100/80 backdrop-blur-md border border-base-content/5 hover:shadow-primary/5 transition-all duration-300">
         <div className="card-body p-8 sm:p-10">
           

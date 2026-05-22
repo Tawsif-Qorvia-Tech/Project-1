@@ -1,6 +1,7 @@
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import "./swiper-custom.css";
+import NextAuthProvider from "@/provider/NextAuthProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,7 +25,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <NextAuthProvider>
+      <html lang="en">
       <body
         className={`${inter.className} ${jakarta.className} antialiased`}
         suppressHydrationWarning={true}
@@ -32,5 +34,6 @@ export default function RootLayout({ children }) {
         {children}
       </body>
     </html>
+    </NextAuthProvider>
   );
 }
