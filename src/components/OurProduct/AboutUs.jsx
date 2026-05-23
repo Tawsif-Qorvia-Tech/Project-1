@@ -16,7 +16,7 @@ const ProductHero = () => {
         src={productBanner}
         alt="Our Products Banner"
         fill
-        className="object-cover object-center"
+        className="object-cover object-center md:object-top w-full h-full"
         priority
       />
       

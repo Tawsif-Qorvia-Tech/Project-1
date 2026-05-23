@@ -16,7 +16,7 @@ const AboutUsBanner = () => {
         alt="About Us Banner"
         fill
         /* 2. RETAINED: Exact About Us center-focused asset placement rules */
-        className="object-cover object-center"
+        className="object-cover object-center md:object-top w-full h-full"
         priority
       />
 

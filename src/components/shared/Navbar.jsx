@@ -49,7 +49,7 @@ const Navbar = () => {
       </li>
 
       <li>
-        <NavLink href={"/specialties"}>Specialties</NavLink>
+        <NavLink href={"/"}>Specialties</NavLink>
       </li>
       <li>
         <NavLink href={"/contact-us"}>Contact Us</NavLink>
@@ -100,7 +100,7 @@ const Navbar = () => {
             </ul>
           </div>
           {user? <LogOut /> : <Link href={"/login"} className="rounded-full">
-            <Login />
+            {/* <Login /> */}
           </Link>}
           <Link href={"/contact-us"} className="rounded-full hidden lg:block">
             <ContactUS />
