@@ -2,6 +2,7 @@ import { getProductById } from "@/actions/server/Product";
 import OurProducts from "@/components/home/OurProducts";
 import FAQ from "@/components/shared/FAQ";
 import CTA from "@/components/home/CTA";
+import immuliv from "@/assets/immuliv.png"
 import ProductDetailsClient from "@/components/ProductDetails/ProductDetailsClient";
 import Image from "next/image";
 
@@ -55,10 +56,7 @@ const ProductDetailsPage = async ({ params }) => {
               {/* Centered Isolated Core Product Graphic */}
               <div className="relative w-full h-full max-h-[390px] aspect-square transition-transform duration-300 hover:scale-105">
                 <Image
-                  src={
-                    product.image?.url ||
-                    "https://placehold.co/600x400?text=No+Image"
-                  }
+                  src={immuliv}
                   alt={product.image?.alt || product.name}
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"

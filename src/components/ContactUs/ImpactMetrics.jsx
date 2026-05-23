@@ -6,7 +6,7 @@ import { IoSend } from "react-icons/io5";
 
 const ContactForm = () => {
   return (
-    <section className="md:pt-20 md:pb-5 px-4 sm:px-8 lg:px-24 w-full max-w-7xl mx-auto">
+    <section className="p-5 md:pt-20 md:pb-5 px-4 sm:px-8 lg:px-24 w-full max-w-7xl mx-auto">
       
       {/* =========================================================================
           PREVIOUS SECTION: Psychological Authority & Social Proof
@@ -14,8 +14,8 @@ const ContactForm = () => {
          ========================================================================= */}
       <div className="pb-12">
         <div className="text-center md:text-left mb-8">
-          <p className="text-s uppercase font-bold tracking-widest text-primary">Enterprise Validation</p>
-          <h3 className="text-2xl font-black text-[#232323] tracking-tight mt-1">Trusted Across the Commercial Poultry Ecosystem</h3>
+          <p className="text-xs uppercase font-bold tracking-widest text-primary">Enterprise Validation</p>
+          <h3 className="text-4xl font-black text-[#232323] tracking-tight mt-1">Trusted Across the Commercial Poultry Ecosystem</h3>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">

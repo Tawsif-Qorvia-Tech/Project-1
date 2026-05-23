@@ -6,6 +6,7 @@ import Trust from "@/components/AboutUs/Trust";
 import Work from "@/components/AboutUs/Work";
 import TopSeller from "@/components/OurProduct/TopSeller";
 import { getProducts } from "@/actions/server/Product";
+import ImpactMetrics from "@/components/ContactUs/ImpactMetrics"
 import CTA from "@/components/home/CTA";
 
 const page = async() => {
@@ -21,9 +22,12 @@ const page = async() => {
       <div>
         <Journey></Journey>
       </div>
-      <div>
+      <div className="my-15">
         <Trust></Trust>
       </div>
+      <div className="w-full">
+        <ImpactMetrics></ImpactMetrics>
+        </div>
       <div className="w-11/12 mx-auto my-10">
         <TopSeller products={products}></TopSeller>
       </div>

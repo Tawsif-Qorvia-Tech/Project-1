@@ -10,13 +10,13 @@ const posts = [
   {
     id: 1,
     image: Farmer2,
-    date: "May 15, 2026",
+    date: "May 20, 2026",
     title: "Top Challenges Poultry Farmers Face – And How to Overcome Them",
   },
   {
     id: 2,
     image: Farmer3,
-    date: "May 06, 2026",
+    date: "May 15, 2026",
     title: "Why Preventive Care Matters in Poultry Farming",
   },
   {
@@ -58,7 +58,7 @@ const Farmers = () => {
             />
           </div>
           <div className="pt-3 sm:pt-4">
-            <p className="text-gray-400 mb-1">Aug 28, 2023</p>
+            <p className="text-gray-400 mb-1">May 23, 2026</p>
             <h3 className="text-[16px] md:text-[22px] font-semibold text-gray-900 leading-snug mb-2">
               The Future of Poultry Healthcare: Innovations in Veterinary
               Medicine

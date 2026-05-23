@@ -19,7 +19,7 @@ const ProductRange = async () => {
       {/* Header Container */}
       <div className="text-center mb-10 sm:mb-14 px-2">
         {/* Adjusted mobile typography from 5xl down to 3xl/4xl so long headings fit cleanly on narrow phone displays */}
-        <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-[72px] font-bold text-[#1a1a1a] tracking-tight leading-tight select-none mb-3">
+        <h2 className="text-5xl xs:text-4xl sm:text-5xl md:text-[72px] font-bold text-[#1a1a1a] tracking-tight leading-tight select-none mb-3">
           Our Product Range
         </h2>
         <p className="text-[#666] text-sm sm:text-[18px] font-light leading-relaxed max-w-3xl mx-auto">
