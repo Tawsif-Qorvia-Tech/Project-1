@@ -7,6 +7,8 @@ export const collections = {
     PRODUCTS: 'products',
     WISHLIST: 'wishlist',
     CART: 'cart',
+    USERS: 'users',
+    LEADS: 'leads',
 };
 
 let client;

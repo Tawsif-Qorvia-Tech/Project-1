@@ -1,10 +1,9 @@
 import { getProductById } from "@/actions/server/Product";
-import WishList from "@/components/buttons/WishList";
 import OurProducts from "@/components/home/OurProducts";
 import FAQ from "@/components/shared/FAQ";
 import CTA from "@/components/home/CTA";
+import ProductDetailsClient from "@/components/ProductDetails/ProductDetailsClient";
 import Image from "next/image";
-import React from "react";
 
 import {
   FaShoppingCart,
@@ -301,7 +300,10 @@ const ProductDetailsPage = async ({ params }) => {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>Excellent performance against hepatic dysfunctions due to toxins, disease & drugs</span>
+                  <span>
+                    Excellent performance against hepatic dysfunctions due to
+                    toxins, disease & drugs
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
@@ -318,7 +320,11 @@ const ProductDetailsPage = async ({ params }) => {
               <ul className="space-y-2.5 text-sm sm:text-base text-[#444444] font-medium">
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>For the prevention & treatment of acute & chronic liver disorders, aflatoxicosis, non specific anorexia, weakness, anemia & stress</span>
+                  <span>
+                    For the prevention & treatment of acute & chronic liver
+                    disorders, aflatoxicosis, non specific anorexia, weakness,
+                    anemia & stress
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
@@ -326,7 +332,10 @@ const ProductDetailsPage = async ({ params }) => {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>To improve feed conversion rate (FCR), egg production, weight gain & hatchability</span>
+                  <span>
+                    To improve feed conversion rate (FCR), egg production,
+                    weight gain & hatchability
+                  </span>
                 </li>
               </ul>
             </section>
@@ -340,19 +349,24 @@ const ProductDetailsPage = async ({ params }) => {
             <div className="bg-[#f5e6f5] rounded-xl border border-base-200 divide-y divide-base-200 overflow-hidden shadow-sm max-w-2xl">
               <div className="flex justify-between items-center p-3.5 sm:px-6 text-sm font-semibold">
                 <span className="text-base-content/70">Chicks</span>
-                <span className="text-[#232323] font-bold">0.5 ml. per liter of drinking water</span>
+                <span className="text-[#232323] font-bold">
+                  0.5 ml. per liter of drinking water
+                </span>
               </div>
               <div className="flex justify-between items-center p-3.5 sm:px-6 text-sm font-semibold">
                 <span className="text-base-content/70">Growers & Broilers</span>
-                <span className="text-[#232323] font-bold">0.5 ml. per liter of drinking water</span>
+                <span className="text-[#232323] font-bold">
+                  0.5 ml. per liter of drinking water
+                </span>
               </div>
               <div className="flex justify-between items-center p-3.5 sm:px-6 text-sm font-semibold">
                 <span className="text-base-content/70">Layers & Breeders</span>
-                <span className="text-[#232323] font-bold">1.0 ml. per liter of drinking water</span>
+                <span className="text-[#232323] font-bold">
+                  1.0 ml. per liter of drinking water
+                </span>
               </div>
             </div>
           </section>
-
         </div>
       </main>
 

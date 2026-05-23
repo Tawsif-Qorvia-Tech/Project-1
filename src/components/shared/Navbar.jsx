@@ -6,6 +6,9 @@ import { useState, useEffect, useRef } from "react";
 import NavLink from "../buttons/NavLink";
 import Logo from "./Logo";
 import ContactUS from "../buttons/ContactUS";
+import Login from "../buttons/Login";
+import { useSession } from "next-auth/react";
+import LogOut from "../buttons/LogOut";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(true);
@@ -29,6 +32,9 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const session = useSession();
+  const user = session?.data?.user;
 
   const nav = (
     <>
@@ -93,6 +99,9 @@ const Navbar = () => {
               {nav}
             </ul>
           </div>
+          {user? <LogOut /> : <Link href={"/login"} className="rounded-full">
+            <Login />
+          </Link>}
           <Link href={"/contact-us"} className="rounded-full hidden lg:block">
             <ContactUS />
           </Link>
