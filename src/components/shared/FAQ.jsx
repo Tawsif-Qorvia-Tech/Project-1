@@ -40,13 +40,13 @@ const FAQ = () => {
     const rightColumnFaqs = faqData.slice(3, 6);
 
     return (
-        <section className="w-full max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-12  bg-[#f5e6f5]">
+        <section className="w-full max-w-6xl mx-auto py-20 px-4 sm:px-6 lg:px-12">
             {/* Header Area */}
             <div className="text-center space-y-3 mb-10">
                 <span className="text-xs uppercase font-bold tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-md inline-block">
                     FAQs
                 </span>
-                <h2 className="text-4xl sm:text-4xl font-bold text-[#232323] tracking-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-[#232323] tracking-tight">
                     Frequently Asked Questions
                 </h2>
                 <p className="max-w-2xl mx-auto text-sm sm:text-base text-[#444444]">
@@ -69,8 +69,8 @@ const FAQ = () => {
 
                                 <span>{faq.question}</span>
                             </div>
-                            <div className="collapse-content text-sm text-[#444444] leading-relaxed pl-9">
-                                <p className="pt-1 border-t border-base-100">{faq.answer}</p>
+                            <div className="collapse-content text-sm text-[#444444] leading-relaxed">
+                                <p className="">{faq.answer}</p>
                             </div>
                         </div>
                     ))}
@@ -88,8 +88,8 @@ const FAQ = () => {
 
                                 <span>{faq.question}</span>
                             </div>
-                            <div className="collapse-content text-sm text-[#444444] leading-relaxed pl-9">
-                                <p className="pt-1 border-t border-base-100">{faq.answer}</p>
+                            <div className="collapse-content text-sm text-[#444444] leading-relaxed">
+                                <p className="pt-1">{faq.answer}</p>
                             </div>
                         </div>
                     ))}

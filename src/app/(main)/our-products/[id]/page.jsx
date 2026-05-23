@@ -37,7 +37,7 @@ const ProductDetailsPage = async ({ params }) => {
   }
 
   return (
-    <div className=" bg-[#f5e6f5]">
+    <div className="">
       <main className="min-h-screen py-12 px-4 sm:px-6 lg:px-12 flex flex-col items-center gap-12">
         {/* Main Product Presentation Card Container */}
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center xl:px-12">
@@ -211,7 +211,7 @@ const ProductDetailsPage = async ({ params }) => {
         <div className="max-w-3xl w-full pt-12 space-y-15 md:space-y-20">
 
           {/* Section 1: Why Supplement Framework */}
-          <section className="bg-[#f5e6f5] rounded-2xl">
+          <section className="rounded-2xl">
             <h2 className="text-2xl sm:text-[40px] font-bold text-[#232323] flex items-center gap-2.5 mb-3 uppercase tracking-tight">
               Why Supplement ImuLiv ?
             </h2>
@@ -346,7 +346,7 @@ const ProductDetailsPage = async ({ params }) => {
             <h2 className="text-2xl sm:text-[40px] font-bold text-[#232323] flex items-center gap-2.5 uppercase tracking-tight">
               Inclusion Rate
             </h2>
-            <div className="bg-[#f5e6f5] rounded-xl border border-base-200 divide-y divide-base-200 overflow-hidden shadow-sm max-w-2xl">
+            <div className="rounded-xl border border-base-200 divide-y divide-base-200 overflow-hidden shadow-sm max-w-2xl">
               <div className="flex justify-between items-center p-3.5 sm:px-6 text-sm font-semibold">
                 <span className="text-base-content/70">Chicks</span>
                 <span className="text-[#232323] font-bold">

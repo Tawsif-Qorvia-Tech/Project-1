@@ -6,7 +6,7 @@ import { IoSend } from "react-icons/io5";
 
 const ContactForm = () => {
   return (
-    <section className="md:pt-15 md:pb-25 px-4 sm:px-8 lg:px-24 w-full max-w-7xl mx-auto">
+    <section className="md:pt-15 pb-20 px-4 sm:px-8 lg:px-24 w-full max-w-7xl mx-auto">
       {/* =========================================================================
           MAIN CONTACT & ENTRY SECTION
          ========================================================================= */}

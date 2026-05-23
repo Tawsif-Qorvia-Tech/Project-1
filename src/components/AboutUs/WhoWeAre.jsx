@@ -19,7 +19,7 @@ const WhoWeAre = () => {
           and quality, our goal is to support farmers by ensuring healthier
           animals and more productive farms.
         </p>
-        <p className="text-[#444444] text-sm md:text-[18px] font-light leading-relaxed mb-4">
+        <p className="text-[#444444] text-sm md:text-[18px] font-light leading-relaxed mb-5">
           Our products are developed under strict quality standards to meet the
           needs of veterinarians and livestock owners across the region
         </p>
