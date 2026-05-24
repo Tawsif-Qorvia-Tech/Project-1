@@ -1,9 +1,9 @@
-import Sidebar from '@/components/shared/Sidebar';
-import React from 'react';
+import Sidebar from "@/components/shared/Sidebar";
+import React from "react";
 
 const layout = ({ children }) => {
-    return (
-         <div>
+  return (
+    <div>
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
@@ -46,7 +46,7 @@ const layout = ({ children }) => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default layout;

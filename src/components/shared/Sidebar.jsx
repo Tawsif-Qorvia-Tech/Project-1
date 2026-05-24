@@ -10,11 +10,14 @@ import { IoHomeOutline } from "react-icons/io5";
 import { AiOutlineProduct } from "react-icons/ai";
 import { MdOutlineAttachMoney } from "react-icons/md";
 import { PiMoneyWavy } from "react-icons/pi";
+import { useSession } from "next-auth/react";
 
 const Sidebar = () => {
      const pathname = usePathname();
+     const session = useSession();
+     const userRole = session?.data?.user?.role;
   return (
-    <div className="flex min-h-full flex-col items-start bg-[#f5e6f5] is-drawer-close:w-14 is-drawer-open:w-64">
+    <div className="flex min-h-full flex-col items-start bg-white is-drawer-close:w-14 is-drawer-open:w-64">
       <ul className="menu w-full grow">
         <li>
           <Link
@@ -57,7 +60,8 @@ const Sidebar = () => {
             <span className="is-drawer-close:hidden">Products Management</span>
           </Link>
 
-          <Link
+          
+            {userRole === "admin" && <><Link
             className={`is-drawer-close:tooltip is-drawer-close:tooltip-right ${
               pathname === "/dashboard/users-management"
                 ? "bg-primary text-primary-content"
@@ -71,7 +75,9 @@ const Sidebar = () => {
               className="my-1.5 inline-block size-4"
             />
             <span className="is-drawer-close:hidden">Users Management</span>
-          </Link>
+          </Link></>}
+
+
           <Link
             className={`is-drawer-close:tooltip is-drawer-close:tooltip-right ${
               pathname === "/dashboard/myProfile"
