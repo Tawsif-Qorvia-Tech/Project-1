@@ -1,8 +1,28 @@
-import AddNewProduct from '@/components/buttons/AddNewProduct';
-import React from 'react';
+
+"use client";
+
+import AddNewProduct from '@/components/buttons/products/AddNewProduct';
+import DeleteProduct from '@/components/buttons/products/DeleteProduct';
+import { getProducts } from '@/actions/server/Product';
+import React, { useState, useEffect } from 'react';
 import { GoPlus } from 'react-icons/go';
 
-const ProductManagement = ({ products = [] }) => {
+const ProductManagement = ({ products: initialProducts = [] }) => {
+    const [products, setProducts] = useState(initialProducts);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const refreshProducts = async () => {
+        setIsLoading(true);
+        try {
+            const updatedProducts = await getProducts();
+            setProducts(updatedProducts);
+        } catch (error) {
+            console.error('Error refreshing products:', error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     return (
          <div className="p-6">
       <div className="mb-6 flex items-center justify-between">
@@ -10,7 +30,7 @@ const ProductManagement = ({ products = [] }) => {
             <h1 className="text-3xl font-bold text-primary mb-2">All Products</h1>
         <p className="text-sm text-gray-600">Manage and track all products</p>
         </div>
-        <AddNewProduct />
+        <AddNewProduct onSuccess={refreshProducts} />
       </div>
       
       {products.length === 0 ? (
@@ -40,13 +60,13 @@ const ProductManagement = ({ products = [] }) => {
                   >
                     <th className="font-medium text-gray-700">{index + 1}</th>
                     <td className="text-gray-800 font-medium">{product.name}</td>
-                    <td className="text-gray-700">৳{product.price}</td>
+                    <td className="text-gray-700">₹{product.price}</td>
                     <td className="text-gray-600">{product.category}</td>
                     <td className="text-gray-600">{product.rating.average.toFixed(1)}</td>
                     <td className="text-gray-600">{new Date(product.createdAt).toLocaleDateString()}</td>
-                    <td>
+                    <td className="flex items-center">
                       <button className="btn btn-md btn-primary mr-2">Edit</button>
-                      <button className="btn btn-md btn-error">Delete</button>
+                      <DeleteProduct productId={product._id} onDeleteSuccess={refreshProducts} />
                     </td>
                   </tr>
                 ))}

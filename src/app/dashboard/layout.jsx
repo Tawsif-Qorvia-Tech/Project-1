@@ -33,7 +33,7 @@ const layout = ({ children }) => {
               Together In Community Dashboard
             </div>
           </nav>
-          <div className="p-4">{children}</div>
+          <div>{children}</div>
         </div>
 
         <div className="drawer-side is-drawer-close:overflow-visible">
