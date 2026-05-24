@@ -93,3 +93,22 @@ export const DeleteUser = async (payload) => {
     return { success: false, message: "database connection failed" };
   }
 };
+
+export const getUserByEmail = async (email) => {
+  try {
+    const collection = await dbConnect(collections.USERS);
+    const user = await collection.findOne({ email });
+    
+    if (!user) {
+      return null;
+    }
+    
+    return {
+      ...user,
+      _id: user._id.toString()
+    };
+  } catch (error) {
+    console.error("Error fetching user:", error);
+    return null;
+  }
+};

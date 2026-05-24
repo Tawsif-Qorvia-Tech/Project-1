@@ -25,8 +25,8 @@ const UserManagement = ({ users: initialUsers = [] }) => {
 
     return (
         <div className="p-6">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
+      <div className="mb-6 flex flex-col md:flex-row items-center justify-between">
+        <div className="mb-4 md:mb-0">
             <h1 className="text-3xl font-bold text-primary mb-2">All Users</h1>
         <p className="text-sm text-gray-600">Manage and track all users</p>
         </div>

@@ -95,12 +95,12 @@ const Sidebar = () => {
 
           <Link
             className={`is-drawer-close:tooltip is-drawer-close:tooltip-right ${
-              pathname === "/dashboard/myProfile"
+              pathname === "/dashboard/my-profile"
                 ? "bg-primary text-primary-content"
                 : ""
             }`}
             data-tip="My Profile"
-            href={"#"}
+            href={"/dashboard/my-profile"}
           >
             <CgProfile
               stroke="currentColor"
