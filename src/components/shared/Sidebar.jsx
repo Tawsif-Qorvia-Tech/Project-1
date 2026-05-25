@@ -8,7 +8,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { HiOutlineUserGroup } from "react-icons/hi";
 import { IoHomeOutline } from "react-icons/io5";
 import { AiOutlineProduct } from "react-icons/ai";
-import { MdOutlineAttachMoney } from "react-icons/md";
+import { MdOutlineAttachMoney, MdOutlineLeaderboard } from "react-icons/md";
 import { PiMoneyWavy } from "react-icons/pi";
 import { useSession } from "next-auth/react";
 
@@ -77,15 +77,30 @@ const Sidebar = () => {
             <span className="is-drawer-close:hidden">Users Management</span>
           </Link></>}
 
+            <Link
+            className={`is-drawer-close:tooltip is-drawer-close:tooltip-right ${
+              pathname === "/dashboard/leads-management"
+                ? "bg-primary text-primary-content"
+                : ""
+            }`}
+            data-tip="Leads Management"
+            href={"/dashboard/leads-management"}
+          >
+            <MdOutlineLeaderboard
+              stroke="currentColor"
+              className="my-1.5 inline-block size-4"
+            ></MdOutlineLeaderboard>
+            <span className="is-drawer-close:hidden">Leads Management</span>
+          </Link>
 
           <Link
             className={`is-drawer-close:tooltip is-drawer-close:tooltip-right ${
-              pathname === "/dashboard/myProfile"
+              pathname === "/dashboard/my-profile"
                 ? "bg-primary text-primary-content"
                 : ""
             }`}
             data-tip="My Profile"
-            href={"#"}
+            href={"/dashboard/my-profile"}
           >
             <CgProfile
               stroke="currentColor"

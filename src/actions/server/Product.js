@@ -36,3 +36,35 @@ export const getProductById = async (id) => {
     return null;
   }
 };
+
+export const DeleteProduct = async (payload) => {
+  try {
+    const { productId } = payload;
+
+    // check payload
+    if (!productId) {
+      return { success: false, message: "productId is required" };
+    }
+
+    // connect to database
+    const productsCollection = await dbConnect(collections.PRODUCTS);
+    
+    // convert string id to MongoDB ObjectId
+    const objectId = new ObjectId(productId);
+
+    // delete product
+    const result = await productsCollection.deleteOne({ _id: objectId });
+    
+    if (result.deletedCount === 1) {
+      return {
+        success: true,
+        message: "Product deleted successfully",
+      };
+    }
+    
+    return { success: false, message: "Product not found" };
+  } catch (error) {
+    console.error('Error deleting product:', error);
+    return { success: false, message: "database connection failed" };
+  }
+};

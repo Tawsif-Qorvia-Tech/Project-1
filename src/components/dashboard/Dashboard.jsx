@@ -1,10 +1,20 @@
+import { getLeads } from "@/actions/server/Leads";
+import { getProducts } from "@/actions/server/Product";
+import { getUsers } from "@/actions/server/User";
 import React from "react";
+import DashboardClient from "./DashboardClient";
 
-const Dashboard = () => {
+const Dashboard = async() => {
+  const leads = await getLeads();
+  const products = await getProducts();
+  const users = await getUsers();
+
   return (
-    <div className="space-y-6">
-      <h1 className="text-3xl font-bold">Recent Leads and Products</h1>
-    </div>
+    <DashboardClient 
+      leads={leads} 
+      products={products} 
+      users={users} 
+    />
   );
 };
 

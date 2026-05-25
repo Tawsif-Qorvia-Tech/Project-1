@@ -25,8 +25,8 @@ const UserManagement = ({ users: initialUsers = [] }) => {
 
     return (
         <div className="p-6">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
+      <div className="mb-6 flex flex-col md:flex-row items-center justify-between">
+        <div className="mb-4 md:mb-0">
             <h1 className="text-3xl font-bold text-primary mb-2">All Users</h1>
         <p className="text-sm text-gray-600">Manage and track all users</p>
         </div>
@@ -64,7 +64,7 @@ const UserManagement = ({ users: initialUsers = [] }) => {
                     <td className="text-gray-700">{user.number || 'N/A'}</td>
                     <td className="text-gray-600">{user.role}</td>
                     <td className="text-gray-600">{new Date(user.createdAt).toLocaleDateString()}</td>
-                    <td className="flex">
+                    <td className="flex items-center">
                       <button className="btn btn-md btn-primary mr-2">Edit</button>
                       <DeleteUser userId={user._id} onDeleteSuccess={refreshUsers} />
                     </td>

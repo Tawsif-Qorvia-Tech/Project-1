@@ -14,7 +14,7 @@ const page = async () => {
     }
 
     return (
-        <div>
+        <div className="bg-[#f5e6f5] min-h-screen">
             <UserManagement users={Users} />
         </div>
     );
