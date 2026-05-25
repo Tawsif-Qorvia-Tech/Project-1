@@ -4,6 +4,8 @@ import CTA from "@/components/home/CTA";
 import Farmers from "@/components/home/Farmers";
 import OurProducts from "@/components/home/OurProducts";
 import Specialist from "@/components/home/Specialist";
+import Categories from "@/components/home/Categories";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Image from "next/image";
 
 export default function Home() {
@@ -12,8 +14,17 @@ export default function Home() {
       <div className="w-full px-2 xl:px-6">
         <Banner />
       </div>
+
+      <div className="w-full px-2 xl:px-6">
+        <Categories />
+      </div>
+      
       <div className="w-full md:w-11/12 mx-auto">
         <About></About>
+      </div>
+
+      <div className="w-full md:w-11/12 mx-auto">
+        <WhyChooseUs></WhyChooseUs>
       </div>
 
       <div className="w-11/12 mx-auto">
@@ -28,8 +39,9 @@ export default function Home() {
         <Farmers></Farmers>
       </div>
 
-      
+      <div className="w-11/12 mx-auto">
         <CTA></CTA>
+      </div>
       
     </div>
   );

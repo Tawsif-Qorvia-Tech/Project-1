@@ -1,126 +1,153 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { MdOutlineArrowRightAlt } from "react-icons/md";
+
+import banner from "@/assets/Banner.webp";
+import banner2 from "@/assets/Banner2.webp";
 import Farmer1 from "@/assets/Farmer1.webp";
 import Farmer2 from "@/assets/Farmer2.webp";
 import Farmer3 from "@/assets/Farmer3.webp";
 import Farmer4 from "@/assets/Farmer4.webp";
-import Link from "next/link";
-import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 const posts = [
   {
     id: 1,
-    image: Farmer2,
-    date: "May 20, 2026",
-    title: "Top Challenges Poultry Farmers Face – And How to Overcome Them",
+    image: Farmer1,
+    date: "May 23, 2026",
+    tag: "Insight",
+    title: "The Future of Poultry Healthcare",
+    excerpt: "New technologies are transforming poultry farming — from advanced vaccines to targeted nutritional solutions.",
+    featured: true,
   },
   {
     id: 2,
-    image: Farmer3,
-    date: "May 15, 2026",
-    title: "Why Preventive Care Matters in Poultry Farming",
+    image: Farmer2,
+    date: "May 20, 2026",
+    tag: "Guide",
+    title: "Top Challenges Poultry Farmers Face",
+    featured: false,
   },
   {
     id: 3,
+    image: Farmer3,
+    date: "May 15, 2026",
+    tag: "Research",
+    title: "Why Preventive Care Matters in Poultry",
+    featured: false,
+  },
+  {
+    id: 4,
     image: Farmer4,
     date: "May 10, 2026",
-    title: "Nutrition First: Boosting Poultry Growth & Immunity Naturally",
+    tag: "Nutrition",
+    title: "Boosting Poultry Growth & Immunity Naturally",
+    featured: false,
   },
 ];
 
+const ArrowButton = ({ href, label, className = "" }) => (
+  <Link
+    href={href}
+    className={`group relative overflow-hidden bg-[#af008c] text-white flex items-center gap-3 rounded-full py-[6px] pl-5 pr-[6px] w-max border border-[#af008c] transition-transform duration-300 active:scale-95 ${className}`}
+  >
+    <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-0 bg-white transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] z-0" />
+    <span className="z-10 text-sm sm:text-base font-semibold text-white group-hover:text-[#af008c] transition-colors duration-300">
+      {label}
+    </span>
+    <div className="bg-white text-[#af008c] flex items-center justify-center rounded-full aspect-square h-8 w-8 z-10 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:scale-110 group-hover:rotate-[-45deg] group-hover:bg-[#af008c] group-hover:text-white">
+      <MdOutlineArrowRightAlt size={22} />
+    </div>
+  </Link>
+);
+
 const Farmers = () => {
+  const featured = posts.find((p) => p.featured);
+  const side     = posts.filter((p) => !p.featured);
+
   return (
-    <section className="pt-20 sm:pt-32 px-4 sm:px-8">
-      {/* Header */}
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 sm:gap-4 mb-5">
-        <h2 className="text-[42px] sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-[#232323] leading-tight">
-          Knowledge for <br className="hidden lg:block" /> Farmers & Vets
-        </h2>
-        <p className="text-[16px] sm:text-[18px] text-[#444444] font-light max-w-xs leading-relaxed">
-          Browse our wide range of veterinary medicines developed to ensure the
-          health and productivity of poultry.
-        </p>
-      </div>
+    <section className="px-4 sm:px-8 md:px-10 pt-20 md:pt-28">
+      <div className="max-w-7xl mx-auto">
 
-      {/* Content Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 max-w-7xl mx-auto items-stretch">
-        
-        {/* Featured Post — Left */}
-        <Link
-          href="#"
-          className="bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-gray-200 p-3 sm:p-4 flex flex-col"
-        >
-          <div className="relative w-full min-h-64 sm:min-h-80 rounded-xl sm:rounded-2xl overflow-hidden">
-            <Image
-              src={Farmer1}
-              alt="Featured farm post"
-              fill
-              className="object-cover object-top"
-            />
-          </div>
-          <div className="pt-3 sm:pt-4">
-            <p className="text-gray-400 mb-1">May 23, 2026</p>
-            <h3 className="text-[16px] md:text-[22px] font-semibold text-gray-900 leading-snug mb-2">
-              The Future of Poultry Healthcare: Innovations in Veterinary
-              Medicine
-            </h3>
-            <p className="text-[16px] sm:text-[18px] font-light text-gray-500 leading-relaxed">
-              New technologies are transforming poultry farming. From advanced
-              vaccines to nutritional solutions, discover what is next for
-              healthier flocks.
-            </p>
-          </div>
-        </Link>
-
-        {/* Side Posts — Right */}
-        <div className="flex flex-col gap-4">
-          {posts.map((post) => (
-            <Link
-              href="#"
-              key={post.id}
-              className="flex gap-3 sm:gap-4 bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-gray-200 p-3 sm:p-4 flex-1"
-            >
-              <div className="relative w-28 sm:w-36 shrink-0 min-h-24 sm:min-h-28 rounded-lg sm:rounded-xl overflow-hidden">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover object-top"
-                />
-              </div>
-              <div className="flex flex-col justify-center py-1">
-                <p className="text-[14px] md:text-[16px] text-[#444444] mb-1">
-                  {post.date}
-                </p>
-                <h4 className="text-[14px] md:text-[16px] font-semibold text-gray-900 leading-snug">
-                  {post.title}
-                </h4>
-              </div>
-            </Link>
-          ))}
+        {/* Clean Header Block */}
+        <div className="mb-10 md:mb-14">
+          <h2 className="text-[#1a1a1a] text-5xl sm:text-5xl lg:text-[3.2rem] font-bold leading-[1.1] tracking-tight">
+            For Farmers <span className="text-[#af008c]">&amp; Vets.</span>
+          </h2>
         </div>
-      </div>
 
-      {/* MATCHING INTERACTIVE HOVER BUTTON */}
-      <div className="flex justify-center mt-10 md:mt-12">
-        <Link
-          href="/knowledge-center"
-          className="group relative overflow-hidden bg-primary text-white w-fit flex justify-center items-center gap-2 sm:gap-3 rounded-[22.4px] py-[5.6px] pl-3 sm:pl-[10px] pr-[5.6px] border border-primary transition-transform duration-300 active:scale-95 cursor-pointer"
-        >
-          {/* Background slide panel */}
-          <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-0 bg-white transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] z-0" />
+        {/* Article Layout Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
 
-          {/* Clean Text Layer */}
-          <div className="pl-3 sm:pl-4 z-10">
-            <span className="inline-block text-[16px] sm:text-[18px] font-medium text-white group-hover:text-primary transition-colors duration-300">
-              Learn More
-            </span>
+          {/* Featured Article Card */}
+          <Link
+            href="#"
+            className="group rounded-2xl overflow-hidden border border-[#e8d0e4] bg-white hover:border-[#af008c]/40 hover:shadow-[0_8px_32px_rgba(175,0,140,0.1)] transition-all duration-300 flex flex-col"
+          >
+            <div className="relative w-full h-52 sm:h-64 overflow-hidden">
+              <Image
+                src={featured.image}
+                alt={featured.title}
+                fill
+                className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              />
+              <span className="absolute top-4 left-4 bg-[#af008c] text-white text-xs font-bold px-3 py-1 rounded-full">
+                {featured.tag}
+              </span>
+            </div>
+            <div className="p-5 sm:p-6 flex flex-col flex-1">
+              <p className="text-[#888] text-xs mb-2">{featured.date}</p>
+              <h3 className="text-[#1a1a1a] text-lg sm:text-xl font-bold leading-snug mb-3 group-hover:text-[#af008c] transition-colors duration-200">
+                {featured.title}
+              </h3>
+              <p className="text-[#555] text-sm font-light leading-relaxed flex-1">
+                {featured.excerpt}
+              </p>
+              <div className="mt-4 flex items-center gap-1 text-[#af008c] text-xs font-bold tracking-wide">
+                Read Article <MdOutlineArrowRightAlt size={15} />
+              </div>
+            </div>
+          </Link>
+
+          {/* Side Articles Column List */}
+          <div className="flex flex-col gap-4">
+            {side.map((post) => (
+              <Link
+                key={post.id}
+                href="#"
+                className="group flex gap-4 rounded-2xl overflow-hidden border border-[#e8d0e4] bg-white hover:border-[#af008c]/40 hover:shadow-[0_4px_16px_rgba(175,0,140,0.08)] transition-all duration-300 p-3 sm:p-4"
+              >
+                <div className="relative w-24 sm:w-32 shrink-0 rounded-xl overflow-hidden self-stretch min-h-[80px]">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex flex-col justify-center py-1 gap-1">
+                  <div className="flex items-center gap-2">
+                    <span className="bg-[#faf5f9] text-[#af008c] text-[10px] font-bold px-2 py-0.5 rounded-full">
+                      {post.tag}
+                    </span>
+                    <p className="text-[#888] text-xs">{post.date}</p>
+                  </div>
+                  <h4 className="text-[#1a1a1a] text-sm sm:text-base font-bold leading-snug group-hover:text-[#af008c] transition-colors duration-200">
+                    {post.title}
+                  </h4>
+                </div>
+              </Link>
+            ))}
           </div>
 
-          {/* Animated Arrow Container */}
-          <div className="bg-white text-primary flex items-center justify-center rounded-full aspect-square h-full p-1 z-10 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:scale-110 group-hover:rotate-[-45deg] group-hover:bg-primary group-hover:text-white">
-            <MdOutlineArrowRightAlt size={28} />
-          </div>
-        </Link>
+        </div>
+
+        {/* Center-aligned CTA button at the bottom of the section */}
+        <div className="mt-12 md:mt-16 flex justify-center w-full">
+          <ArrowButton href="/knowledge-center" label="Browse All Articles" />
+        </div>
+
       </div>
     </section>
   );
