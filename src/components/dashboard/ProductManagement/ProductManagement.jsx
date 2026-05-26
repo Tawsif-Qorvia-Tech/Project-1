@@ -48,8 +48,8 @@ const ProductManagement = ({ products: initialProducts = [] }) => {
                   </th>
                   <th className="text-white font-semibold py-4">Price</th>
                   <th className="text-white font-semibold py-4">Category</th>
-                  <th className="text-white font-semibold py-4">Rating</th>
                   <th className="text-white font-semibold py-4">Created At</th>
+                  <th className="text-white font-semibold py-4">Updated At</th>
                   <th className="text-white font-semibold py-4">Actions</th>
                 </tr>
               </thead>
@@ -66,10 +66,12 @@ const ProductManagement = ({ products: initialProducts = [] }) => {
                     <td className="text-gray-700">₹{product.price}</td>
                     <td className="text-gray-600">{product.category}</td>
                     <td className="text-gray-600">
-                      {product.rating?.average?.toFixed(1) || "0.0"}
+                      {new Date(product.createdAt).toLocaleDateString()}
                     </td>
                     <td className="text-gray-600">
-                      {new Date(product.createdAt).toLocaleDateString()}
+                      {product.updatedAt
+                        ? new Date(product.updatedAt).toLocaleDateString()
+                        : "Not updated yet"}
                     </td>
                     <td className="flex items-center">
                       <button className="btn btn-md btn-primary mr-2">

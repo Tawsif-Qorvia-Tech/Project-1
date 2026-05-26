@@ -5,7 +5,7 @@ import React from 'react';
 const page = async() => {
     const products = await getProducts();
     return (
-        <div className="bg-[#f5e6f5]">
+        <div className="bg-[#f5e6f5] min-h-screen">
             <ProductManagement products={products} />
         </div>
     );

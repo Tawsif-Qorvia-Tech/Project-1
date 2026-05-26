@@ -6,7 +6,7 @@ import Link from "next/link";
 import QuoteModal from "../shared/QuoteModal";
 
 const ProductsCard = ({ product }) => {
-  const { name, tagline, price, moq, image, rating } = product;
+  const { name, tagline, price, moqQuantity, image, rating, moqUnit } = product;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -53,7 +53,7 @@ const ProductsCard = ({ product }) => {
             {name} – {tagline}
           </h3>
           <p className="text-m sm:text-[18px] text-[#444444] font-semibold mb-1">
-            MOQ: {moq.quantity} {moq.unit}
+            MOQ: {moqQuantity} {moqUnit}
           </p>
           <p className="text-m sm:text-[18px] font-bold text-[#232323]">
             ₹{price.toFixed(2)}

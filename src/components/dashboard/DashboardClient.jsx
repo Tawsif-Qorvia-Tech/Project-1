@@ -322,9 +322,6 @@ const DashboardClient = ({ leads = [], products = [], users = [] }) => {
                         Category: {product.category}
                       </p>
                     </div>
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800">
-                      {product.rating?.average.toFixed(1) || "N/A"} ⭐
-                    </span>
                   </div>
                   <p className="text-xs text-gray-500 mt-2">
                     {new Date(product.createdAt).toLocaleDateString()}

@@ -27,7 +27,7 @@ const uploadToImgbb = async (base64Image) => {
   }
 };
 
- // Helper to normalize images to always be [{ url, alt }]
+// Helper to normalize images to always be [{ url, alt }]
 
 const normalizeImages = (images, fallbackAlt = "") => {
   if (!images) return [];
@@ -36,7 +36,7 @@ const normalizeImages = (images, fallbackAlt = "") => {
     return images
       .filter(Boolean)
       .map((img) =>
-        typeof img === "string" ? { url: img, alt: fallbackAlt } : img
+        typeof img === "string" ? { url: img, alt: fallbackAlt } : img,
       );
   }
   return [];
@@ -50,7 +50,6 @@ export const getProducts = async () => {
     return result.map((product) => ({
       ...product,
       _id: product._id.toString(),
-      images: normalizeImages(product.images, product.name),
     }));
   } catch (error) {
     console.error("Error fetching products:", error);
@@ -70,7 +69,6 @@ export const getProductById = async (id) => {
     return {
       ...product,
       _id: product._id.toString(),
-      images: normalizeImages(product.images, product.name),
     };
   } catch (error) {
     console.error("Error fetching single product layout data:", error);
@@ -215,19 +213,24 @@ export const PostProduct = async (payload) => {
     let uploadedImages = [];
     if (images && images.length > 0) {
       try {
-        const base64Data = typeof images[0] === "string" && images[0].includes(",")
-          ? images[0].split(",")[1]
-          : images[0];
+        // Replace with:
+        const base64Data =
+          typeof images[0] === "string" && images[0].includes(",")
+            ? images[0].split(",")[1]
+            : images[0];
 
         if (typeof base64Data !== "string") {
-          console.error("Invalid image format — expected base64 string, got:", typeof base64Data);
+          console.error(
+            "Invalid image format — expected base64 string, got:",
+            typeof base64Data,
+          );
         } else {
           const formData = new FormData();
-          formData.append("image", encodeURIComponent(base64Data));
+          formData.append("image", base64Data);
 
           const response = await fetch(
             `https://api.imgbb.com/1/upload?key=${process.env.IMAGE_HOST_KEY}`,
-            { method: "POST", body: formData }
+            { method: "POST", body: formData },
           );
 
           const data = await response.json();
@@ -265,7 +268,7 @@ export const PostProduct = async (payload) => {
       uniqueFeatures: uniqueFeatures || [],
       indications: indications || [],
       inclusionRates: inclusionRates || [],
-      images: uploadedImages, // always an array of { url, alt }
+      image: uploadedImages[0] || null, // always an array of { url, alt }
       rating: {
         average: 0,
         count: 0,

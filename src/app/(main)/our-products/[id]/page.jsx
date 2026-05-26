@@ -56,7 +56,7 @@ const ProductDetailsPage = async ({ params }) => {
               {/* Centered Isolated Core Product Graphic */}
               <div className="relative w-full h-full max-h-[390px] aspect-square transition-transform duration-300 hover:scale-105">
                 <Image
-                  src={immuliv}
+                  src={product.image?.url || immuliv}
                   alt={product.image?.alt || product.name}
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"
@@ -97,7 +97,7 @@ const ProductDetailsPage = async ({ params }) => {
                   Minimum Order Quantity
                 </p>
                 <p className="text-lg sm:text-xl font-bold text-[#232323] pt-0.5">
-                  {product.moq?.quantity} {product.moq?.unit || "pcs"}
+                  {product.moqQuantity} {product.moqUnit || "pcs"}
                 </p>
               </div>
             </div>
@@ -140,20 +140,13 @@ const ProductDetailsPage = async ({ params }) => {
             <div className="p-3.5 bg-gray-50 rounded-xl border border-gray-100 text-xs text-[#444444] leading-relaxed">
               <div className="font-bold uppercase tracking-wider text-[#232323] flex items-center gap-1.5 mb-1.5">
                 <FaCheckCircle className="text-primary text-[10px]" />{" "}
-                <span className="text-2xl font-bold"> Product Overview & Safety Logistics </span>
+                <span className="text-2xl font-bold">
+                  {" "}
+                  Product Overview & Safety Logistics{" "}
+                </span>
               </div>
               <p className="text-sm sm:text-base font-medium leading-relaxed pt-3">
-                Engineered via strict medical production guidelines for holistic
-                herd management, this production-grade formula features verified
-                clinical ingredients optimized for maximum biosecurity across
-                diverse climates.
-                <span className="font-semibold text-[#232323]">
-                  {" "}
-                  Storage & Safety:
-                </span>{" "}
-                Keep sealed in cool, dry conditions away from direct solar
-                radiation. Always check target verification schedules prior to
-                full-scale farm application.
+                {product.summary}
               </p>
             </div>
           </div>
@@ -161,36 +154,23 @@ const ProductDetailsPage = async ({ params }) => {
 
         {/* ========================================================================= */}
         <div className="max-w-3xl w-full pt-12 space-y-15 md:space-y-20">
-          {/* Section 1: Why Supplement Framework */}
+          {/* Section 1: Why Supplement */}
           <section className="rounded-2xl">
-            <h2 className="text-2xl sm:text-[40px] font-bold text-[#232323] flex items-center gap-2.5 mb-3 uppercase tracking-tight">
-              Why Supplement ImuLiv ?
+            <h2 className="text-2xl sm:text-[40px] font-bold text-[#232323] uppercase tracking-tight mb-3">
+              Why Supplement {product.name}?
             </h2>
             <p className="text-sm sm:text-base font-medium leading-relaxed">
-              The present agricultural trend where numerous toxic chemicals are
-              used in the production of animal foods and with the present demand
-              of numerous drugs to be incorporated in the animal diet and water
-              supply, the liver faces a great threat of{" "}
-              <strong className="text-[#232323]">OVERLOADING</strong> its
-              functions to detoxify the blood.
-              <strong className="text-primary"> IMULIV</strong> is specially
-              formulated to provide substances and nutrients needed by the liver
-              to function properly.
+              {product.whySupplement}
             </p>
           </section>
-
-          {/* Section 2: Nutritional Value Matrix Table */}
-          {/* Container positioned at the absolute bottom row, outside of your layout columns */}
           <section className="space-y-4 w-full mt-10 md:mt-16">
             <h2 className="text-2xl sm:text-[32px] font-bold text-[#232323] flex items-center gap-2.5 uppercase tracking-tight">
-              Nutritional Value of 10 ml.
+              Nutritional Value of {product.nutritionalValueAmount || "10 ml."}
             </h2>
 
             <div className="overflow-x-auto border border-base-200 rounded-xl shadow-sm">
-              {/* Scaled down font size safely using text-xs sm:text-sm */}
               <table className="table w-full text-xs sm:text-sm text-[#444444]">
                 <thead>
-                  {/* Retained your exact background color variables */}
                   <tr className="bg-base-200/60 text-[#232323] border-b border-base-200 text-[11px] sm:text-xs uppercase tracking-wider">
                     <th className="py-3 px-4 font-bold">Nutrient Ingredient</th>
                     <th className="py-3 px-4 font-bold text-right">
@@ -199,143 +179,68 @@ const ProductDetailsPage = async ({ params }) => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-base-200 font-medium">
-                  {/* Retained exact text-right properties and hover states */}
-                  <tr className="hover:bg-base-200/20 transition-colors">
-                    <td className="py-2.5 px-4">Choline Chloride</td>
-                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">
-                      2000 mg.
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-base-200/20 transition-colors">
-                    <td className="py-2.5 px-4">Protein Hydrolysate</td>
-                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">
-                      50 mg.
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-base-200/20 transition-colors">
-                    <td className="py-2.5 px-4">Yeast Extract</td>
-                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">
-                      40 mg.
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-base-200/20 transition-colors">
-                    <td className="py-2.5 px-4">DL-Panthenol</td>
-                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">
-                      2.5 mg.
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-base-200/20 transition-colors">
-                    <td className="py-2.5 px-4">Inositol</td>
-                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">
-                      35 mg.
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-base-200/20 transition-colors">
-                    <td className="py-2.5 px-4">Niacin</td>
-                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">
-                      24 mg.
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-base-200/20 transition-colors">
-                    <td className="py-2.5 px-4 flex flex-col sm:flex-row sm:items-center gap-1">
-                      <span>Vitamin B₁₂</span>
-                      <span className="text-[11px] sm:text-xs text-base-content/50 font-normal">
-                        (equivalent to Vitamin B₁₂ available from 0.55 ml. of
-                        liver extract 1:30)
-                      </span>
-                    </td>
-                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold whitespace-nowrap">
-                      3.3 mcg.
-                    </td>
-                  </tr>
+                  {product.nutritionalValues?.map((item, index) => (
+                    <tr
+                      key={index}
+                      className="hover:bg-base-200/20 transition-colors"
+                    >
+                      <td className="py-2.5 px-4">{item.ingredient}</td>
+                      <td className="py-2.5 px-4 text-right text-[#232323] font-bold">
+                        {item.concentration}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
           </section>
 
           {/* Grid Layout Container for remaining actionable bullet points */}
-          <div className="grid grid-cols-1 gap-15">
-            {/* Section 3: Unique Features Bullet Panel */}
-            <section className="space-y-4">
-              <h2 className="text-2xl sm:text-[40px] font-bold text-[#232323] flex items-center gap-2.5 uppercase tracking-tight">
-                Unique Features
-              </h2>
-              <ul className="space-y-2.5 text-sm sm:text-base text-[#444444] font-medium">
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>Boosts Liver Functions</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>Promotes Growth</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>
-                    Excellent performance against hepatic dysfunctions due to
-                    toxins, disease & drugs
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>Increases production & hatchability</span>
-                </li>
-              </ul>
-            </section>
-
-            {/* Section 4: Indications Diagnostics Bullet Panel */}
-            <section className="space-y-4">
-              <h2 className="text-2xl sm:text-[40px] font-bold text-[#232323] flex items-center gap-2.5 uppercase tracking-tight">
-                Indications
-              </h2>
-              <ul className="space-y-2.5 text-sm sm:text-base text-[#444444] font-medium">
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>
-                    For the prevention & treatment of acute & chronic liver
-                    disorders, aflatoxicosis, non specific anorexia, weakness,
-                    anemia & stress
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>To regulate feed intake & livability</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>
-                    To improve feed conversion rate (FCR), egg production,
-                    weight gain & hatchability
-                  </span>
-                </li>
-              </ul>
-            </section>
-          </div>
-
-          {/* Section 5: Inclusion Rate Calculation Metrics */}
+          {/* Section 3: Unique Features */}
           <section className="space-y-4">
-            <h2 className="text-2xl sm:text-[40px] font-bold text-[#232323] flex items-center gap-2.5 uppercase tracking-tight">
+            <h2 className="text-2xl sm:text-[40px] font-bold text-[#232323] uppercase tracking-tight">
+              Unique Features
+            </h2>
+            <ul className="space-y-2.5 text-sm sm:text-base text-[#444444] font-medium">
+              {product.uniqueFeatures?.map((item, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <span>{item.feature}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* Section 4: Indications */}
+          <section className="space-y-4">
+            <h2 className="text-2xl sm:text-[40px] font-bold text-[#232323] uppercase tracking-tight">
+              Indications
+            </h2>
+            <ul className="space-y-2.5 text-sm sm:text-base text-[#444444] font-medium">
+              {product.indications?.map((item, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <span>{item.indication}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* Section 5: Inclusion Rate */}
+          <section className="space-y-4">
+            <h2 className="text-2xl sm:text-[40px] font-bold text-[#232323] uppercase tracking-tight">
               Inclusion Rate
             </h2>
             <div className="rounded-xl border border-base-200 divide-y divide-base-200 overflow-hidden shadow-sm max-w-2xl">
-              <div className="flex justify-between items-center p-3.5 sm:px-6 text-sm font-semibold">
-                <span className="text-base-content/70">Chicks</span>
-                <span className="text-[#232323] font-bold">
-                  0.5 ml. per liter of drinking water
-                </span>
-              </div>
-              <div className="flex justify-between items-center p-3.5 sm:px-6 text-sm font-semibold">
-                <span className="text-base-content/70">Growers & Broilers</span>
-                <span className="text-[#232323] font-bold">
-                  0.5 ml. per liter of drinking water
-                </span>
-              </div>
-              <div className="flex justify-between items-center p-3.5 sm:px-6 text-sm font-semibold">
-                <span className="text-base-content/70">Layers & Breeders</span>
-                <span className="text-[#232323] font-bold">
-                  1.0 ml. per liter of drinking water
-                </span>
-              </div>
+              {product.inclusionRates?.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex justify-between items-center p-3.5 sm:px-6 text-sm font-semibold"
+                >
+                  <span className="text-base-content/70">{item.livestock}</span>
+                  <span className="text-[#232323] font-bold">{item.rate}</span>
+                </div>
+              ))}
             </div>
           </section>
         </div>
