@@ -2,7 +2,7 @@ import { getProductById } from "@/actions/server/Product";
 import OurProducts from "@/components/home/OurProducts";
 import FAQ from "@/components/shared/FAQ";
 import CTA from "@/components/home/CTA";
-import immuliv from "@/assets/immuliv.png"
+import immuliv from "@/assets/immuliv.png";
 import ProductDetailsClient from "@/components/ProductDetails/ProductDetailsClient";
 import Image from "next/image";
 
@@ -15,7 +15,7 @@ import {
   FaTable,
   FaStar,
   FaStethoscope,
-  FaFlask
+  FaFlask,
 } from "react-icons/fa";
 
 const ProductDetailsPage = async ({ params }) => {
@@ -136,79 +136,46 @@ const ProductDetailsPage = async ({ params }) => {
             {/* Operational Order Form Execution Controls */}
             <ProductDetailsClient productName={product.name} />
 
-            {/* Modular Regulatory Collapsible Information Accents */}
-            <div className="space-y-1">
-
-              {/* Accordion Item 1 */}
-              <div className="collapse collapse-plus rounded-xl">
-                {/* Changed to type="radio" with a shared name tag */}
-                <input type="radio" name="product_accordion" />
-                <div className="collapse-title text-sm font-bold uppercase tracking-wider text-[#232323] flex items-center gap-2">
-                  <FaCheckCircle className="text-primary text-xs" /> Description & Clinical Efficacy
-                </div>
-                <div className="collapse-content text-sm text-[#444444] leading-relaxed">
-                  <p>
-                    Engineered via strict medical production guidelines to
-                    promote holistic herd management health solutions. This
-                    production-grade formula contains verified active clinical
-                    ingredients optimized for maximum biosecurity defense
-                    profiles under diverse agricultural climate spaces.
-                  </p>
-                </div>
+            {/* Modular Regulatory Summary Accent */}
+            <div className="p-3.5 bg-gray-50 rounded-xl border border-gray-100 text-xs text-[#444444] leading-relaxed">
+              <div className="font-bold uppercase tracking-wider text-[#232323] flex items-center gap-1.5 mb-1.5">
+                <FaCheckCircle className="text-primary text-[10px]" />{" "}
+                <span className="text-2xl font-bold"> Product Overview & Safety Logistics </span>
               </div>
-
-              {/* Accordion Item 2 */}
-              <div className="collapse collapse-plus rounded-xl">
-                {/* Changed to type="radio" with a shared name tag */}
-                <input type="radio" name="product_accordion" />
-                <div className="collapse-title text-sm font-bold uppercase tracking-wider text-[#232323] flex items-center gap-2">
-                  <FaShieldAlt className="text-primary text-xs" /> Storage & Farm Safety Logistics
-                </div>
-                <div className="collapse-content text-sm text-[#444444] leading-relaxed">
-                  <p>
-                    Keep sealed in cool, dry climate storage conditions away
-                    from direct solar radiation profiles. Always check target
-                    verification schedules prior to full scale farm-wide
-                    application setups.
-                  </p>
-                </div>
-              </div>
-
-              {/* Accordion Item 3 */}
-              <div className="collapse collapse-plus rounded-xl">
-                {/* Changed to type="radio" with a shared name tag */}
-                <input type="radio" name="product_accordion" />
-                <div className="collapse-title text-sm font-bold uppercase tracking-wider text-[#232323] flex items-center gap-2">
-                  <FaShieldAlt className="text-primary text-xs" /> Storage & Farm Safety Logistics
-                </div>
-                <div className="collapse-content text-sm text-[#444444] leading-relaxed">
-                  <p>
-                    Keep sealed in cool, dry climate storage conditions away
-                    from direct solar radiation profiles. Always check target
-                    verification schedules prior to full scale farm-wide
-                    application setups.
-                  </p>
-                </div>
-              </div>
-
+              <p className="text-sm sm:text-base font-medium leading-relaxed pt-3">
+                Engineered via strict medical production guidelines for holistic
+                herd management, this production-grade formula features verified
+                clinical ingredients optimized for maximum biosecurity across
+                diverse climates.
+                <span className="font-semibold text-[#232323]">
+                  {" "}
+                  Storage & Safety:
+                </span>{" "}
+                Keep sealed in cool, dry conditions away from direct solar
+                radiation. Always check target verification schedules prior to
+                full-scale farm application.
+              </p>
             </div>
-
           </div>
         </div>
 
         {/* ========================================================================= */}
         <div className="max-w-3xl w-full pt-12 space-y-15 md:space-y-20">
-
           {/* Section 1: Why Supplement Framework */}
           <section className="rounded-2xl">
             <h2 className="text-2xl sm:text-[40px] font-bold text-[#232323] flex items-center gap-2.5 mb-3 uppercase tracking-tight">
               Why Supplement ImuLiv ?
             </h2>
             <p className="text-sm sm:text-base font-medium leading-relaxed">
-              The present agricultural trend where numerous toxic chemicals are used in the production of animal foods
-              and with the present demand of numerous drugs to be incorporated in the animal diet and water supply,
-              the liver faces a great threat of <strong className="text-[#232323]">OVERLOADING</strong> its functions to detoxify the blood.
-              <strong className="text-primary"> IMULIV</strong> is specially formulated to provide substances and nutrients needed by the liver to function properly.
+              The present agricultural trend where numerous toxic chemicals are
+              used in the production of animal foods and with the present demand
+              of numerous drugs to be incorporated in the animal diet and water
+              supply, the liver faces a great threat of{" "}
+              <strong className="text-[#232323]">OVERLOADING</strong> its
+              functions to detoxify the blood.
+              <strong className="text-primary"> IMULIV</strong> is specially
+              formulated to provide substances and nutrients needed by the liver
+              to function properly.
             </p>
           </section>
 
@@ -226,53 +193,68 @@ const ProductDetailsPage = async ({ params }) => {
                   {/* Retained your exact background color variables */}
                   <tr className="bg-base-200/60 text-[#232323] border-b border-base-200 text-[11px] sm:text-xs uppercase tracking-wider">
                     <th className="py-3 px-4 font-bold">Nutrient Ingredient</th>
-                    <th className="py-3 px-4 font-bold text-right">Concentration</th>
+                    <th className="py-3 px-4 font-bold text-right">
+                      Concentration
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-base-200 font-medium">
                   {/* Retained exact text-right properties and hover states */}
                   <tr className="hover:bg-base-200/20 transition-colors">
                     <td className="py-2.5 px-4">Choline Chloride</td>
-                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">2000 mg.</td>
+                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">
+                      2000 mg.
+                    </td>
                   </tr>
                   <tr className="hover:bg-base-200/20 transition-colors">
                     <td className="py-2.5 px-4">Protein Hydrolysate</td>
-                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">50 mg.</td>
+                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">
+                      50 mg.
+                    </td>
                   </tr>
                   <tr className="hover:bg-base-200/20 transition-colors">
                     <td className="py-2.5 px-4">Yeast Extract</td>
-                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">40 mg.</td>
+                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">
+                      40 mg.
+                    </td>
                   </tr>
                   <tr className="hover:bg-base-200/20 transition-colors">
                     <td className="py-2.5 px-4">DL-Panthenol</td>
-                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">2.5 mg.</td>
+                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">
+                      2.5 mg.
+                    </td>
                   </tr>
                   <tr className="hover:bg-base-200/20 transition-colors">
                     <td className="py-2.5 px-4">Inositol</td>
-                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">35 mg.</td>
+                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">
+                      35 mg.
+                    </td>
                   </tr>
                   <tr className="hover:bg-base-200/20 transition-colors">
                     <td className="py-2.5 px-4">Niacin</td>
-                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">24 mg.</td>
+                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold">
+                      24 mg.
+                    </td>
                   </tr>
                   <tr className="hover:bg-base-200/20 transition-colors">
                     <td className="py-2.5 px-4 flex flex-col sm:flex-row sm:items-center gap-1">
                       <span>Vitamin B₁₂</span>
                       <span className="text-[11px] sm:text-xs text-base-content/50 font-normal">
-                        (equivalent to Vitamin B₁₂ available from 0.55 ml. of liver extract 1:30)
+                        (equivalent to Vitamin B₁₂ available from 0.55 ml. of
+                        liver extract 1:30)
                       </span>
                     </td>
-                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold whitespace-nowrap">3.3 mcg.</td>
+                    <td className="py-2.5 px-4 text-right text-[#232323] font-bold whitespace-nowrap">
+                      3.3 mcg.
+                    </td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </section>
 
-
           {/* Grid Layout Container for remaining actionable bullet points */}
           <div className="grid grid-cols-1 gap-15">
-
             {/* Section 3: Unique Features Bullet Panel */}
             <section className="space-y-4">
               <h2 className="text-2xl sm:text-[40px] font-bold text-[#232323] flex items-center gap-2.5 uppercase tracking-tight">
