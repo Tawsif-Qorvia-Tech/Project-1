@@ -66,7 +66,7 @@ const ProductManagement = ({ products: initialProducts = [] }) => {
                     <td className="text-gray-700">₹{product.price}</td>
                     <td className="text-gray-600">{product.category}</td>
                     <td className="text-gray-600">
-                      {product.rating.average.toFixed(1)}
+                      {product.rating?.average?.toFixed(1) || "0.0"}
                     </td>
                     <td className="text-gray-600">
                       {new Date(product.createdAt).toLocaleDateString()}

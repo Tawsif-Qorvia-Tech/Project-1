@@ -3,11 +3,12 @@ import React, { useState } from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { GoPlus } from "react-icons/go";
 import { FaTrashAlt, FaTimes } from "react-icons/fa";
+import Swal from "sweetalert2";
+import { PostProduct } from "@/actions/server/Product";
 
 const AddNewProduct = ({ onSuccess }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [message, setMessage] = useState({ type: '', text: '' });
   const [images, setImages] = useState([]);
 
   // Initialize React Hook Form
@@ -65,7 +66,6 @@ const AddNewProduct = ({ onSuccess }) => {
       inclusionRates: [{ livestock: "", rate: "" }],
     });
     setImages([]);
-    setMessage({ type: '', text: '' });
     setIsModalOpen(true);
   };
 
@@ -94,28 +94,45 @@ const AddNewProduct = ({ onSuccess }) => {
   // Handle Form Submission
   const onSubmit = async (data) => {
     setIsLoading(true);
-    setMessage({ type: '', text: '' });
 
     try {
-      const formData = {
-        ...data,
-        images: images,
+     const formData = {
+      ...data,
+      images: images.map((img) => img.src),
       };
-      console.log("Structured Product Form Data Submitted:", formData);
       
-      // Add your API call here
-      // const result = await PostProduct(formData);
+      const result = await PostProduct(formData);
       
-      setMessage({ type: 'success', text: 'Product created successfully!' });
-      reset();
-      setImages([]);
-      setTimeout(() => {
-        closeModal();
-        setMessage({ type: '', text: '' });
-        if (onSuccess) onSuccess();
-      }, 1500);
+      if (result.success) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'Product created successfully!',
+          confirmButtonColor: '#3b82f6',
+          confirmButtonText: 'OK',
+        }).then(() => {
+          reset();
+          setImages([]);
+          closeModal();
+          if (onSuccess) onSuccess();
+        });
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error!',
+          text: result.message || 'Failed to create product',
+          confirmButtonColor: '#ef4444',
+          confirmButtonText: 'Try Again',
+        });
+      }
     } catch (error) {
-      setMessage({ type: 'error', text: 'An error occurred while creating the product' });
+      Swal.fire({
+        icon: 'error',
+        title: 'Error!',
+        text: 'An error occurred while creating the product',
+        confirmButtonColor: '#ef4444',
+        confirmButtonText: 'Try Again',
+      });
       console.error('Error:', error);
     } finally {
       setIsLoading(false);
@@ -168,13 +185,6 @@ const AddNewProduct = ({ onSuccess }) => {
             <form onSubmit={handleSubmit(onSubmit)} className="card-body p-0 max-h-[70vh] overflow-y-auto">
               <fieldset className="fieldset space-y-4" disabled={isLoading}>
                 
-                {/* Success/Error Message */}
-                {message.text && (
-                  <div className={`alert ${message.type === 'success' ? 'alert-success' : 'alert-error'} text-sm`}>
-                    {message.type === 'success' ? '✓' : '✕'} {message.text}
-                  </div>
-                )}
-
                 {/* SEGMENT 1: Core Product Identity */}
                 <div className="space-y-3">
                   <h4 className="text-sm font-semibold text-gray-700">Core Product Information</h4>
