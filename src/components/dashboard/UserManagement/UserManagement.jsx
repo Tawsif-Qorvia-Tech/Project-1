@@ -65,7 +65,6 @@ const UserManagement = ({ users: initialUsers = [] }) => {
                     <td className="text-gray-600">{user.role}</td>
                     <td className="text-gray-600">{new Date(user.createdAt).toLocaleDateString()}</td>
                     <td className="flex items-center">
-                      <button className="btn btn-md btn-primary mr-2">Edit</button>
                       <DeleteUser userId={user._id} onDeleteSuccess={refreshUsers} />
                     </td>
                   </tr>

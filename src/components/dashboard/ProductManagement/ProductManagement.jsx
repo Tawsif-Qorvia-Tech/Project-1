@@ -5,6 +5,7 @@ import DeleteProduct from "@/components/buttons/products/DeleteProduct";
 import { getProducts } from "@/actions/server/Product";
 import React, { useState, useEffect } from "react";
 import { GoPlus } from "react-icons/go";
+import UpdateProduct from "@/components/buttons/products/UpdateProduct";
 
 const ProductManagement = ({ products: initialProducts = [] }) => {
   const [products, setProducts] = useState(initialProducts);
@@ -74,9 +75,7 @@ const ProductManagement = ({ products: initialProducts = [] }) => {
                         : "Not updated yet"}
                     </td>
                     <td className="flex items-center">
-                      <button className="btn btn-md btn-primary mr-2">
-                        Edit
-                      </button>
+                      <UpdateProduct product={product} onSuccess={refreshProducts}></UpdateProduct>
                       <DeleteProduct
                         productId={product._id}
                         onDeleteSuccess={refreshProducts}
