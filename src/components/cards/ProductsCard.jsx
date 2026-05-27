@@ -35,19 +35,6 @@ const ProductsCard = ({ product }) => {
         {/* Bottom white section — info */}
         <div className="bg-white px-3 sm:px-4 pt-2 sm:pt-3 pb-3 sm:pb-4">
           {/* Rating */}
-          <div className="flex items-center gap-0.5 mb-1">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <FaStar
-                key={i}
-                className={
-                  i < Math.round(rating?.average ?? 0)
-                    ? "text-amber-400"
-                    : "text-gray-200"
-                }
-                size={12}
-              />
-            ))}
-          </div>
           {/* Product Info */}
           <h3 className="text-m sm:text-[18px] font-semibold text-[#232323] leading-snug mb-1">
             {name} – {tagline}
