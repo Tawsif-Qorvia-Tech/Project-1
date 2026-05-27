@@ -9,7 +9,6 @@ const Footer = () => {
     <footer className="bg-[#232323] text-white pb-5 pt-10 md:pt-20">
       <div className="w-11/12 mx-auto py-10 sm:py-14 px-4 sm:px-8">
         <div className="flex flex-col md:flex-row gap-8 sm:gap-1">
-
           {/* LEFT — Logo & Socials */}
           <div className="flex flex-col gap-3 sm:gap-3 md:w-1/3 md:pr-10">
             <Image
@@ -24,16 +23,28 @@ const Footer = () => {
               stronger farming.
             </p>
             <div className="flex gap-2 sm:gap-3 mt-7">
-              <a href="#" className="bg-primary rounded-full p-3 sm:p-2.5 hover:opacity-80 transition">
+              <a
+                href="#"
+                className="bg-primary rounded-full p-3 sm:p-2.5 hover:opacity-80 transition"
+              >
                 <FaFacebookF size={20} className="sm:w-4 sm:h-4" />
               </a>
-              <a href="#" className="bg-primary rounded-full p-3 sm:p-2.5 hover:opacity-80 transition">
+              <a
+                href="#"
+                className="bg-primary rounded-full p-3 sm:p-2.5 hover:opacity-80 transition"
+              >
                 <FaInstagram size={20} className="sm:w-4 sm:h-4" />
               </a>
-              <a href="#" className="bg-primary rounded-full p-3 sm:p-2.5 hover:opacity-80 transition">
+              <a
+                href="#"
+                className="bg-primary rounded-full p-3 sm:p-2.5 hover:opacity-80 transition"
+              >
                 <FaXTwitter size={20} className="sm:w-4 sm:h-4" />
               </a>
-              <a href="#" className="bg-primary rounded-full p-3 sm:p-2.5 hover:opacity-80 transition">
+              <a
+                href="#"
+                className="bg-primary rounded-full p-3 sm:p-2.5 hover:opacity-80 transition"
+              >
                 <FaLinkedinIn size={20} className="sm:w-4 sm:h-4" />
               </a>
             </div>
@@ -41,7 +52,6 @@ const Footer = () => {
 
           {/* RIGHT — Links & Newsletter */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-5 flex-1">
-
             {/* Quick Links */}
             <div className="flex flex-col gap-2 sm:gap-3">
               <h3 className="text-[18px] sm:text-[18px] font-semibold mb-1 sm:mb-2">
@@ -65,23 +75,27 @@ const Footer = () => {
             </div>
 
             {/* Help */}
+            {/* Help */}
             <div className="flex flex-col gap-2 sm:gap-3">
               <h3 className="text-[18px] sm:text-[18px] font-semibold mb-1 sm:mb-2">
                 Help
               </h3>
               {[
-                "Help Center",
-                "Trust And Safety",
-                "Privacy Settings",
-                "Privacy Policy",
-                "Terms And Conditions",
-              ].map((link) => (
+                { label: "Help Center", href: "#" },
+                { label: "Trust And Safety", href: "#" },
+                { label: "Privacy Settings", href: "#" },
+                { label: "Privacy Policy", href: "/privacy-policy" },
+                {
+                  label: "Terms And Conditions",
+                  href: "/terms-and-conditions",
+                },
+              ].map(({ label, href }) => (
                 <Link
-                  key={link}
-                  href="#"
+                  key={label}
+                  href={href}
                   className="text-[16px] sm:text-[16px] text-white hover:text-white transition"
                 >
-                  {link}
+                  {label}
                 </Link>
               ))}
             </div>
@@ -105,7 +119,6 @@ const Footer = () => {
                 </button>
               </div>
             </div>
-
           </div>
         </div>
       </div>
