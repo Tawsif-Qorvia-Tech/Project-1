@@ -12,7 +12,7 @@ const ProductsCard = ({ product }) => {
   return (
     <>
       <Link
-        href={`/our-products/${product._id}`}
+        href={`/our-products/${product.slug}`}
         className="relative bg-white rounded-xl sm:rounded-2xl overflow-hidden flex-shrink-0 w-[75vw] sm:w-[45vw] lg:w-[100%] snap-start block"
       >
         {/* Top slate section — image + button */}

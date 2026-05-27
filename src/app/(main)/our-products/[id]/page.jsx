@@ -1,4 +1,4 @@
-import { getProductById } from "@/actions/server/Product";
+import { getProductById, getProductBySlug } from "@/actions/server/Product";
 import OurProducts from "@/components/home/OurProducts";
 import FAQ from "@/components/shared/FAQ";
 import CTA from "@/components/home/CTA";
@@ -22,7 +22,7 @@ const ProductDetailsPage = async ({ params }) => {
   const resolvedParams = await params;
   const id = resolvedParams.id;
 
-  const product = await getProductById(id);
+ const product = await getProductBySlug(id);
 
   if (!product) {
     return (

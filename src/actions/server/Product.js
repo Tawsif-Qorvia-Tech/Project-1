@@ -159,6 +159,7 @@ export const PostProduct = async (payload) => {
         count: 0,
       },
       createdAt: new Date(),
+      slug: slugify(name)
     };
 
     const result = await productsCollection.insertOne(newProduct);
@@ -220,6 +221,7 @@ export const UpdateProduct = async (productId, payload) => {
       indications: indications || [],
       inclusionRates: inclusionRates || [],
       updatedAt: new Date(),
+      slug: slugify(name)
     };
 
     if (images && images.length > 0) {
@@ -267,5 +269,17 @@ export const UpdateProduct = async (productId, payload) => {
   } catch (error) {
     console.error("Error updating product:", error);
     return { success: false, message: "Database connection failed" };
+  }
+};
+
+export const getProductBySlug = async (slug) => {
+  try {
+    const collection = await dbConnect(collections.PRODUCTS);
+    const product = await collection.findOne({ slug });
+    if (!product) return null;
+    return { ...product, _id: product._id.toString() };
+  } catch (error) {
+    console.error("Error fetching product by slug:", error);
+    return null;
   }
 };
