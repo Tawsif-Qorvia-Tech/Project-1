@@ -3,9 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
-
-import banner from "@/assets/Banner.webp";
-import banner2 from "@/assets/Banner2.webp";
 import Farmer1 from "@/assets/Farmer1.webp";
 import Farmer2 from "@/assets/Farmer2.webp";
 import Farmer3 from "@/assets/Farmer3.webp";

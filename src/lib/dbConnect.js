@@ -9,6 +9,7 @@ export const collections = {
     CART: 'cart',
     USERS: 'users',
     LEADS: 'leads',
+    BLOGS: 'blogs',
 };
 
 let client;
