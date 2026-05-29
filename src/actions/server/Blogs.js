@@ -14,3 +14,15 @@ export const getBlogs = async () => {
     return [];
   }
 };
+
+export const getBlogBySlug = async (slug) => {
+  try {
+    const collection = await dbConnect(collections.BLOGS);
+    const blog = await collection.findOne({ slug });
+    if (!blog) return null;
+    return { ...blog, _id: blog._id.toString() };
+  } catch (error) {
+    console.error("Error fetching blog by slug:", error);
+    return null;
+  }
+};
