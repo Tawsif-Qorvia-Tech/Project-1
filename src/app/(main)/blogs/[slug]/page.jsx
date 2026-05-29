@@ -1,208 +1,254 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FiArrowLeft, FiBookmark, FiShare2, FiCalendar, FiClock, FiMail, FiChevronRight } from 'react-icons/fi';
+import { FiArrowLeft, FiCalendar, FiClock, FiShare2, FiChevronRight } from 'react-icons/fi';
 import { getBlogBySlug } from '@/actions/server/Blogs';
 
-
 const Details = async ({ params }) => {
-    const { slug } = params;
+    const { slug } = await params;
     const post = await getBlogBySlug(slug);
 
+    if (!post) {
+        return (
+            <div className="min-h-[70vh] flex flex-col justify-center items-center gap-4">
+                <h2 className="text-2xl font-bold text-base-content">Article Not Found</h2>
+                <Link href="/" className="text-primary hover:underline text-sm">← Back to home</Link>
+            </div>
+        );
+    }
+
     return (
-        <div className="min-h-screen bg-base-200 text-base-content antialiased">
-            
-            {/* Sticky Navigation / Header Actions */}
-            <div className="sticky top-0 z-50 border-b border-base-300 bg-base-100/80 backdrop-blur-md">
-                <div className="navbar max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 justify-between">
-                    <Link href="/farmer" className="btn btn-ghost btn-sm gap-2 normal-case text-base-content/70 hover:text-base-content">
-                        <FiArrowLeft className="text-base" />
-                        <span>Back to insights</span>
+        <div className="min-h-screen bg-white">
+
+            {/* ── TOP NAV BAR ─────────────────────────────────────── */}
+            <div className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
+                <div className="max-w-6xl mx-auto px-4 sm:px-8 h-14 flex items-center justify-between">
+                    <Link
+                        href="/"
+                        className="group flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-[#af008c] transition-colors duration-200"
+                    >
+                        <FiArrowLeft className="transition-transform duration-200 group-hover:-translate-x-1" />
+                        Back to Home
                     </Link>
-                    <div className="flex gap-1">
-                        <button className="btn btn-ghost btn-circle btn-sm text-base-content/60 hover:text-primary" title="Bookmark">
-                            <FiBookmark className="text-lg" />
-                        </button>
-                        <button className="btn btn-ghost btn-circle btn-sm text-base-content/60 hover:text-primary" title="Share Article">
-                            <FiShare2 className="text-lg" />
-                        </button>
+                    <button
+                        className="flex items-center gap-1.5 text-xs font-semibold text-gray-400 hover:text-[#af008c] transition-colors duration-200 uppercase tracking-widest"
+                        title="Share Article"
+                    >
+                        <FiShare2 size={14} />
+                        Share
+                    </button>
+                </div>
+            </div>
+
+            {/* ── HERO ────────────────────────────────────────────── */}
+            <div className="relative w-full h-[55vh] sm:h-[65vh] overflow-hidden">
+                <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    priority
+                    className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+
+                <div className="absolute bottom-0 left-0 right-0 px-4 sm:px-10 pb-10 sm:pb-14 max-w-6xl mx-auto">
+                    <span className="inline-block bg-[#af008c] text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4">
+                        {post.tag}
+                    </span>
+
+                    <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight max-w-3xl mb-5">
+                        {post.title}
+                    </h1>
+
+                    <div className="flex flex-wrap items-center gap-5 text-white/70 text-xs font-medium">
+                        {post.author && (
+                            <div className="flex items-center gap-2.5">
+                                <div className="relative w-8 h-8 rounded-full overflow-hidden ring-2 ring-[#af008c]/60 shrink-0">
+                                    <Image src={post.author.avatar} alt={post.author.name} fill className="object-cover" sizes="32px" />
+                                </div>
+                                <div>
+                                    <p className="text-white font-semibold text-sm leading-none">{post.author.name}</p>
+                                    <p className="text-white/50 text-[11px] mt-0.5">{post.author.role}</p>
+                                </div>
+                            </div>
+                        )}
+                        <span className="hidden sm:block w-px h-4 bg-white/20" />
+                        <div className="flex items-center gap-1.5">
+                            <FiCalendar size={12} />
+                            {post.date}
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                            <FiClock size={12} />
+                            {post.readingTime}
+                        </div>
                     </div>
                 </div>
             </div>
 
-            {/* Main Layout Container */}
-            <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
-                
-                {/* Left Column: Article Body */}
-                <article className="lg:col-span-8 card bg-base-100 border border-base-300 shadow-sm overflow-hidden">
-                    
-                    {/* Hero Context Image via Next.js Image Component */}
-                    <div className="w-full aspect-[2/1] relative bg-base-300">
-                        <Image 
-                            src={post.image} 
-                            alt={post.title} 
-                            fill
-                            sizes="(max-w-7xl) 100vw, 800px"
-                            priority // Speeds up LCP (Largest Contentful Paint) for above-the-fold image
-                            className="object-cover"
-                        />
-                    </div>
+            {/* ── MAIN CONTENT AREA ───────────────────────────────── */}
+            <div className="max-w-6xl mx-auto px-4 sm:px-8 py-12 sm:py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
 
-                    <div className="card-body p-6 sm:p-8 lg:p-10">
-                        {/* Meta Tags */}
-                        <div className="flex items-center gap-2">
-                            <span className="badge badge-primary badge-outline uppercase font-semibold tracking-wider text-xs px-3 py-2.5">
-                                {post.tag}
-                            </span>
-                        </div>
+                {/* LEFT: Article body */}
+                <article className="lg:col-span-8">
 
-                        {/* Title Block */}
-                        <h1 className="card-title text-3xl font-bold tracking-tight text-base-content sm:text-4xl mt-4 leading-tight">
-                            {post.title}
-                        </h1>
-                        
-                        <p className="text-lg text-base-content/70 leading-relaxed max-w-3xl mt-2 grow-0">
-                            {post.excerpt}
-                        </p>
+                    <p className="text-lg sm:text-xl text-gray-600 font-light leading-relaxed border-l-4 border-[#af008c] pl-5 mb-10">
+                        {post.excerpt}
+                    </p>
 
-                        {/* Author & Read Time Metadata Bar */}
-                        <div className="flex flex-wrap items-center gap-6 my-6 border-y border-base-200 py-4 text-sm text-base-content/60">
-                            {post.author && (
-                                <div className="flex items-center gap-3">
-                                    <div className="avatar">
-                                        <div className="w-10 h-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 relative overflow-hidden">
-                                            <Image 
-                                                src={post.author.avatar} 
-                                                alt={post.author.name}
-                                                fill
-                                                sizes="40px"
-                                                className="object-cover"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold text-base-content">{post.author.name}</p>
-                                        <p className="text-xs text-base-content/50">{post.author.role}</p>
-                                    </div>
-                                </div>
-                            )}
-                            <div className="hidden sm:block divider divider-horizontal m-0 h-8 bg-base-300 w-[1px]" />
-                            <div className="flex items-center gap-1.5">
-                                <FiCalendar className="text-base" />
-                                <span>{post.date}</span>
-                            </div>
-                            <div className="hidden sm:block divider divider-horizontal m-0 h-8 bg-base-300 w-[1px]" />
-                            <div className="flex items-center gap-1.5">
-                                <FiClock className="text-base" />
-                                <span>{post.readingTime}</span>
-                            </div>
-                        </div>
+                    <div className="space-y-6 text-[15px] sm:text-base text-gray-700 leading-relaxed font-light">
+                        {post.content && post.content.map((block, index) => {
+                            switch (block.type) {
 
-                        {/* Structured Database Content Renderer */}
-                        <div className="prose prose-slate max-w-none 
-                            prose-headings:text-base-content prose-headings:font-bold
-                            prose-p:leading-relaxed prose-p:text-base-content/80 
-                            prose-strong:text-base-content">
-                            
-                            {post.content && post.content.map((block, index) => {
-                                switch (block.type) {
-                                    case 'heading':
-                                        return (
-                                            <h2 key={index} className="text-2xl mt-8 mb-4">
-                                                {block.text}
-                                            </h2>
-                                        );
-                                    case 'paragraph':
-                                        return (
-                                            <p key={index} className="mb-4">
-                                                {block.text}
-                                            </p>
-                                        );
-                                    case 'blockquote':
-                                        return (
-                                            <blockquote key={index} className="my-6 italic border-l-4 border-primary bg-base-200 p-4 rounded-r-lg text-base-content/70">
-                                                "{block.text}"
-                                            </blockquote>
-                                        );
-                                    case 'takeaways':
-                                        return (
-                                            <div key={index} className="my-8 card bg-base-200 border border-base-300 rounded-xl">
-                                                <div className="card-body p-6">
-                                                    <h3 className="card-title text-lg font-bold text-base-content m-0">{block.title}</h3>
-                                                    <ul className="mt-4 space-y-3 text-sm text-base-content/80 list-none pl-0">
-                                                        {block.items && block.items.map((item, i) => (
-                                                            <li key={i} className="flex items-start gap-2">
-                                                                <FiChevronRight className="text-primary mt-0.5 shrink-0 text-base" />
-                                                                <span>{item}</span>
-                                                            </li>
-                                                        ))}
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        );
-                                    default:
-                                        return null;
-                                }
-                            })}
-                        </div>
+                                case 'heading':
+                                    return (
+                                        <h2 key={index} className="text-xl sm:text-2xl font-bold text-[#1a1a1a] tracking-tight pt-6 pb-1">
+                                            {block.text}
+                                        </h2>
+                                    );
 
-                        {/* Author Profile Footer block */}
-                        {post.author && (
-                            <div className="mt-12 card bg-base-200 border border-base-300 rounded-2xl">
-                                <div className="card-body flex-col sm:flex-row items-center gap-6 p-6 sm:p-8">
-                                    <div className="avatar">
-                                        <div className="w-20 h-20 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 relative overflow-hidden">
-                                            <Image 
-                                                src={post.author.avatar} 
-                                                alt={post.author.name}
-                                                fill
-                                                sizes="80px"
-                                                className="object-cover"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="text-center sm:text-left">
-                                        <h4 className="text-lg font-bold text-base-content">{post.author.name}</h4>
-                                        <p className="text-sm font-medium text-primary">{post.author.role}</p>
-                                        <p className="mt-2 text-sm text-base-content/60 leading-relaxed">
-                                            Expert analysis and technical updates provided directly by industry leaders and specialists.
+                                case 'paragraph':
+                                    return (
+                                        <p key={index} className="leading-[1.85]">
+                                            {block.text}
                                         </p>
-                                    </div>
+                                    );
+
+                                case 'blockquote':
+                                    return (
+                                        <blockquote key={index} className="relative my-8 pl-6 pr-4 py-5 bg-[#faf5f9] rounded-r-xl border-l-4 border-[#af008c]">
+                                            <p className="text-[#3d1a35] italic font-medium leading-relaxed text-[15px]">
+                                                "{block.text}"
+                                            </p>
+                                        </blockquote>
+                                    );
+
+                                case 'takeaways':
+                                    return (
+                                        <div key={index} className="my-10 rounded-2xl border border-[#e8d0e4] bg-[#faf5f9] overflow-hidden">
+                                            <div className="bg-[#af008c] px-6 py-4 flex items-center gap-3">
+                                                <div className="w-2 h-2 rounded-full bg-white/60" />
+                                                <h3 className="text-white font-bold text-sm tracking-wide uppercase">
+                                                    {block.title}
+                                                </h3>
+                                            </div>
+                                            <ul className="px-6 py-5 space-y-3">
+                                                {block.items && block.items.map((item, i) => (
+                                                    <li key={i} className="flex items-start gap-3 text-sm text-[#3d1a35] font-medium">
+                                                        <FiChevronRight className="text-[#af008c] mt-0.5 shrink-0" size={16} />
+                                                        {item}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    );
+
+                                default:
+                                    return null;
+                            }
+                        })}
+                    </div>
+
+                    {post.author && (
+                        <div className="mt-14 pt-8 border-t border-gray-100">
+                            <div className="flex items-center gap-5">
+                                <div className="relative w-16 h-16 rounded-2xl overflow-hidden shrink-0 ring-2 ring-[#af008c]/20">
+                                    <Image src={post.author.avatar} alt={post.author.name} fill className="object-cover" sizes="64px" />
+                                </div>
+                                <div>
+                                    <p className="text-xs font-bold uppercase tracking-widest text-[#af008c] mb-1">Written by</p>
+                                    <h4 className="text-[#1a1a1a] font-bold text-lg leading-none">{post.author.name}</h4>
+                                    <p className="text-gray-500 text-sm mt-1">{post.author.role}</p>
                                 </div>
                             </div>
-                        )}
-
-                    </div>
+                        </div>
+                    )}
                 </article>
 
-                {/* Right Column: Sidebar Panels */}
+                {/* RIGHT: Sidebar */}
                 <aside className="lg:col-span-4 space-y-6">
-                    {/* Newsletter Container Block */}
-                    <div className="card bg-neutral text-neutral-content shadow-xl border border-neutral-focus">
-                        <div className="card-body p-6">
-                            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-primary-content">
-                                <FiMail className="text-xl" />
+
+                    <div className="rounded-2xl bg-[#1a1a1a] p-6 text-white">
+                        <p className="text-[10px] font-bold tracking-widest uppercase text-[#af008c] mb-3">Stay Updated</p>
+                        <h3 className="text-xl font-bold leading-snug mb-3">
+                            Get the latest farm science in your inbox
+                        </h3>
+                        <p className="text-white/50 text-xs leading-relaxed mb-5">
+                            Weekly insights on poultry nutrition, disease control, and veterinary best practices.
+                        </p>
+                        <div className="flex flex-col gap-2">
+                            <input
+                                type="email"
+                                placeholder="your@email.com"
+                                className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#af008c] transition-colors"
+                            />
+                            <button className="w-full bg-[#af008c] hover:bg-[#8f0072] text-white font-semibold text-sm py-2.5 rounded-xl transition-colors duration-200">
+                                Subscribe to Insights
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="rounded-2xl border border-[#e8d0e4] bg-[#faf5f9] p-6">
+                        <p className="text-[10px] font-bold tracking-widest uppercase text-[#af008c] mb-3">Need a Solution?</p>
+                        <h3 className="text-[#1a1a1a] font-bold text-lg leading-snug mb-2">
+                            Talk to our veterinary team
+                        </h3>
+                        <p className="text-gray-500 text-xs leading-relaxed mb-5">
+                            Get personalized product recommendations for your farm's specific challenges.
+                        </p>
+                        <Link
+                            href="/contact-us"
+                            className="flex items-center justify-center gap-2 w-full bg-[#1a1a1a] hover:bg-[#af008c] text-white font-semibold text-sm py-2.5 rounded-xl transition-colors duration-200"
+                        >
+                            Get a Free Consultation
+                        </Link>
+                    </div>
+
+                    <div className="rounded-2xl border border-gray-100 p-5 space-y-4">
+                        <p className="text-[10px] font-bold tracking-widest uppercase text-gray-400">Article Details</p>
+                        <div className="space-y-3 text-sm">
+                            <div className="flex justify-between items-center">
+                                <span className="text-gray-400 font-medium">Category</span>
+                                <span className="bg-[#faf5f9] text-[#af008c] text-xs font-bold px-2.5 py-1 rounded-full">{post.tag}</span>
                             </div>
-                            <h3 className="card-title text-xl font-bold mt-4 text-neutral-content">Stay Ahead of the Curve</h3>
-                            <p className="text-sm text-neutral-content/70 leading-relaxed grow-0">
-                                Get technical agribusiness analysis and actionable veterinary data briefs sent straight to your inbox weekly.
-                            </p>
-                            <form onSubmit={(e) => e.preventDefault()} className="mt-4 form-control gap-3">
-                                <input 
-                                    type="email" 
-                                    placeholder="Enter your email" 
-                                    className="input input-bordered w-full text-base-content bg-base-100 border-none focus:outline-primary"
-                                    required
-                                />
-                                <button className="btn btn-primary w-full normal-case font-bold">
-                                    Subscribe to Insights
-                                </button>
-                            </form>
+                            <div className="flex justify-between items-center border-t border-gray-50 pt-3">
+                                <span className="text-gray-400 font-medium">Published</span>
+                                <span className="text-[#1a1a1a] font-semibold">{post.date}</span>
+                            </div>
+                            <div className="flex justify-between items-center border-t border-gray-50 pt-3">
+                                <span className="text-gray-400 font-medium">Read time</span>
+                                <span className="text-[#1a1a1a] font-semibold">{post.readingTime}</span>
+                            </div>
                         </div>
                     </div>
                 </aside>
+            </div>
 
-            </main>
+            {/* ── BOTTOM CTA STRIP ────────────────────────────────── */}
+            <div className="bg-[#1a1a1a] mt-8">
+                <div className="max-w-6xl mx-auto px-4 sm:px-8 py-12 flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div>
+                        <p className="text-[#af008c] text-xs font-bold tracking-widest uppercase mb-2">Ready to act?</p>
+                        <h3 className="text-white text-2xl sm:text-3xl font-bold leading-tight">
+                            Find the right supplement <br className="hidden sm:block" /> for your flock.
+                        </h3>
+                    </div>
+                    <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+                        <Link
+                            href="/our-products"
+                            className="px-6 py-3 bg-[#af008c] hover:bg-[#8f0072] text-white font-semibold text-sm rounded-full transition-colors duration-200 text-center"
+                        >
+                            Explore Products
+                        </Link>
+                        <Link
+                            href="/contact-us"
+                            className="px-6 py-3 border border-white/20 hover:border-white/50 text-white font-semibold text-sm rounded-full transition-colors duration-200 text-center"
+                        >
+                            Contact Our Team
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
         </div>
     );
 };

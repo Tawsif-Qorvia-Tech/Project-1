@@ -1,3 +1,5 @@
+"use server";
+
 import { collections, dbConnect } from "@/lib/dbConnect";
 
 export const getBlogs = async () => {
