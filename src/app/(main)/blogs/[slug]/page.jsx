@@ -165,7 +165,7 @@ const Details = async ({ params }) => {
                 </article>
 
                 {/* RIGHT: Sidebar */}
-                <aside className="lg:col-span-4 space-y-6">
+                <aside className="lg:col-span-4 space-y-6 sticky top-20 self-start">
 
                     <div className="rounded-2xl bg-[#1a1a1a] p-6 text-white">
                         <p className="text-[10px] font-bold tracking-widest uppercase text-[#af008c] mb-3">Stay Updated</p>
