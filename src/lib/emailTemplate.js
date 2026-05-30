@@ -95,7 +95,7 @@ export const b2bInquiryTemplate = ({
           <!-- Footer -->
           <tr>
             <td align="center" style="padding-top:20px; border-top:1px solid #eeeeee; color:#777777; font-size:12px; line-height:1.5;">
-              <p style="margin:0 0 4px 0;">This request was logged via the <strong>Poultry Health Hub</strong> Partner Network.</p>
+              <p style="margin:0 0 4px 0;">This request was logged via the <strong>Together In Community</strong> Partner Network.</p>
               <p style="margin:0 0 12px 0;">Distribution Hub: 123 Agriculture Way, TX 75001</p>
               <p style="font-size:11px; color:#999999; margin:0;">Internal routing only • Automated transmission protocol • Do not reply directly.</p>
             </td>
